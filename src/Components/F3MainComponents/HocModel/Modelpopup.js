@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+import SignIn from '../SignIn'
 
-import Singnin from '../Singnin'
 
 
  const Modelpopup=(WrappedComponent)=>{
@@ -40,7 +40,7 @@ return class Modelpopup extends Component {
             <div >
 
       <WrappedComponent    showmodel={this.openModal} Loggeruser={this.state.loggedin} />
-      <Singnin open={this.state.modalopen} close={this.closeModal} Loggeruser={this.state.loggedin}    />
+      <SignIn open={this.state.modalopen} close={this.closeModal} Loggeruser={this.state.loggedin}    />
                 
             </div>
         )

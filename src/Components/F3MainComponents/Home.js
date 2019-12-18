@@ -177,7 +177,7 @@ class Home extends Component {
 							</div>
 						</div>
 					</div>
-					<Link className="btn-primary" Link to={'/MyBet'}>Go for it</Link>
+					<Link className="btn-primary" Link to={'/Mybets'}>Go for it</Link>
 				</section>
     <Footer/>
 			</div>

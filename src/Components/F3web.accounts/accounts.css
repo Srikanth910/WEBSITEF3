@@ -1,0 +1,546 @@
+
+
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+ 
+    background-color:#54a800;
+}
+.trans{
+	transition-duration: 0.4s; 
+	-webkit-transition-duration: 0.4s;
+}
+
+
+.nav-link .dropdown-toggle{
+	transition-duration: 0.4;
+	-webkit-transition-duration: 0.4s; 
+}
+
+
+/* acccounnt  css*/
+
+
+.N-brand
+{
+	position:static;
+	margin-top:20px;
+	margin-bottom:20px;
+	margin-left:auto;
+	margin-right:auto;
+} 
+
+
+
+.user
+{
+	line-height:35px;
+	background:url('../../assests/user-icon.png') 0px 0px no-repeat;
+	padding-left:50px;
+	display:block;
+	color:#5d5d5d;
+	text-transform:uppercase;
+	font-weight:500;
+}
+
+a.sign-out
+{
+	width:25px;
+	height:27px;
+	display:block;
+	background:url('../../assests/sign-out-icon.png') 0px 0px no-repeat;
+	margin:5px auto;
+}
+
+ul.side-menu
+{
+	color:#fff;
+	text-transform:uppercase;
+	font-weight:500;
+	letter-spacing:1px;
+	font-size:12px;
+	line-height:47px;
+	display:block;
+	margin-top:30px;
+	width:100%;
+}
+
+.side-menu li
+{
+	display:block;
+	width:100%;
+}
+
+.side-menu li a.nav-link
+{
+	color:#fff;
+	padding:0px;
+	padding-left:27px;
+	display:block;
+}
+
+.side-menu li a.nav-link span
+{
+	width:23px;
+	height:23px;
+	display:block;
+	float:left;
+	margin-right:14px;
+	margin-top:11px;
+	background-position:0px 0px;
+	background-repeat:no-repeat;
+}
+
+.side-menu li a.nav-link span.profile
+{
+	background-image:url('../../assests/profile-icon.png');
+}
+
+.side-menu li a.nav-link span.my-wallet
+{
+	background-image:url('../../assests/wallet-icon.png');
+}
+
+.side-menu li a.nav-link span.my-bets
+{
+	background-image:url('../../assests/bets-icon.png');
+}
+
+.side-menu li a.nav-link span.bonuses
+{
+	background-image:url('../../assests/bonuses-icon.png');
+}
+
+.side-menu li a.nav-link span.messages
+{
+	background-image:url('../../assests/messages-icon.png');
+}
+
+.side-menu li a.nav-link:hover, .side-menu li a.nav-link:focus, .side-menu li a.nav-link.active
+{
+	color:#ffa234;
+	background-color:#262644;
+}
+
+.side-menu li a.nav-link:hover span, .side-menu li a.nav-link:focus span, .side-menu li a.nav-link.active span
+{
+	background-position:0px -23px;
+}
+
+.side-menu li ul
+{
+	list-style:none;
+	margin-left:25px;
+}
+
+.side-menu li ul li a
+{
+	color:#fff;
+	text-transform:uppercase;
+	font-size:12px;
+	font-weight:500;
+	padding:5px 0px;
+}
+
+.side-menu .dropdown-toggle::after
+{
+	border:none;
+	width:14px;
+	height:7px;
+	background:url('../../assests/down-arrow.png') 0px 0px no-repeat;
+	float:right;
+	margin-right:23px;
+	margin-top:17px;
+}
+
+.taggler
+{
+	position:absolute;
+	top:-147px;
+	left:0px;
+	z-index:10001;
+}
+
+.balance, .bonus-balance
+{
+	display:block;
+	padding-left:50px;
+	background:url('../../assests/balance-icon.png') 0px 5px no-repeat;
+	line-height:22px;
+	color:#5d5d5d;
+	font-size:9px;
+	/* new */
+	/* font-size: 12px; */
+	font-weight:bold;
+	margin-left:10px;
+	text-transform:uppercase;
+}
+
+.bonus-balance
+{
+	background:url('../../assests/bonus-icon.png') 0px 5px no-repeat;
+}
+
+.balance span, .bonus-balance span
+{
+	font-size:16px;
+	display:block;
+	font-weight:300;
+}
+
+ul.tabs
+{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+
+ul.tabs li
+{
+	margin-bottom:26px;
+}
+
+ul.tabs li:last-child
+{
+	margin-bottom:0px;
+}
+
+ul.tabs li a
+{
+	display:block;
+	text-align:center;
+	padding:20px;
+	border:1px solid #bababa;
+}
+
+ul.tabs li a:hover, ul.tabs li a:focus, ul.tabs li a.active
+{
+	background-color:#e2e2e2;
+	border:1px solid #e2e2e2;
+}
+
+.row-title
+{
+	font-size:12px;
+	text-transform:uppercase;
+	font-weight:bold;
+	color:#1b1b35;
+	text-align:center;
+}
+
+.pagination
+{
+	font-size:14px;
+	color:#000000;
+	text-transform:uppercase;
+	border-radius:0px;
+}
+
+.pagination ul
+{
+	list-style:none;
+	display:inline-block;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:0px;
+}
+
+.pagination ul li
+{
+	float:left;
+	margin-right:5px;
+	margin-left:5px;
+}
+
+.pagination ul li a
+{
+	width:19px;
+	height:19px;
+	display:block;
+	line-height:19px;
+	text-align:center;
+	color:#000;
+}
+
+
+.pagination ul li a:hover, .pagination ul li a:focus, .pagination ul li a.active
+{
+	background-color:#ffa234;
+}
+
+.pagination .prev
+{
+	display:block;
+	background:url('../../assests/prev-arrow.png') left center no-repeat;
+	padding-left:25px;
+}
+
+.pagination .next
+{
+	display:block;
+	background:url('../../assests/next-arrow.png') right center no-repeat;
+	padding-right:25px;
+}
+
+.blue-bg .form-inline
+{
+	width:100%;
+}
+
+.blue-bg .form-inline label
+{
+	font-size:14px;
+	color:#ffffff;
+	text-transform:uppercase;
+	display:block;
+}
+
+.blue-bg .form-inline button.reload
+{
+	width:34px;
+	height:34px;
+	display:block;
+	background:url('../../assests/reload-icon.png') 0px 0px no-repeat;
+	border:none;
+	margin-top:25px;
+	cursor:pointer;
+}
+
+.modal-content {
+    background-color: none !important;
+    border: 1px solid #161d5f;
+    border-radius: 0px;
+}
+
+@media all and (min-width: 1024px) and (max-width: 1200px)
+{
+
+}
+
+/* #Tablet (Portrait)
+================================================== */
+@media only screen and (max-width: 961px)
+{
+
+}
+
+@media (max-width: 768px)
+{
+
+}
+
+/*  #Mobile (Portrait)
+================================================== */
+@media only screen and (max-width: 480px)
+{
+
+	h1.inner
+	{
+		margin-bottom:20px;
+	}
+
+	.balance, .bonus-balance
+	{
+		margin-left:0px;
+		line-height:18px;
+	}
+
+	.balance span, .bonus-balance span
+	{
+		margin-top:5px;
+	}
+
+	.pagination ul
+	{
+		display:block;
+	}
+
+	.pagination ul li a
+	{
+		margin-top:5px;
+	}
+
+	.border-left.m-border
+	{
+		border-left:none !important;
+	}
+
+	.border-left
+	{
+		border-top:1px solid #fff;
+	}
+}
+
+
+/*  ofce  overwirte */
+
+
+.offcanvas-collapse
+{
+	top:138px;
+	background-color:#1b1b35;
+	padding-left:0px;
+	padding-right:0px;
+}
+
+
+/* ooffcanvas write */
+
+
+body {
+	overflow-x: hidden; /* Prevent scroll on narrow devices */
+  }
+  
+  body {
+	padding-top: 0px;
+  }
+  
+  @media (max-width: 991.98px) {
+	.offcanvas-collapse {
+	  position: fixed;
+	  top:118px; /* Height of navbar */
+	  bottom: 0;
+	  z-index:10001;
+	  right: 100%;
+	  width: 100%;
+	  padding-right: 1rem;
+	  padding-left: 1rem;
+	  padding-top:55px;
+	  overflow-y: auto;
+	  visibility: hidden;
+	  /* background-color: #ffa234; */
+	  transition-timing-function: ease-in-out;
+	  transition-duration: .3s;
+	  transition-property: right, visibility;
+	}
+	.offcanvas-collapse.open {
+	  right: 0;
+	  visibility: visible;
+	}
+  }
+  
+  .nav-scroller {
+	position: relative;
+	z-index: 2;
+	height: 2.75rem;
+	overflow-y: hidden;
+  }
+  
+  .nav-scroller .nav {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	padding-bottom: 1rem;
+	margin-top: -1px;
+	overflow-x: auto;
+	color: rgba(255, 255, 255, .75);
+	text-align: center;
+	white-space: nowrap;
+	-webkit-overflow-scrolling: touch;
+  }
+  
+  .nav-underline .nav-link {
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	font-size: .875rem;
+	color: #6c757d;
+  }
+  
+  .nav-underline .nav-link:hover {
+	color: #007bff;
+  }
+  
+  .nav-underline .active {
+	font-weight: 500;
+	color: #343a40;
+  }
+  
+  .text-white-50 { color: rgba(255, 255, 255, .5); }
+  
+  .bg-purple { background-color: #6f42c1; }
+  
+  .lh-100 { line-height: 1; }
+  .lh-125 { line-height: 1.25; }
+  .lh-150 { line-height: 1.5; }
+  
+
+  /* new */
+  .input[type=file].form-control {
+    padding: 5px;
+}
+/* lobby */
+
+
+.around{
+    margin: 0 auto;
+    width: 80%;
+}
+.card-img{
+width: 330px;
+height: 173px;
+
+
+}
+.cards-view{
+width: 330px;
+height: 173px;
+margin-bottom: 1px;
+}
+.cards-section{
+margin-bottom: 3rem;
+}
+.card-footer{
+width: 330px;
+}
+.image-game-type{
+display: inline-grid !important;
+float:right;
+}
+.bet-place{
+width: 80px;
+height: 30px;
+}
+.dies{
+width: 54px;
+height: 51px;
+padding: 4px;
+}
+.player_name{
+font-weight: 900;
+}
+.icon_players{
+width: 30px;
+background: #9c0f1c;
+height: 18px;
+padding: 2px;
+
+}
+.player_bet{
+font-weight: 800;
+color: #9c0f1c;
+}
+.bottom_div{
+position: relative;
+top: 10.7rem;
+background: #ffffff;
+}
+.bottom-layer{
+margin:1rem 10px 0;
+}
+.cardcursor{
+cursor: pointer;
+}
+
+.modal-content1 {
+    color:#808080 !important;
+    background-color:white !important
+    /* border: 1px solid #161d5f; */
+    /* border-radius: 0px; */
+}
+/* .modal-head{
+    border: 1px !important;
+} */
+.modal-foot {
+    border:  0px !important;
+    text-align: center;
+}

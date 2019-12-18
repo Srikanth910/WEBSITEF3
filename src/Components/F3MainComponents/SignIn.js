@@ -7,7 +7,7 @@ import Auth from '../ServerApi/Auth';
 
 
 
-class FormModel extends Component {
+class SignIn extends Component {
 	
 	constructor(props) {
 		super(props)
@@ -972,4 +972,4 @@ class FormModel extends Component {
 		)
 	}
 }
-export default withRouter(FormModel)
+export default withRouter(SignIn)

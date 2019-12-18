@@ -393,11 +393,11 @@ nav.inner.navbar-expand-lg .navbar-nav .nav-link:hover, nav.inner.navbar-expand-
 
 .carousel-caption h1
 {
-	font-size:72px;
-	color:#b4ff00;
-	font-weight:100;
-	margin-bottom:50px;
-	text-shadow: 0px 0px 7px #B4F53D;
+    font-size: 72px;
+    color: #b4ff00;
+    font-weight: 100;
+    margin-bottom: 50px;
+    text-shadow: 0px 0px 7px #B4F53D;
 }
 
 .carousel-caption .btn-dark
@@ -1168,13 +1168,13 @@ footer .social-media a.youtube
 	.table-bg .tips.tip3
 	{
         /* background:url(../images/numbers.png) 0px -32px no-repeat; */
-         background: ur('../../assests/numbers.png') 0px -32px no-repeat
+         background: url('../../assests/numbers.png') 0px -32px no-repeat
 	}
 
 	.table-bg .tips.tip4
 	{
         /* background:url(../images/numbers.png) 0px -48px no-repeat; */
-        background:ur('../../assests/numbers.png') 0px -48px no-repeat
+        background:url('../../assests/numbers.png') 0px -48px no-repeat
 	}
 
 	.table-bg .tips.tip5
@@ -1200,7 +1200,7 @@ footer .social-media a.youtube
 		width:150px;
 		height:136px;
         /* background:url(../images/coin-stack-mobile.png) 0px 0px no-repeat; */
-        background: ur('../../assests/coin-stack-mobile.png')  0px 0px no-repeat;
+        background: url('../../assests/coin-stack-mobile.png')  0px 0px no-repeat;
 		position:absolute;
 		right:-10px;
 	}
@@ -1307,3 +1307,94 @@ body {
 
 
 /* chnahe */
+
+
+/* form errror */
+
+form input {
+	padding: 10px;
+	border: solid 1px #BDC7D8;
+  
+  }
+  
+  .button {
+	background-color: #00BFFF;
+	border-color: #3ac162;
+	font-weight: bold;
+	padding: 12px 15px;
+	color: #ffffff;
+  }
+  
+  .errorMsg {
+	color: #cc0000;
+	margin-bottom: 12px;
+  }
+  
+  .sucessMsg {
+	color: #6B8E23;
+	margin-bottom: 10px;
+  }
+  
+	
+	input.error {
+	  border: 1px solid red;
+	}
+	
+	.errorMessage {
+	  color: red;
+	  font-size: 0.75em;
+	  display: relative;
+	}
+	
+	.firstName {
+	  margin-right: 1%;
+	}
+	
+	.lastName {
+	  margin-left: 1%;
+	}
+	
+	.firstName,
+	.lastName,
+	.email,
+	.password {
+	  display: flex;
+	  flex-direction: column;
+	  margin-bottom: 15px;
+	}
+	
+	.firstName,
+	.lastName {
+	  width: 49%;
+	}
+	
+	.email,
+	.password {
+	  width: 100%;
+	}
+	
+	.createAccount {
+	  width: 100%;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	}
+	
+	.createAccount button {
+	  background-color: #519e8a;
+	  color: #fff;
+	  border: 2px solid #fff;
+	  width: 100%;
+	  margin-top: 1em;
+	  padding: 8px 0px;
+	  font-size: 1em;
+	  font-weight: lighter;
+	  letter-spacing: 1px;
+	  margin-bottom: 0.25em;
+	}
+	
+	.createAccount button:hover {
+	  color: #519e8a;
+	  background-color: #fff;
+	  border: 2px solid #519e8a;
+	}
