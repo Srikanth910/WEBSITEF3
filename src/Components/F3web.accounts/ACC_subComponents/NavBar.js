@@ -5,7 +5,9 @@ import Modal from 'react-bootstrap/Modal';
  import { withRouter } from 'react-router-dom';
 import { Balance, Logout } from '../../ServerApi/ServerApi';
 
-  
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css';
+import Auth from '../../ServerApi/Auth';
  class NavBar extends Component {
 	 constructor(props) {
 		 super(props)
@@ -17,7 +19,7 @@ import { Balance, Logout } from '../../ServerApi/ServerApi';
 			Modelopen:''		  
 
 		 }
-		 this.UserLogout=this.UserLogout.bind(this)
+	
 	 }
 	 
 
@@ -37,38 +39,64 @@ import { Balance, Logout } from '../../ServerApi/ServerApi';
 
 	 }
 
-	 LogoutModel=()=>{
+	 LogoutUser=()=>{
 
 
-		this.setState({
-			Modelopen:true
+	// 	this.setState({
+	// 		Modelopen:true
 
-		})
-	}
-		closemodel=()=>{
-			console.log('hellomodel close')
-			this.setState({
-				Modelopen:false
-			})
-		}
+	// 	})
+	// }
+	// 	closemodel=()=>{
+	// 		console.log('hellomodel close')
+	// 		this.setState({
+	// 			Modelopen:false
+	// 		})
+	// 	}
 
 
-		UserLogout=async()=>{
-			console.log('logout')
-			const  Logoutuser  = await Logout();
-	if(Logoutuser.status==="ok"){
+	// 	UserLogout=async()=>{
+	// 		console.log('logout')
+	// 		const  Logoutuser  = await Logout();
+	// if(Logoutuser.status==="ok"){
 
 			
-			this.props.history.push('/')
+	// 		this.props.history.push('/')
 	
 			
-			}else{
+	// 		}else{
 				
-				this.props.history.push("# ")
-			}
+	// 			this.props.history.push("# ")
+	// 		}
 	 
 
+    confirmAlert({
+		Title: 'Confirm to submit',
+		message: 'Are you sure  LOGOUT',
+		buttons: [
+		  {
+			label: 'Yes',
+			onClick: () =>
+			
+			// Logout().then(user=>{
+			// 	if(user.status==='ok'){
+			// 		this.props.history.push('/');
+					Auth.signout()
+			// 	}else{
+			// 		this.props.history.push("# ")
+			// 	}
+			// })
+              
 
+		
+		  },
+		  {
+			label: 'No',
+			onClick: () => 
+			this.props.history.push("# ")
+		  }
+		]
+	  });
 		
 
 		}
@@ -121,7 +149,7 @@ import { Balance, Logout } from '../../ServerApi/ServerApi';
 									</div>	
 								</div>
 								<div  onClick={this.LogoutModel}className="col-2 col-sm-1 col-lg-1 border-left px-3 py-3 text-center">
-								<a href ="#"   className="sign-out"></a>
+								<a href ="#"   onClick={this.LogoutUser} className="sign-out"></a>
 								</div>
 							</div>
 						</div>	
@@ -129,44 +157,6 @@ import { Balance, Logout } from '../../ServerApi/ServerApi';
 					
 					{/* <!-- Small modal --> */}
 {/* <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Logout modal</button> */}
-<Modal
-        size="sm"
-		show={this.state.Modelopen}
-		onHide={this.closemodel}
-     className="modelcolor"
-        aria-labelledby="example-modal-sizes-title-sm"
-      >
-     
-		  <div class="modal-content1">
-         
-	 <Modal.Header  >
-          <Modal.Title id="example-modal-sizes-title-sm"  >
-		 
-		 <h4><span style={{color:'black'}}>Logout <i class="fa fa-lock"></i></span></h4> </Modal.Title>
-
-        </Modal.Header>
-
-	
-   
-        <Modal.Body>
-
-		<div style={{color:'block'}} ><i class="fa fa-question-circle"></i> Are you sure you want to log-off?</div>
-
-		  
-		
-			
-			.</Modal.Body>
-			<hr/>
-		 
-
-			<Modal.Footer>
-			<button   onClick={this.UserLogout}  className=" btn btn-info">Logout</button>
-  </Modal.Footer>
-
-			</div>
-      </Modal>
-
-  
 				
 </div>
 

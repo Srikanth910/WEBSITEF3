@@ -130,7 +130,7 @@ export default class SideNav extends Component {
                             </li>
                             <li className="nav-item">
                             
-                            <Link className="nav-link"Link to={'/Mybet'}><span  className="bonuses"></span>My Bets</Link>
+                            <Link className="nav-link"Link to={'/Mybets'}><span  className="bonuses"></span>My Bets</Link>
                                     
                             </li>
                             <li className="nav-item">

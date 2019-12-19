@@ -17,7 +17,7 @@ import Auth from './Auth';
 			to={{
 			  pathname: "/",
 			  state:{
-				  error:'pleace Login  man',
+				from: props.location
 				  
 			  }
 			  

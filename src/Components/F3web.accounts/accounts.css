@@ -544,3 +544,10 @@ cursor: pointer;
     border:  0px !important;
     text-align: center;
 }
+
+/* alert */
+
+
+.react-confirm-alert{
+	margin-bottom: 17rem !important;
+}

@@ -5,7 +5,7 @@ import { withRouter ,Redirect} from 'react-router-dom';
 import Auth from '../ServerApi/Auth';
 
 
-
+import Toast from 'light-toast';
 
 class SignIn extends Component {
 	
@@ -14,7 +14,7 @@ class SignIn extends Component {
 
 		this.state = {
 
-			isAutherticated:false,
+			isLogged:false,
 			Name: 'Login',
 		  login:'login',
 		  Register:'',
@@ -367,13 +367,27 @@ class SignIn extends Component {
 
 	  handlelogin=async(e) =>{
 		e.preventDefault();
+		Toast.loading('loading...',()=>{
+				// this.props.history.push('/Lobby');
+				
+			});
 
-	Auth.authenticate();
-		console.log('autherticate',Auth.getAuth());
-		this.setState({
-			redirect:true
+		
+		Auth.authenticate(()=>{
+		this.setState(() => ({
+		isLogged: true
+		  }));
 		})
 
+	
+	
+		setTimeout(() => {
+			Toast.hide();
+		}, 3000);
+
+	
+		// console.log('autherticate',Auth.getAuth());
+		// 
 		// 
 		// if (this.validateForm()) {
 		// 	let fields = {};
@@ -644,8 +658,13 @@ class SignIn extends Component {
 
 
 	render() {
-		const { state = {} } = this.props.location;
-		const { error } = state;
+		const { from } = this.props.location.state || { from: { pathname: '/' } };
+		console.log('valuse ', from)
+		const { isLogged } = this.state;
+	
+		if (isLogged === true) {
+		  this.props.history.push(from.pathname);
+		}
 
 		return (
 			<Modal centeredaria-labelledby="contained-modal-title-vcenter" show={this.props.open} onHide={this.props.close} >

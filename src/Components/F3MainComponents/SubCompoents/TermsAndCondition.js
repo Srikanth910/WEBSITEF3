@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {Link}  from 'react-router-dom';
 import $ from 'jquery';
-import Modal from 'react-bootstrap/Modal';
+import Footer from './Footer';
+import Modelpopup from '../HocModel/Modelpopup';
 
-
-export default class TermsAndCondition extends Component {
+class TermsAndCondition extends Component {
     constructor(props) {
         super(props)
     
@@ -13,30 +13,11 @@ export default class TermsAndCondition extends Component {
         }
     }
     
-    getInitialState() {
-		return { showModal: false };
-	  }	
-	
-	  close = () => {
-		this.setState({ showModal: false });
-	  }
-	
-	  open = () => {
-		  console.log('open')
-		this.setState({
-			showModal: true,
-		  });
-		
-	  }
+  
 
 
 	  
- handleclick=(Name)=>{
-	console.log('login click')
-	this.setState({
-		Name:Name
-	})
- }
+
     componentDidMount(){
         $(function () {
             'use strict'
@@ -49,46 +30,54 @@ export default class TermsAndCondition extends Component {
     render() {
         return (
             <div>
-            <header className="mt-2 mt-sm-4 fixed-top">
-        <div className="container-fluid px-0 text-center">
-        <a href="#" role="button" class="sign-in" data-toggle="modal" onClick={this.open}  data-target="#exampleModalCenter">Sign In / Register</a>
-            <nav className="navbar navbar-expand-lg orange-bg mt-4 mt-md-5">
-            <Link Link to={'/'} class="navbar-brand">
-                <img src = { process.env.PUBLIC_URL + "/logo.png" }className="d-none d-sm-none d-md-block" alt="Fantastic 3"/>
-                    <img src = { process.env.PUBLIC_URL + "/logo-m.png"} className="d-block d-sm-none" alt="Fantastic 3"/>
+           
+				 <header class="mt-2 mt-sm-4 fixed-top">
+					<div class="container-fluid px-0 text-center">
+						
+						
+						<Link to="" role="button" class="sign-in" data-toggle="modal" onClick={this.props.showmodel} data-target="#exampleModalCenter">Sign In / Register</Link>
 
 
-                </Link>
-                <button className="navbar-toggler" type="button" data-toggle="offcanvas1">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="navbar-collapse offcanvas-collapse1" id="collapsingNavbar">
-                    <ul className="navbar-nav mr-5 ml-auto">
-                    <li className="nav-item active">
-								<Link className="nav-link "  Link to={'/'}>Home</Link>
-							</li>
-							<li className="nav-item">
+						
+						<nav class="navbar navbar-expand-lg orange-bg mt-4 mt-md-5">
+							<Link Link to={'/'} className="navbar-brand">
+								<img src={process.env.PUBLIC_URL + "/logo.png"} className="d-none d-sm-none d-md-block" alt="Fantastic 3" />
+								<img src={process.env.PUBLIC_URL + "/logo-m.png"} className="d-block d-sm-none" alt="Fantastic 3" />
 
-                	<Link className="nav-link "  Link to={'/About'}>About Us</Link>
-							</li>
-						</ul>
-						<ul className="navbar-nav ml-5 mr-auto">
-							<li className="nav-item">
+							</Link>
+							<button class="navbar-toggler" type="button" data-toggle="offcanvas">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="navbar-collapse offcanvas-collapse1" id="collapsingNavbar">
+								<ul class="navbar-nav mr-5 ml-auto">
+									<li className="nav-item active">
+										<Link className="nav-link active" Link to={'/'}>Home</Link>
+									</li>
+									<li className="nav-item">
 
-                	<Link className="nav-link "  Link to={'/LiveCasino'}>Live Casino</Link>
-							</li>
-							<li className="nav-item">
-							<Link className="nav-link " Link to={'/FAQ'}>Faq</Link>
-							</li>                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
+										<Link className="nav-link " Link to={'/About'}>About Us</Link>
+									</li>
+								</ul>
+								<ul className="navbar-nav ml-5 mr-auto">
+									<li className="nav-item">
 
+										<Link className="nav-link " Link to={'/LiveCasino'}>Live Casino</Link>
+									</li>
+									<li className="nav-item">
+										<Link className="nav-link " Link to={'/FAq'}>Faq</Link>
+									</li>
+
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</header> 
+
+			
 
     {/* model */}
 
-    
+   
     <div id="carouselExampleIndicators" className="carousel inner slide" data-ride="carousel">
         <div className="carousel-inner">
             <div className="carousel-item active text-center">
@@ -146,52 +135,14 @@ export default class TermsAndCondition extends Component {
         <div className="container">
             <div className="row">
                 <div className="col-12 col-md-6"><h1 className="black">Live Dealer Game</h1></div>
-                <div className="col-12 col-md-6 text-center">  <Link  className="btn-block"Link to={'/Deposite'}>Deposit</Link></div>
+                <div className="col-12 col-md-6 text-center">  <Link  className="btn-block"Link to={'/Deposit'}>Deposit</Link></div>
             </div>
         </div>
     </section>
-
-    <footer class="text-center">
-        <div class="container">
-            <ul class="nav navbar-nav">
-            <li className="nav-item">
-							<Link className="nav-link "  Link to={'/'}>Home</Link>
-					</li>
-					<li className="nav-item">
-					<Link className="nav-link "  Link to={'/About'}>About Us</Link>
-					</li>
-					<li className="nav-item">
-						<Link className="nav-link "  Link to={'/Live Casino'}>Live Casino</Link>
-					</li>
-					<li className="nav-item">
-						<Link className="nav-link " Link to={'/FAQ'}>Faq</Link>
-					</li>
-            </ul>
-            <div class="clearfix"></div>
-            <div class="social-media">
-                <a href="#" target="_blank" className="facebook"></a>
-                <a href="#" target="_blank" className="twitter"></a>
-                <a href="#" target="_blank" className="youtube"></a>
-                <a href="#" target="_blank" className="instagram"></a>
-            </div>
-        </div>
-        <div className="border-top">
-            <div className="container">
-                <div className="row py-4">
-                    <div className="col-12 col-sm-6 col-md-6 text-left">
-                    <Link Link to={'/TermsAndCondition'}>Terms &amp; Conditions</Link> &nbsp; | &nbsp;<Link Link to={'/privacyPolicy'}>Privacy Policy</Link>
-                    </div>
-                    <div className="col-12 col-sm-6 col-md-6 text-right">
-                        &copy; 2019 Fantastic 3
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-
+<Footer/>
         </div>
         )
     }
 }
+
+export default Modelpopup(TermsAndCondition)

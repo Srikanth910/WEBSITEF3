@@ -8,8 +8,9 @@ import axios from 'axios';
 
 import Modelpopup from './HocModel/Modelpopup';
 import Footer from './SubCompoents/Footer';
-
-
+import Auth from '../ServerApi/Auth';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
  
 
 
@@ -67,15 +68,15 @@ class Home extends Component {
 	//    }
 
 	handleDeposite=()=>{
-		console.log('consloecaled',)
+	
 		
-		if(this.state.user===false){
-			this.props.history.push("/");
-			
+		if(Auth.getAuth()){
+			this.props.history.push('/Deposit')
+		
 		}else{
-		this.props.history.push('/Deposit')
+			NotificationManager.error('Pleace login ');
+		}	
 		}
-	}
 	render() {
 		console.log('props data.',this.props.Loggeruser)
 	
@@ -85,7 +86,7 @@ class Home extends Component {
 		
 		return (
 			<div>
-
+  <NotificationContainer/>
 				 <header class="mt-2 mt-sm-4 fixed-top">
 					<div class="container-fluid px-0 text-center">
 						
@@ -143,7 +144,7 @@ class Home extends Component {
 						<div className="carousel-item first active text-center">
 							<div className="carousel-caption">
 								<h1>Live Dealer Game</h1>
-								<Link to={'/Deposit'} className="btn-dark"   onClick={this.handleDeposite}>Deposit</Link>
+								<Link to={'#'} className="btn-dark"   onClick={this.handleDeposite}>Deposit</Link>
 
 
 							</div>
@@ -177,7 +178,7 @@ class Home extends Component {
 							</div>
 						</div>
 					</div>
-					<Link className="btn-primary" Link to={'/Mybets'}>Go for it</Link>
+					<Link className="btn-primary" Link to={'#'} onClick={this.handleDeposite}  >Go for it</Link>
 				</section>
     <Footer/>
 			</div>
