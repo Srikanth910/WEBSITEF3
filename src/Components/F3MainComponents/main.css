@@ -1398,3 +1398,117 @@ form input {
 	  background-color: #fff;
 	  border: 2px solid #519e8a;
 	}
+
+
+	/* lobby */
+
+	
+.lobby
+{
+	display:block;
+	position:relative;
+	text-align:center;
+	transition-duration:0.4s;
+    -webkit-transition-duration:0.4s;
+}
+
+.price
+{
+	background:url('../../assests/black_bg.png') 0px 0px repeat;
+	padding:0px 0px;
+	border-radius:3px;
+	color:#ffd200;	
+	font-size:24px;
+	line-height:40px;
+	font-weight:bold;
+	position:absolute;
+	width:60px;
+	height:40px;
+	top:10px;
+	right:10px;
+}
+
+.dice
+{
+	width:74px;
+	height:74px;
+	display:block;
+	background:url('../../assests/dice.png') 0px 0px no-repeat;
+	position:absolute;
+	top:70px;
+	right:10px;
+}
+
+.flag
+{
+	width:60px;
+	height:60px;
+	display:block;
+	position:absolute;
+	left:15px;
+	top:-15px;	
+}
+
+.lobby-title
+{
+	font-weight:bold;
+	text-transform:uppercase;
+	padding-left:70px;	
+}
+
+.players
+{
+	background:url('../../assests/players-icon.png') 0px 0px no-repeat; 	
+	padding-left:38px;
+	font-weight:bold;	
+}
+
+.overlay
+{
+	position:absolute;
+	top:0px;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	text-align:center;
+	color:#fff;
+	text-transform:uppercase;
+	font-size:18px;
+	font-weight:bold;
+	letter-spacing:1px;
+	display:none;
+	padding-top:25%;
+	background:url('../../assests/black_bg.png') 0px 0px repeat;
+	transition-duration:0.4s;
+    -webkit-transition-duration:0.4s;
+}
+
+.lobby:hover .overlay, .lobby:focus .overlay
+{
+	display:block;
+	color:#fff;
+	opacity:1;	
+}
+
+
+.balance-btn
+{
+	background:#ff8b01 url('../../assests/orange_bg.jpeg') 0px 0px repeat-x;
+	border-radius:5px;
+	display:inline-block;
+	padding:20px 40px;
+	font-size:36px;
+	line-height:40px;
+	color:#000;
+	text-transform:uppercase;
+	font-weight:bold;
+	letter-spacing:1px;	
+}
+
+.balance-btn span
+{
+	display:block;
+	font-size:18px;
+	line-height:24px;
+	letter-spacing:2px;	
+}

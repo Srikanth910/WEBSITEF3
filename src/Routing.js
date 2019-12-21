@@ -31,7 +31,7 @@ export default class Routing extends Component {
        <Route exact path = '/' component = { Home }/>
         <Route path = '/About' component = {About }   />
        <Route path = '/FAQ'component = { Faq }/>
-      <Route path = '/LiveCasino' component = { Livecasino } />
+      <ProtectedRoute path = '/LiveCasino' component = { Livecasino } />
       <Route path='/TermsAndCondition' component= { TermsAndCondition }/>
       <Route path='/PrivacyPolicy' component= { PrivacyPolicy }/>  
       <Route path='/Profile' component= { Profile }/>  

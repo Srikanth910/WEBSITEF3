@@ -99,6 +99,11 @@ import Footer from './SubCompoents/Footer';
 	// }
 
 	
+	handleUrl=()=>{
+		window.open("http://localhost:3000");
+		
+		
+	}
 	
 	render() {
 		
@@ -166,37 +171,106 @@ import Footer from './SubCompoents/Footer';
 					</div>
 				</div>
 
-				<section className="block dark-blue-bg">
-					<div className="container-fluid">
-						<h1 className="h1">Live Casino</h1>
-						<div>
-
-
-
-							{/* <!-- Place this code where you'd like the game to appear --> */}
-							<div className="miniclip-game-embed" data-game-name="8-ball-pool-multiplayer" data-theme="5" data-width="100%" data-height="680" data-language="en">
-								{/* <a onClick={() => this.setState({ show: true })} href="#">Play 8 Ball Pool</a> */}
-                              
-  
-                  <Link to={'/Lobby'}  onClick={this.handlelink} >
-								<button   class="btn btn-primary"  type="submit">play</button>
-								</Link>
-							
-								{/* <button  onClick={this.props.openModal} class="btn btn-primary"  type="submit">play</button> */}
+				
+		<section class="block dark-blue-bg">
+			<h1 class="h1">Lobby arena</h1>
+			<div class="darkest-blue-bg px-5 py-5 text-center">
+				<div class="balance-btn">
+					<span>Balance</span>
+					$ 382,34,583
+				</div>
+			</div>
+			<div class="container mt-5">
+				<div class="row">
+					<div class="col-md-4 px-3 mb-5">
+						<div class="lobby">
+						<img src={process.env.PUBLIC_URL + "/host_g1..png"} class="img-fluid" alt="..." />
+							<div class="price">$10</div>
+							<span class="dice"></span>
+							<a href="#" class="overlay" onClick={this.handleUrl}>
+								Play Now!
+							</a>
+						</div>	
+						<div class="green-bg px-2 py-2">
+							<div class="row">
+								<div class="col-8 col-md-8 black position-relative">
+									<span class="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" class="img-fluid"/></span>
+									<span class="lobby-title">AMANDA PERRY</span>
+								</div>
+								<div class="col-4 col-md-4 blue">
+									<span class="players">17652</span>
+								</div>
 							</div>
-
-                        {/* <Game  open={this.state.modalIsOpen} /> */}
-							{/* <!-- Insert this code before your </body> tag --> */}
-							<script src="//static.miniclipcdn.com/js/game-embed.js"></script>
-                     {/* <Game   id={this.state.RoomId} open={this.state.modelopen} close={this.state.closeModal}/> */}
-							
-						
 						</div>
-
-
-						
 					</div>
-				</section>
+					<div class="col-md-4 px-3 mb-5">
+						<div class="lobby">
+						<img src={process.env.PUBLIC_URL + "/host_g1..png"} class="img-fluid" alt="..." />
+							<div class="price">$10</div>
+							<span class="dice"></span>
+							<a href="#" class="overlay" onClick={this.handleUrl}>
+								Play Now!
+							</a>
+						</div>	
+						<div class="green-bg px-2 py-2">
+							<div class="row">
+								<div class="col-8 col-md-8 black position-relative">
+									<span class="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" class="img-fluid"/></span>
+									<span class="lobby-title">AMANDA PERRY</span>
+								</div>
+								<div class="col-4 col-md-4 blue">
+									<span class="players">17652</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 px-3 mb-5">
+						<div class="lobby">
+						<img src={process.env.PUBLIC_URL + "/host_g1..png"} class="img-fluid" alt="..." />
+							<div class="price">$10</div>
+							<span class="dice"></span>
+							<a href="#" class="overlay" onClick={this.handleUrl} >
+								Play Now!
+							</a>
+						</div>	
+						<div class="green-bg px-2 py-2">
+							<div class="row">
+								<div class="col-8 col-md-8 black position-relative">
+									<span class="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" class="img-fluid"/></span>
+									<span class="lobby-title">AMANDA PERRY</span>
+								</div>
+								<div class="col-4 col-md-4 blue">
+									<span class="players">17652</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 px-3 mb-5">
+						<div class="lobby">
+						<img src={process.env.PUBLIC_URL + "/host_g1..png"} class="img-fluid" alt="..." />
+							<div class="price">$10</div>
+							<span class="dice"></span>
+							<a href="#"  class="overlay" onClick={this.handleUrl}>
+								Play Now!
+							</a>
+						</div>	
+						<div class="green-bg px-2 py-2">
+							<div class="row">
+								<div class="col-8 col-md-8 black position-relative">
+									
+									<span class="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" class="img-fluid"/></span>
+									<span class="lobby-title">AMANDA PERRY</span>
+								</div>
+								<div class="col-4 col-md-4 blue">
+									<span class="players">17652</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
 
 				<section className="px-3 py-3 px-sm-5 py-sm-5 green-bg">
 					<div className="container">
@@ -219,3 +293,5 @@ import Footer from './SubCompoents/Footer';
 }
 
  export default   Modelpopup(LiveCasino)
+
+ 
