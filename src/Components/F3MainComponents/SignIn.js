@@ -368,7 +368,7 @@ class SignIn extends Component {
 	  handlelogin=async(e) =>{
 		e.preventDefault();
 		Toast.loading('loading...',()=>{
-				// this.props.history.push('/Lobby');
+			this.props.history.push("/LiveCasino");
 				
 			});
 

@@ -18,9 +18,9 @@ class Home extends Component {
 
 	constructor(props) {
 		super(props)
-
+ 
 		this.state = {
-			user:this.props.loggedIn,
+		 userlogged:false,
 			message: [],
 			error: [],
 			matchdata:'',
@@ -54,6 +54,8 @@ class Home extends Component {
             });
       });	
 	}
+
+
 	
 	// openModal=(e)=> {   
 	// 	console.log('hello')
@@ -67,6 +69,9 @@ class Home extends Component {
 	// 	 this.setState({modalopen: false});
 	//    }
 
+ 
+
+
 	handleDeposite=()=>{
 	
 		
@@ -77,6 +82,16 @@ class Home extends Component {
 			NotificationManager.error('Pleace login ');
 		}	
 		}
+
+		 showmodel=()=>{
+			 console.log('helo props')
+		 }
+
+		 handleLivecasino=()=>{
+			NotificationManager.error('Pleace login ');
+			 
+		 }
+
 	render() {
 		console.log('props data.',this.props.Loggeruser)
 	
@@ -119,9 +134,9 @@ class Home extends Component {
 									</li>
 								</ul>
 								<ul className="navbar-nav ml-5 mr-auto">
-									<li className="nav-item">
+									<li className="nav-item " >
 
-										<Link className="nav-link " Link to={'/LiveCasino'}>Live Casino</Link>
+										<Link className="nav-link " Link to={'/LiveCasino'} onClick={this.handleLivecasino} >Live Casino</Link>
 									</li>
 									<li className="nav-item">
 										<Link className="nav-link " Link to={'/FAq'}>Faq</Link>

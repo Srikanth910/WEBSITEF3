@@ -104,6 +104,11 @@ import Footer from './SubCompoents/Footer';
 		
 		
 	}
+
+
+	handleLivecasino=()=>{
+		console.log('lovecasino')
+	}
 	
 	render() {
 		
@@ -137,7 +142,7 @@ import Footer from './SubCompoents/Footer';
 								<ul className="navbar-nav ml-5 mr-auto">
 									<li className="nav-item">
 
-										<Link className="nav-link  active" Link to={'/LiveCasino'}>Live Casino</Link>
+										<Link className="nav-link  active" Link to={'/LiveCasino'} onClick={this.handleLivecasino}>Live Casino</Link>
 									</li>
 									<li className="nav-item">
 										<Link className="nav-link " Link to={'/FAQ'}>Faq</Link>

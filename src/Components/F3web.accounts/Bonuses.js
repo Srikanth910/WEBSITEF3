@@ -31,17 +31,7 @@ export default class Bonuses extends Component {
 	 })
  }
 
- handlelogout=()=>{
-		  
-	axios.get('http://localhost:8080/api/v1/player/logout',{
-		dafault:"successful operation"
-	})
-	.then(res=>{
-		console.log('res',res);
-	}).catch(error=>{
-		console.log('error',error)
-	})
-}
+ 
     render() {
         return (
             <div>
