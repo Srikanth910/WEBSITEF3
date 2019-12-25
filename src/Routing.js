@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route ,Switch} from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './Components/F3MainComponents/Home'
 import About from './Components/F3MainComponents/About'
 import Faq from './Components/F3MainComponents/Faq'
@@ -22,48 +22,37 @@ import Bonuses from './Components/F3web.accounts/Bonuses'
 
 export default class Routing extends Component {
 
-  
-  
+
+
   render() {
     return (
-  <BrowserRouter >
-  
-       <Route exact path = '/' component = { Home }/>
-        <Route path = '/About' component = {About }   />
-       <Route path = '/FAQ'component = { Faq }/>
-      <ProtectedRoute path = '/LiveCasino' component = { Livecasino } />
-      <Route path='/TermsAndCondition' component= { TermsAndCondition }/>
-      <Route path='/PrivacyPolicy' component= { PrivacyPolicy }/>  
-      <Route path='/Profile' component= { Profile }/>  
-      <Route path='/WithDraw' component= { Withdraw}/>  
-      <Route path='/Notification' component= { Notification }/> 
-      <Route path='/Documents' component= { Documents }/> 
-      <Route path='/Bonuses' component= { Bonuses }/> 
-      <Route path='/BalanceHistory' component= { BalanceHistory }/> 
-      <Route path='/Changepassword' component= { ChangePassword }/> 
-    
-      <ProtectedRoute path='/Deposit' component= { Deposite }/> 
-      
-      <ProtectedRoute path='/Mybets' component= { Mybets }/> 
-     
-    
-     
-      
-      <Route path='/Messages' component= { Messages }/>
- 
-     
-    
-      <Route path ='/Lobby' component ={Lobby}/>
-     
+      <BrowserRouter >
 
-    
-      
-   
+        <Route exact path='/' component={Home} />
+        <Route path='/About' component={About} />
+        <Route path='/Faq' component={Faq} />
+        <ProtectedRoute path='/LiveCasino' component={Livecasino} />
+        <Route path='/TermsAndCondition' component={TermsAndCondition} />
+        <Route path='/PrivacyPolicy' component={PrivacyPolicy} />
+        <Route path='/Profile' component={Profile} />
+        <Route path='/WithDraw' component={Withdraw} />
+        <Route path='/Notification' component={Notification} />
+        <Route path='/Documents' component={Documents} />
+        <Route path='/Bonuses' component={Bonuses} />
+        <Route path='/BalanceHistory' component={BalanceHistory} />
+        <Route path='/Changepassword' component={ChangePassword} />
+
+        <ProtectedRoute path='/Deposit' component={Deposite} />
+
+        <ProtectedRoute path='/Mybets' component={Mybets} />
+
+        <Route path='/Messages' component={Messages} />
+        <Route path='/Lobby' component={Lobby} />
       </BrowserRouter>
 
-  
-  
-  
+
+
+
     )
   }
 }

@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import  $ from 'jquery'
-import Modelpopup from './HocModel/Modelpopup'
+// import Modelpopup from './HocModel/Modelpopup'
 import Footer from './SubCompoents/Footer'
+// import Auth from '../ServerApi/Auth'
+import LoginButton from './SubCompoents/LoginButton'
 
 
  class Faq extends Component {
@@ -106,8 +108,17 @@ toggleCollapse1 =( collapseID1) =>{
                 
 				<header className="mt-2 mt-sm-4 fixed-top">
 					<div className="container-fluid px-0 text-center">
-						<a href="#" role="button" class="sign-in" data-toggle="modal" onClick={this.props.showmodel} data-target="#exampleModalCenter">Sign In / Register</a>
+						{/* <a href="#" role="button" class="sign-in" data-toggle="modal" onClick={this.props.showmodel} data-target="#exampleModalCenter">Sign In / Register</a> */}
 						{/* <FormModel open={this.state.modalopen} close={this.closeModal}/> */}
+                        <LoginButton/>
+                        {/* {Auth.getAuth()===false &&
+						
+						<Link to="" role="button" class="sign-in" data-toggle="modal" onClick={this.props.showmodel} data-target="#exampleModalCenter">Sign In / Register</Link>}
+
+{Auth.getAuth()===true &&
+						<Link to="" role="button" class="sign-in" data-toggle="modal" onClick={this.props.showmodel} data-target="#exampleModalCenter">Logout</Link>}
+						 */}
+					
 						<nav className="navbar navbar-expand-lg orange-bg mt-4 mt-md-5">
 							<Link Link to={'/'} className="navbar-brand">
 								<img src={process.env.PUBLIC_URL + "/logo.png"} className="d-none d-sm-none d-md-block" alt="Fantastic 3" />
@@ -451,4 +462,4 @@ toggleCollapse1 =( collapseID1) =>{
     }
 }
 
-export default Modelpopup(Faq)
+export default Faq;

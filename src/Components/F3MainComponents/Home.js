@@ -11,6 +11,8 @@ import Footer from './SubCompoents/Footer';
 import Auth from '../ServerApi/Auth';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
+import { Logout } from '../ServerApi/ServerApi';
+import LoginButton from './SubCompoents/LoginButton';
  
 
 
@@ -83,14 +85,19 @@ class Home extends Component {
 		}	
 		}
 
-		 showmodel=()=>{
-			 console.log('helo props')
-		 }
+		LogoutUser=()=>{
+			Logout().then(userLogout=>{
+				if(userLogout.status==='ok'){
 
-		 handleLivecasino=()=>{
-			NotificationManager.error('Pleace login ');
-			 
-		 }
+					Auth.signout(()=>{
+
+					this.props.history.push('/')
+				})
+				}else{
+					this.props.history.push('#')
+				}
+			})
+		}
 
 	render() {
 		console.log('props data.',this.props.Loggeruser)
@@ -104,13 +111,15 @@ class Home extends Component {
   <NotificationContainer/>
 				 <header class="mt-2 mt-sm-4 fixed-top">
 					<div class="container-fluid px-0 text-center">
-						
-						
-						<Link to="" role="button" class="sign-in" data-toggle="modal" onClick={this.props.showmodel} data-target="#exampleModalCenter">Sign In / Register</Link>
 
-
-						{/* <Link to="" role="button" class="sign-in" data-toggle="modal" onClick={this.props.showmodel} data-target="#exampleModalCenter">Logout</Link> */}
+						<LoginButton/>
+{/* {Auth.getAuth()===false &&
 						
+						<Link to="" role="button" class="sign-in" data-toggle="modal" onClick={this.props.showmodel} data-target="#exampleModalCenter">Sign In / Register</Link>}
+
+{Auth.getAuth()===true &&
+						<Link to="" role="button" class="sign-in" data-toggle="modal"  onClick={this.LogoutUser} data-target="#exampleModalCenter">Logout</Link>}
+						 */}
 						
 						{/* <FormModel open={this.state.modalopen} close={this.closeModal}/> */}
 						
@@ -136,7 +145,7 @@ class Home extends Component {
 								<ul className="navbar-nav ml-5 mr-auto">
 									<li className="nav-item " >
 
-										<Link className="nav-link " Link to={'/LiveCasino'} onClick={this.handleLivecasino} >Live Casino</Link>
+										<Link className="nav-link " Link to={'/LiveCasino'} >Live Casino</Link>
 									</li>
 									<li className="nav-item">
 										<Link className="nav-link " Link to={'/FAq'}>Faq</Link>
@@ -202,4 +211,4 @@ class Home extends Component {
 }
 
 
-export default Modelpopup (withRouter(Home))
+export default  withRouter(Home)

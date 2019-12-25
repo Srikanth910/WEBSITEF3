@@ -28,13 +28,13 @@ import Auth from '../../ServerApi/Auth';
 	 componentDidMount=()=>{
 		
 		
-	// Balance().then(Userbalance=>{
-	// 	console.log('resp',Userbalance);
-	// 	this.setState({
-	// 	Balance:Userbalance.cash,
-	// 	Bonus:Userbalance.bonus,
-	// 	})
-	// })
+	Balance().then(Userbalance=>{
+		console.log('resp',Userbalance);
+		this.setState({
+		Balance:Userbalance.cash,
+		Bonus:Userbalance.bonus,
+		})
+	})
 		
 
 	 }
@@ -76,16 +76,20 @@ import Auth from '../../ServerApi/Auth';
 		buttons: [
 		  {
 			label: 'Yes',
-			onClick: () =>
+			onClick:() =>
 			
-			// Logout().then(user=>{
-			// 	if(user.status==='ok'){
-			// 		this.props.history.push('/');
-					Auth.signout()
-			// 	}else{
-			// 		this.props.history.push("# ")
-			// 	}
-			// })
+			Logout().then(user=>{
+				console.log('logoutrep',user)
+				if(user.status==='ok'){
+					Auth.signout(()=>{
+						this.props.history.push('/');
+					});
+					
+				
+				}else{
+					this.props.history.push("# ")
+				}
+			})
               
 
 		

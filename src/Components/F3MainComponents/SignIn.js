@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Modal from 'react-bootstrap/Modal';
- import {Register}  from '../ServerApi/ServerApi'
+ import {Register, Login}  from '../ServerApi/ServerApi'
 import { withRouter ,Redirect} from 'react-router-dom';
 import Auth from '../ServerApi/Auth';
 
@@ -367,60 +367,83 @@ class SignIn extends Component {
 
 	  handlelogin=async(e) =>{
 		e.preventDefault();
-		Toast.loading('loading...',()=>{
-			this.props.history.push("/LiveCasino");
+		// Toast.loading('loading...',()=>{
+		// 	this.props.history.push("/LiveCasino");
 				
-			});
+		// 	});
 
 		
-		Auth.authenticate(()=>{
-		this.setState(() => ({
-		isLogged: true
-		  }));
-		})
+		// Auth.authenticate(()=>{
+		// this.setState(() => ({
+		// isLogged: true
+		//   }));
+		// })
 
 	
 	
-		setTimeout(() => {
-			Toast.hide();
-		}, 3000);
+		// setTimeout(() => {
+		// 	Toast.hide();
+		// }, 3000);
 
 	
 		// console.log('autherticate',Auth.getAuth());
 		// 
 		// 
-		// if (this.validateForm()) {
-		// 	let fields = {};
-		// 	fields["user_name"] = "";
-		// 	fields["pass_word"] = "";
-		// 	this.setState({ fields: fields });
+		if (this.validateForm()) {
+			let fields = {};
+			fields["user_name"] = "";
+			fields["pass_word"] = "";
+			this.setState({ fields: fields });
 
-		// 	const { user_name, pass_word } = this.state.fields
-		// 	const user = {
-		// 		username: user_name,
-		// 		password: pass_word,
-		// 	}
-		// 	console.log('outside', user);
+			const { user_name, pass_word } = this.state.fields
+			const user = {
+				username: user_name,
+				password: pass_word,
+			}
+			console.log('outside', user);
 			 
 	
-		// const LoginUser=await Login(user);
+		const LoginUser=await Login(user);
 
-		//  if(LoginUser.status==="ok"){
-		// 	this.setState({
+		 if(LoginUser.status==="ok"){
 
-		// 	error:"login succuss" 
-		// 	});
+			
+			Toast.loading('loading...',()=>{
+				this.props.history.push("/LiveCasino");
+					
+				});
+				setTimeout(() => {
+					Toast.hide();
+				}, 3000);
+	
+			
+			Auth.authenticate(()=>{
+			this.setState(() => ({
+			isLogged: true,
+		
+			  }));
 
-		// 	this.props.history.push("/LiveCasino");
-		// 			this.props.close();
 
-		// 			}else {
-		// 				 this.setState({
-		// 					error:LoginUser.message
-		// 				 })	
-		// 			}
+			},()=>{
+				this.props.close();
+			})
+		   }else {
+						Toast.loading('Pleace wait...',()=>{
+							this.setState({
+								error:LoginUser.message
+							 })	
 
-		//  }
+						})
+						setTimeout(() => {
+							Toast.hide();
+						}, 3000);
+
+
+
+						 
+					}
+
+		 }
 		
 
 		// Login(user).then(res => {
@@ -446,9 +469,9 @@ class SignIn extends Component {
 		// 				 })	
 		// 			}
 
-		// 		}).catch(err=>{
-		// 			console.log('errr',err)
-		// 		})
+				// }).catch(err=>{
+				// 	console.log('errr',err)
+				// })
 
 
 
@@ -518,66 +541,10 @@ class SignIn extends Component {
 				
 
 			})
-				
-
-		
-
-
 			
 			
 
 		})
-			// const {
-			// 	username,
-			// 	email,
-			// 	password,
-			// 	currency,
-			// 	country,
-			// 	state,
-			// 	city,
-			// 	pincode,
-			// 	first_name,
-			// 	last_name,
-			// 	gender,
-			// 	date_of_birth,
-			// 	phone_number,
-			// 	address,
-			// 	Conform_password,
-
-
-			// } = this.state.fields;
-			// const data = {
-
-			// 	username: username,
-			// 	email: email,
-			// 	password: password,
-			// 	Conform_password: Conform_password,
-			// 	currency: currency,
-			// 	country: country,
-			// 	state: state,
-			// 	city: city,
-			// 	pincode: pincode,
-			// 	first_name: first_name,
-			// 	last_name: last_name,
-			// 	gender: gender,
-			// 	date_of_birth,
-			// 	phone_number: phone_number,
-			// 	address: address
-
-
-			// };
-			// console.log('register', data)
-		
-
-			
-
-
-
-		
-		
-		
-		
-
 		
 	}
 
@@ -714,7 +681,7 @@ class SignIn extends Component {
 								{this.state.login === "login" && 	<div>
 
 
-             {this.state.alertshow &&
+                       {this.state.alertshow &&
 
 						<div class="alert alert-success" role="alert">
 							{this.state.messages} Please register try again

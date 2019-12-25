@@ -1,4 +1,4 @@
-import React, { Component,  } from 'react';
+import React, { Component, } from 'react';
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
 
@@ -7,9 +7,11 @@ import $ from 'jquery';
 
 import Modelpopup from './HocModel/Modelpopup';
 import Footer from './SubCompoents/Footer';
+import Auth from '../ServerApi/Auth';
+import LoginButton from './SubCompoents/LoginButton';
 
 
- class LiveCasino extends Component {
+class LiveCasino extends Component {
 
 
 
@@ -21,20 +23,20 @@ import Footer from './SubCompoents/Footer';
 			setShow: false,
 
 			Name: 'Login',
-			
-		
 
 
 
 
-			}
 
 
-		
-		
+		}
+
+
+
+
 	}
 
-  
+
 
 	// getInitialState() {
 	// 	return { show: false };
@@ -69,21 +71,21 @@ import Footer from './SubCompoents/Footer';
 	// 	});
 	// }
 
-	
+
 	// openModal=(e)=> {   
 	// 	console.log('hello')
 	// 	 e.preventDefault();
 	// 	 this.setState({modalopen: true});
 	//    }
- 
+
 	//  closeModal=(e)=> {
-		
-		 
+
+
 	// 	 this.setState({modalopen: false});
 	//    }
 
 	componentDidMount() {
-	
+
 		$(function () {
 			'use strict'
 
@@ -94,32 +96,43 @@ import Footer from './SubCompoents/Footer';
 	}
 	// handlelink=()=>{
 	// 	window.open("http://localhost:3000")
-		
-		
+
+
 	// }
 
-	
-	handleUrl=()=>{
+
+	handleUrl = () => {
 		window.open("http://localhost:3000");
-		
-		
+
+
 	}
 
 
-	handleLivecasino=()=>{
+	handleLivecasino = () => {
 		console.log('lovecasino')
 	}
-	
+
 	render() {
-		
+
 		return (
 
 			<div>
-		
-				 <header class="mt-2 mt-sm-4 fixed-top">
+
+				<header class="mt-2 mt-sm-4 fixed-top">
 					<div class="container-fluid px-0 text-center">
-						<Link Link to={"#"} role="button" class="sign-in" data-toggle="modal" onClick={this.props.showmodel} data-target="#exampleModalCenter">Sign In / Register</Link>
+						{/* <Link Link to={"#"} role="button" class="sign-in" data-toggle="modal" onClick={this.props.showmodel} data-target="#exampleModalCenter">Sign In / Register</Link> */}
 						{/* <FormModel open={this.state.modalopen} close={this.closeModal}/> */}
+
+						<LoginButton/>
+
+						{/* {Auth.getAuth() === false &&
+
+							<Link to="" role="button" class="sign-in" data-toggle="modal" onClick={this.props.showmodel} data-target="#exampleModalCenter">Sign In / Register</Link>}
+
+						{Auth.getAuth() === true &&
+							<Link to="" role="button" class="sign-in" data-toggle="modal" data-target="#exampleModalCenter">Logout</Link>} */}
+
+
 						<nav class="navbar navbar-expand-lg orange-bg mt-4 mt-md-5">
 							<Link Link to={'/'} className="navbar-brand">
 								<img src={process.env.PUBLIC_URL + "/logo.png"} className="d-none d-sm-none d-md-block" alt="Fantastic 3" />
@@ -152,14 +165,14 @@ import Footer from './SubCompoents/Footer';
 							</div>
 						</nav>
 					</div>
-				</header> 
+				</header>
 
 				{/* <Navbar/> */}
 
 				{/* model */}
 
 
-{/* 
+				{/* 
 				<Modal
 					centered
 					show={this.state.showModal}
@@ -176,106 +189,107 @@ import Footer from './SubCompoents/Footer';
 					</div>
 				</div>
 
-				
-		<section class="block dark-blue-bg">
-			<h1 class="h1">Lobby arena</h1>
-			<div class="darkest-blue-bg px-5 py-5 text-center">
-				<div class="balance-btn">
-					<span>Balance</span>
-					$ 382,34,583
+
+				<section className="block dark-blue-bg">
+					<h1 className="h1">Lobby arena</h1>
+					<div className="darkest-blue-bg px-5 py-5 text-center">
+						<div className="balance-btn">
+							<span>Balance</span>
+							$ 382,34,583
 				</div>
-			</div>
-			<div class="container mt-5">
-				<div class="row">
-					<div class="col-md-4 px-3 mb-5">
-						<div class="lobby">
-						<img src={process.env.PUBLIC_URL + "/host_g1..png"} class="img-fluid" alt="..." />
-							<div class="price">$10</div>
-							<span class="dice"></span>
-							<a href="#" class="overlay" onClick={this.handleUrl}>
-								Play Now!
+					</div>
+					<div className="container mt-5">
+						<div className="row">
+							<div className="col-md-4 px-3 mb-5">
+								<div className="lobby">
+									<img src={process.env.PUBLIC_URL + "/host_g1..png"} className="img-fluid" alt="..." />
+									<div className="price">$10</div>
+									<span className="dice"></span>
+									<a href="#" className="overlay" onClick={this.handleUrl}>
+										Play Now!
 							</a>
-						</div>	
-						<div class="green-bg px-2 py-2">
-							<div class="row">
-								<div class="col-8 col-md-8 black position-relative">
-									<span class="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" class="img-fluid"/></span>
-									<span class="lobby-title">AMANDA PERRY</span>
 								</div>
-								<div class="col-4 col-md-4 blue">
-									<span class="players">17652</span>
+
+								<div className="green-bg px-2 py-2">
+									<div className="row">
+										<div className="col-8 col-md-8 black position-relative">
+											<span className="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" className="img-fluid" /></span>
+											<span className="lobby-title">AMANDA PERRY</span>
+										</div>
+										<div className="col-4 col-md-4 blue">
+											<span className="players">17652</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div className="col-md-4 px-3 mb-5">
+								<div className="lobby">
+									<img src={process.env.PUBLIC_URL + "/host_g1..png"} className="img-fluid" alt="..." />
+									<div className="price">$10</div>
+									<span className="dice"></span>
+									<a href="#" className="overlay" onClick={this.handleUrl}>
+										Play Now!
+							</a>
+								</div>
+								<div className="green-bg px-2 py-2">
+									<div className="row">
+										<div className="col-8 col-md-8 black position-relative">
+											<span className="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" className="img-fluid" /></span>
+											<span className="lobby-title">AMANDA PERRY</span>
+										</div>
+										<div className="col-4 col-md-4 blue">
+											<span className="players">17652</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div className="col-md-4 px-3 mb-5">
+								<div className="lobby">
+									<img src={process.env.PUBLIC_URL + "/host_g1..png"} className="img-fluid" alt="..." />
+									<div className="price">$10</div>
+									<span className="dice"></span>
+									<a href="#" className="overlay" onClick={this.handleUrl} >
+										Play Now!
+							</a>
+								</div>
+								<div className="green-bg px-2 py-2">
+									<div className="row">
+										<div className="col-8 col-md-8 black position-relative">
+											<span className="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" className="img-fluid" /></span>
+											<span className="lobby-title">AMANDA PERRY</span>
+										</div>
+										<div className="col-4 col-md-4 blue">
+											<span className="players">17652</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div className="col-md-4 px-3 mb-5">
+								<div className="lobby">
+									<img src={process.env.PUBLIC_URL + "/host_g1..png"} className="img-fluid" alt="..." />
+									<div className="price">$10</div>
+									<span className="dice"></span>
+									<a href="#" className="overlay" onClick={this.handleUrl}>
+										Play Now!
+							</a>
+								</div>
+								<div className="green-bg px-2 py-2">
+									<div className="row">
+										<div className="col-8 col-md-8 black position-relative">
+
+											<span className="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" className="img-fluid" /></span>
+											<span className="lobby-title">AMANDA PERRY</span>
+										</div>
+										<div className="col-4 col-md-4 blue">
+											<span className="players">17652</span>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 px-3 mb-5">
-						<div class="lobby">
-						<img src={process.env.PUBLIC_URL + "/host_g1..png"} class="img-fluid" alt="..." />
-							<div class="price">$10</div>
-							<span class="dice"></span>
-							<a href="#" class="overlay" onClick={this.handleUrl}>
-								Play Now!
-							</a>
-						</div>	
-						<div class="green-bg px-2 py-2">
-							<div class="row">
-								<div class="col-8 col-md-8 black position-relative">
-									<span class="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" class="img-fluid"/></span>
-									<span class="lobby-title">AMANDA PERRY</span>
-								</div>
-								<div class="col-4 col-md-4 blue">
-									<span class="players">17652</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 px-3 mb-5">
-						<div class="lobby">
-						<img src={process.env.PUBLIC_URL + "/host_g1..png"} class="img-fluid" alt="..." />
-							<div class="price">$10</div>
-							<span class="dice"></span>
-							<a href="#" class="overlay" onClick={this.handleUrl} >
-								Play Now!
-							</a>
-						</div>	
-						<div class="green-bg px-2 py-2">
-							<div class="row">
-								<div class="col-8 col-md-8 black position-relative">
-									<span class="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" class="img-fluid"/></span>
-									<span class="lobby-title">AMANDA PERRY</span>
-								</div>
-								<div class="col-4 col-md-4 blue">
-									<span class="players">17652</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 px-3 mb-5">
-						<div class="lobby">
-						<img src={process.env.PUBLIC_URL + "/host_g1..png"} class="img-fluid" alt="..." />
-							<div class="price">$10</div>
-							<span class="dice"></span>
-							<a href="#"  class="overlay" onClick={this.handleUrl}>
-								Play Now!
-							</a>
-						</div>	
-						<div class="green-bg px-2 py-2">
-							<div class="row">
-								<div class="col-8 col-md-8 black position-relative">
-									
-									<span class="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" class="img-fluid"/></span>
-									<span class="lobby-title">AMANDA PERRY</span>
-								</div>
-								<div class="col-4 col-md-4 blue">
-									<span class="players">17652</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		
+				</section>
+
 
 				<section className="px-3 py-3 px-sm-5 py-sm-5 green-bg">
 					<div className="container">
@@ -286,10 +300,10 @@ import Footer from './SubCompoents/Footer';
 					</div>
 				</section>
 
-				<Footer/>
+				<Footer />
 
-              
-			
+
+
 			</div>
 
 
@@ -297,6 +311,5 @@ import Footer from './SubCompoents/Footer';
 	}
 }
 
- export default   Modelpopup(LiveCasino)
+export default LiveCasino;
 
- 

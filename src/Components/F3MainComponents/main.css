@@ -1,3 +1,16 @@
+#topheader .navbar-nav li > a {
+	text-transform: capitalize;
+	color: #333;
+	transition: background-color .2s, color .2s;
+	
+}
+
+#topheader .navbar-nav li.active > a {
+	background-color: #333;
+	color: #fff;
+}
+
+ 
 
 .modal-90w { 
 	max-width: 90% !important; 
@@ -340,6 +353,7 @@ nav.inner.navbar-expand-lg .navbar-nav .nav-link:hover, nav.inner.navbar-expand-
 
 .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active
 {
+
     color:#fff;
 	background-color:#54a800;
 }
