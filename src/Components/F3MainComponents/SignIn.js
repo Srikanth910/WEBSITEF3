@@ -71,7 +71,7 @@ class SignIn extends Component {
 		}
 
 		if (typeof fields["user_name"] !== "undefined") {
-			if (!fields["user_name"].match(/^[a-zA-Z ]*$/)) {
+			if (!fields["user_name"].match(/^[a-zA-Z0-9]+$/)) {
 				formIsValid = false;
 				errors["user_name"] = "*Please enter alphabet characters only.";
 			}
@@ -119,7 +119,7 @@ class SignIn extends Component {
 		}
 
 		if (typeof fields["username"] !== "undefined") {
-			if (!fields["username"].match(/^[a-zA-Z ]*$/)) {
+			if (!fields["username"].match(/^[a-zA-Z0-9]+$/)) {
 				Registervalide = false;
 				errors["username"] = "*Please enter alphabet characters only.";
 			}
@@ -367,28 +367,7 @@ class SignIn extends Component {
 
 	  handlelogin=async(e) =>{
 		e.preventDefault();
-		// Toast.loading('loading...',()=>{
-		// 	this.props.history.push("/LiveCasino");
-				
-		// 	});
-
 		
-		// Auth.authenticate(()=>{
-		// this.setState(() => ({
-		// isLogged: true
-		//   }));
-		// })
-
-	
-	
-		// setTimeout(() => {
-		// 	Toast.hide();
-		// }, 3000);
-
-	
-		// console.log('autherticate',Auth.getAuth());
-		// 
-		// 
 		if (this.validateForm()) {
 			let fields = {};
 			fields["user_name"] = "";
