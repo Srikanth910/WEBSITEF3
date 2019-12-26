@@ -19,6 +19,7 @@ import SideNav from './Components/F3web.accounts/ACC_subComponents/SideNav'
 import NavBar from './Components/F3web.accounts/ACC_subComponents/NavBar'
 import Lobby from './Components/F3web.accounts/Lobby'
 import Bonuses from './Components/F3web.accounts/Bonuses'
+import Notifications from './Components/F3web.accounts/Editprofile/Notification'
 
 export default class Routing extends Component {
 
@@ -36,7 +37,7 @@ export default class Routing extends Component {
         <Route path='/PrivacyPolicy' component={PrivacyPolicy} />
         <Route path='/Profile' component={Profile} />
         <Route path='/WithDraw' component={Withdraw} />
-        <Route path='/Notification' component={Notification} />
+        <Route path='/Notification' component={Notifications} />
         <Route path='/Documents' component={Documents} />
         <Route path='/Bonuses' component={Bonuses} />
         <Route path='/BalanceHistory' component={BalanceHistory} />

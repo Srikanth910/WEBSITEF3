@@ -8,6 +8,8 @@ import { Balance, Logout } from '../../ServerApi/ServerApi';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import Auth from '../../ServerApi/Auth';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+
  class NavBar extends Component {
 	 constructor(props) {
 		 super(props)
@@ -82,9 +84,10 @@ import Auth from '../../ServerApi/Auth';
 				console.log('logoutrep',user)
 				if(user.status==='ok'){
 				
-					Auth.signout(()=>{
+					Auth.signout()
 						
-					});
+				
+					NotificationManager.success('successful logout ');
 		
 					this.props.history.push('/');
 		
@@ -92,6 +95,7 @@ import Auth from '../../ServerApi/Auth';
 				}
 				else{
 					this.props.history.push("# ")
+					NotificationManager.errror('try again');
 				}
 			})
               
@@ -136,8 +140,10 @@ import Auth from '../../ServerApi/Auth';
     render() {
         return (
             
-                
-<div >
+				
+				
+<div>
+<NotificationContainer/>
 					<div className="gray-bg border-bottom">
 						<div className="container-fluid">
 							<div className="row">

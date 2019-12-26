@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import $ from 'jquery'
 import {Link} from 'react-router-dom'
 import axios from 'axios';
-import SideBar from './SideBar';
-import Bar from './Bar';
+
 import Footer from '../ACC_subComponents/Footer';
 import SideNav from '../ACC_subComponents/SideNav';
 import NavBar from '../ACC_subComponents/NavBar';
@@ -116,7 +115,7 @@ onChange=( event )=> {
                                         <Link  className="nav-link " Link to={'/ChangePassword'}>Change Password</Link>
                                     </li>
                                     <li class="nav-item">
-                                        <Link  className="nav-link" Link to={'/Notifications'}>Notifications</Link>
+                                        <Link  className="nav-link active" Link to={'/Notification'}>Notifications</Link>
                                     </li>
 									</ul>
 								</div>

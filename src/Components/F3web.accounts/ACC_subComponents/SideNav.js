@@ -103,7 +103,7 @@ export default class SideNav extends Component {
                                     </li>
                                     <li>
                                         {/* <a href="notification.html">Notifications</a> */}
-                                        <Link Link to={'/Notifications'}>Notification</Link>
+                                        <Link Link to={'/Notification'}>Notification</Link>
                                     </li>
                                 </ul>
                             </li>

@@ -80,7 +80,7 @@ export default class ChangePassword extends Component {
                                         <Link  className="nav-link active " Link to={'/ChangePassword'}>Change Password</Link>
                                     </li>
                                     <li class="nav-item">
-                                        <Link  className="nav-link" Link to={'/Notifications'}>Notifications</Link>
+                                        <Link  className="nav-link" Link to={'/Notification'}>Notifications</Link>
                                     </li>
 									</ul>
 								</div>

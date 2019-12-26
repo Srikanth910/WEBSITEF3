@@ -73,7 +73,7 @@ class SignIn extends Component {
 		if (typeof fields["user_name"] !== "undefined") {
 			if (!fields["user_name"].match(/^[a-zA-Z0-9]+$/)) {
 				formIsValid = false;
-				errors["user_name"] = "*Please enter alphabet characters only.";
+				errors["user_name"] = "*Please enter fields";
 			}
 		};
 
@@ -90,12 +90,6 @@ class SignIn extends Component {
 				errors["pass_word"] = "*Please enter 1 lowercase alphabetical character.";
 			}
 		};
-
-
-
-
-
-
 
 
 		this.setState({
@@ -121,7 +115,7 @@ class SignIn extends Component {
 		if (typeof fields["username"] !== "undefined") {
 			if (!fields["username"].match(/^[a-zA-Z0-9]+$/)) {
 				Registervalide = false;
-				errors["username"] = "*Please enter alphabet characters only.";
+				errors["username"] = "*Please enter fields.";
 			}
 		}
 
@@ -474,19 +468,31 @@ class SignIn extends Component {
 
 
 			if(res.status===200){
-			this.setState({
-			
-				errorstring:res.data.errorString,
-				messages:res.data.message
-			},()=>{
-
-
-				this.Registeralert();
+				Toast.loading('pleace wait...',()=>{
+					this.Registeralert();
 				setTimeout(()=>this.login(), 1000);  
+
+				this.setState({
+			
+					errorstring:res.data.errorString,
+					messages:res.data.message
+				},)
+	
+				})
+
+				setTimeout(() => {
+					Toast.hide();
+				}, 1000);
+
+		
+
+
+
+				
 	
 				
 
-			})
+			
 				
 		
 	}
