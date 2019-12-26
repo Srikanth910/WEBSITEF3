@@ -407,7 +407,7 @@ class SignIn extends Component {
 
 		 if(LoginUser.status==="ok"){
 			Toast.loading('loading...',()=>{
-				this.props.history.push("/Lobby");
+				this.props.history.push("/LobbyArena");
 					
 				});
 				setTimeout(() => {
@@ -516,22 +516,22 @@ class SignIn extends Component {
 
 
 		
-		Register(data).then(res => {
+		// Register(data).then(res => {
 
-			console.log('responce', res);
-			this.setState({
+		// 	console.log('responce', res);
+		// 	this.setState({
 			
-				errorstring:res.data.errorString,
-				messages:res.data.message
-			},()=>{
+		// 		errorstring:res.data.errorString,
+		// 		messages:res.data.message
+		// 	},()=>{
 
 
-				this.Registeralert();
-				setTimeout(()=>this.login(), 1000);  
+		// 		this.Registeralert();
+		// 		setTimeout(()=>this.login(), 1000);  
 	
 				
 
-			})
+		// 	})
 				
 
 		
@@ -540,7 +540,7 @@ class SignIn extends Component {
 			
 			
 
-		})
+		// })
 			// const {
 			// 	username,
 			// 	email,
@@ -774,7 +774,7 @@ class SignIn extends Component {
 
 	render() {
 		const { from } = this.props.location.state || { from: { pathname: '/' } };
-		console.log('valuse ', from)
+	
 		const { isLogged } = this.state;
 	
 		if (isLogged === true) {

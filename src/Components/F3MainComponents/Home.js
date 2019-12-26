@@ -100,7 +100,7 @@ class Home extends Component {
 		}
 
 	render() {
-		console.log('props data.',this.props.Loggeruser)
+		
 	
 		//  const isEnabledRegister= username.length > 3 && password.length > 3 && email.length > 3  && currency.length > 0  &&Conform_password.length>0
 		//                               first_name.length>3 &&pincode.length>3&& date_of_birth>4 && city.length>0 && state.length>3 && phone_number.length> 10&&  address.length >3

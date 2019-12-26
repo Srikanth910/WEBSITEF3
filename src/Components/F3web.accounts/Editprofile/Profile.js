@@ -197,7 +197,7 @@ console.log('called component	')
                                         <Link  className="nav-link " Link to={'/ChangePassword'}>Change Password</Link>
                                     </li>
                                     <li class="nav-item">
-                                        <Link  className="nav-link" Link to={'/Notifications'}>Notifications</Link>
+                                        <Link  className="nav-link" Link to={'/Notification'}>Notifications</Link>
                                     </li>
 									</ul>
 								</div>

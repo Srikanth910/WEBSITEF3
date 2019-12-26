@@ -47,7 +47,7 @@ export default class Routing extends Component {
         <ProtectedRoute path='/Mybets' component={Mybets} />
 
         <Route path='/Messages' component={Messages} />
-        <Route path='/Lobby' component={Lobby} />
+        <ProtectedRoute path='/LobbyArena' component={Lobby} />
       </BrowserRouter>
 
 
