@@ -492,11 +492,7 @@ class SignIn extends Component {
 
 		if (this.RegisterValidate()) {
 			let fields = {};
-			// fields["username"] = "";
-			// fields["password"] = "";
-			// fields["email"] = "";
-			// fields["currency"] = "";
-			// fields["Conform_password"] = "";
+		
 			fields["city"] = "";
 			fields["pincode"] = "";
 			fields["first_name"] = "";
@@ -531,7 +527,7 @@ class SignIn extends Component {
 
 
 				this.Registeralert();
-				setTimeout(()=>this.login(), 2000);  
+				setTimeout(()=>this.login(), 1000);  
 	
 				
 
@@ -832,13 +828,24 @@ class SignIn extends Component {
 
 								{this.state.login === "login" && 	<div>
 
+								{this.state.alertshow &&
 
-                       {this.state.alertshow &&
+							<div class="alert alert-success" role="alert">
+
+							<p>{this.state.errorstring} ,
+							
+						</p>
+						<p>{this.state.messages} </p>
+					
+								</div>}
+
+
+                       {/* {this.state.alertshow &&
 
 						<div class="alert alert-success" role="alert">
-							{this.state.messages} Please register try again
+							{this.state.messages} 
 						
-							</div>}
+							</div>} */}
 
 
 
@@ -895,12 +902,7 @@ class SignIn extends Component {
 								{this.state.login === "Register" && <div id="register-step1" role="tabpanel" aria-labelledby="register-tab">
 
 
-								{this.state.alertshow &&
-
-<div class="alert alert-success" role="alert">
-
-<p>{this.state.errorstring}</p>
-	</div>}
+								
 									<div className="modal-header px-4 pt-5">
 																						
 												
