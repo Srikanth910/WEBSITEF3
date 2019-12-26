@@ -13,8 +13,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
      Logout().then(user=>{
        if(user.status==="ok"){
       
-        Auth.signout()
-    
+        Auth.signout();
      NotificationManager.success('successful logout ');
     this.props.history.push('/');
        }else{

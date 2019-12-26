@@ -43,7 +43,7 @@ export default class Bonuses extends Component {
 				<SideNav/>
 				
 				<div className="col-12 col-lg-9 px-0">
-					<NavBar-/>
+					<NavBar/>
 				
 					<div className="container-fluid pb-5">
 						<h1 className="inner mt-5">Bonuses</h1>

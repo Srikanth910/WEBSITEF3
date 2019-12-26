@@ -83,13 +83,21 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 			Logout().then(user=>{
 				console.log('logoutrep',user)
 				if(user.status==='ok'){
-				
-					Auth.signout()
-						
-				
-					NotificationManager.success('successful logout ');
 		
-					this.props.history.push('/');
+				
+					NotificationManager.success('successful logout ')
+					
+
+			
+					Auth.signout()
+					
+
+					setTimeout(()=>{
+						this.props.history.push('/');
+
+					},1000)
+		
+					
 		
 				
 				}

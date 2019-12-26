@@ -83,11 +83,11 @@ class SignIn extends Component {
 		}
 
 		if (typeof fields["pass_word"] !== "undefined") {
-			if (!fields["pass_word"].match(/(?=.*\d)(?=.*[a-z]).{6,}/
+			if (!fields["pass_word"].match(/^[a-zA-Z0-9]+$/
 
 			)) {
 				formIsValid = false;
-				errors["pass_word"] = "*Please enter 1 lowercase alphabetical character.";
+				errors["pass_word"] = "*Please enter password.";
 			}
 		};
 
@@ -143,9 +143,9 @@ class SignIn extends Component {
 		}
 
 		if (typeof fields["password"] !== "undefined") {
-			if (!fields["password"].match(/(?=.*\d)(?=.*[a-z]).{6,}/)) {
+			if (!fields["password"].match(/^[a-zA-Z0-9]+$/)) {
 				Registervalide = false;
-				errors["password"] = "*Please enter 1 lowercase alphabetical character..";
+				errors["password"] = "*Please enter   pasword.";
 			}
 		};
 
@@ -160,9 +160,9 @@ class SignIn extends Component {
 
 
 		if (typeof fields["Conform_password"] !== "undefined") {
-			if (!fields["Conform_password"].match(/(?=.*\d)(?=.*[a-z]).{6,}/)) {
+			if (!fields["Conform_password"].match(/^[a-zA-Z0-9]+$/)) {
 				Registervalide = false;
-				errors["Conform_password"] = "*Please enter 1 lowercase alphabetical character.";
+				errors["Conform_password"] = "*Please enter  Conform_password.";
 			}
 
 
@@ -379,7 +379,8 @@ class SignIn extends Component {
 		const LoginUser=await Login(user);
 
 		 if(LoginUser.status==="ok"){
-			Toast.loading('loading...',()=>{
+			 localStorage.setItem('cookie', LoginUser)
+			Toast.loading('please wait...',()=>{
 				this.props.history.push("/LobbyArena");
 					
 				});
@@ -397,7 +398,7 @@ class SignIn extends Component {
 
 			})
 		   }else {
-						Toast.loading('pleace wait...',()=>{
+						Toast.loading('please wait...',()=>{
 							this.setState({
 								error:LoginUser.message
 							 })	
@@ -455,7 +456,7 @@ class SignIn extends Component {
 
 			this.setState({ fields: fields });
 
-	//   console.log('fleds data',this.state.fields)
+	  console.log('fleds data',this.state.fields)
 
 	   const data =this.state.fields
 		console.log('prestATE',data)
@@ -463,9 +464,6 @@ class SignIn extends Component {
 		Register(data).then(res => {
 
 			console.log('responce', res);
-
-
-
 
 			if(res.status===200){
 				Toast.loading('pleace wait...',()=>{
@@ -642,29 +640,25 @@ class SignIn extends Component {
 		 e.preventDefault();
 		 
 
-		const{login}=this.state.state;
-		// if (this.RegisterValidate1()) {
-		// 	let fields = {};
-		// 	fields["username"] = "";
-		// 	fields["password"] = "";
-		// 	fields["email"] = "";
-		// 	fields["currency"] = "";
-		// 	fields["Conform_password"] = ""
-		// 	this.setState({ fields: fields });
+		
 
+
+		const{login}=this.state.state;
+		
 
 		  if(login==="Register2btn"){
 			  this.setState({
 				login:''
 				  
 			  })
+			 
 		  }else{
 			  this.setState({
 				login:'Register2btn'
 			  })
 		  }
 
-	//  }
+
 	}
 
 	 Registeralert=()=>{
@@ -855,6 +849,7 @@ class SignIn extends Component {
 
 											<div className="form-group">
 												<select name="currency" value={this.state.fields.currency} onChange={this.handlechange} className="form-control" >
+												<option>All currency</option>
 													<option>inr</option>
 													<option>usd</option>
 													<option >aud</option>
@@ -948,6 +943,7 @@ class SignIn extends Component {
 										</div>
 										<div class="form-group">
 											<select name="country" value={this.state.fields.country} onChange={this.handlechange} class="form-control">
+											<option>All Countries</option>
 												<option>UK</option>
 												<option>IN</option>
 											</select>

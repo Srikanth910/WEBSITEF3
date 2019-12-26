@@ -81,7 +81,7 @@ class Home extends Component {
 			this.props.history.push('/Deposit')
 		
 		}else{
-			NotificationManager.error('pleace login ');
+			NotificationManager.error('please login ');
 		}	
 		}
 

@@ -77,7 +77,7 @@ export default class SideNav extends Component {
                         
                         <li class="nav-item  " >
                                 {/* <a class="nav-link" href="#"><span class="messages"></span>Messages</a> */}
-                                <Link className="nav-link active  dropdown-toggle "Link to={'/Lobby'}><span  className="messages"></span>Lobby</Link>
+                                <Link className="nav-link active  dropdown-toggle "Link to={'/LobbyArena'}><span  className="messages"></span>Lobby</Link>
 
                             </li> 
                         
