@@ -36,132 +36,100 @@ export default class Lobby extends Component {
 				<SideNav/>
 				<div className="col-12 col-lg-9 px-0 bg " >
 				<NavBar/>
-                <div className="container" style={{marginTop:"3rem"}}>
-				
-                {/* <Link to={'#'}  target="_blank"  onClick={this.handlelink} >
-								<button   class="btn btn-primary"  type="submit">play</button>
-						
-                    		</Link> */}
+           
+				<section className="block ">
+			
+					<div className="container mt-5">
+						<div className="row">
+							<div className="col-md-4 px-3 mb-5">
+								<div className="lobby">
+									<img src={process.env.PUBLIC_URL + "/host_g1..png"} className="img-fluid" alt="..." />
+									<div className="price">$10</div>
+									<span className="dice"></span>
+									<a href="#" className="overlay" onClick={this.handleUrl}>
+										Play Now!
+							</a>
+								</div>
 
+								<div className="green-bg px-2 py-2">
+									<div className="row">
+										<div className="col-8 col-md-8 black position-relative">
+											<span className="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" className="img-fluid" /></span>
+											<span className="lobby-title">AMANDA PERRY</span>
+										</div>
+										<div className="col-4 col-md-4 blue">
+											<span className="players">17652</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div className="col-md-4 px-3 mb-5">
+								<div className="lobby">
+									<img src={process.env.PUBLIC_URL + "/host_g2.png"} className="img-fluid" alt="..." />
+									<div className="price">$10</div>
+									<span className="dice"></span>
+									<a href="#" className="overlay" onClick={this.handleUrl}>
+										Play Now!
+							</a>
+								</div>
+								<div className="green-bg px-2 py-2">
+									<div className="row">
+										<div className="col-8 col-md-8 black position-relative">
+											<span className="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" className="img-fluid" /></span>
+											<span className="lobby-title">AMANDA PERRY</span>
+										</div>
+										<div className="col-4 col-md-4 blue">
+											<span className="players">17652</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div className="col-md-4 px-3 mb-5">
+								<div className="lobby">
+									<img src={process.env.PUBLIC_URL + "/host_g3.png"} className="img-fluid" alt="..." />
+									<div className="price">$10</div>
+									<span className="dice"></span>
+									<a href="#" className="overlay" onClick={this.handleUrl} >
+										Play Now!
+							</a>
+								</div>
+								<div className="green-bg px-2 py-2">
+									<div className="row">
+										<div className="col-8 col-md-8 black position-relative">
+											<span className="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" className="img-fluid" /></span>
+											<span className="lobby-title">AMANDA PERRY</span>
+										</div>
+										<div className="col-4 col-md-4 blue">
+											<span className="players">17652</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div className="col-md-4 px-3 mb-5">
+								<div className="lobby">
+									<img src={process.env.PUBLIC_URL + "/host_g4.png"} className="img-fluid" alt="..." />
+									<div className="price">$10</div>
+									<span className="dice"></span>
+									<a href="#" className="overlay" onClick={this.handleUrl}>
+										Play Now!
+							</a>
+								</div>
+								<div className="green-bg px-2 py-2">
+									<div className="row">
+										<div className="col-8 col-md-8 black position-relative">
 
-<div class="row d-flex justify-content-center ">
-
-{/* <!-- Card--1 --> */}
-
-<div class="col-md-4 cards-section cardcursor" onClick={this.handleUrl}>
-  <div class="card  cards-view text-white">
-    <img src={process.env.PUBLIC_URL + "/host_g1..png"} class="card-img" alt="..." />
-    <div class="card-img-overlay align-self-end">
-      <div class="image-game-type align-self-end">
-        <img src={process.env.PUBLIC_URL + "/price.png"} class="bet-place" alt="" />
-        <img src={process.env.PUBLIC_URL + "/game_type_f3.png"} class="dies" />
-      </div>
-    </div>
-
-  </div>
-  <div class="card-footer bg-light d-flex justify-content-between">
-    <img src={process.env.PUBLIC_URL + "/flag_ph.png"} />
-    <h6 class="player_name"> AMANDA PERRY</h6>
-    <div>
-      <img src={process.env.PUBLIC_URL + "/icon_players.png"} class="icon_players" />
-      <span class="player_bet">1000</span>
-    </div>
-
-
-  </div>
-</div>
-
-{/* <!-- Card--2 --> */}
-<div class="col-4 cards-section cardcursor" onClick={this.handleUrl}>
-                  <div class="card cards-view text-white">
-                    <img src={process.env.PUBLIC_URL + "/host_g2.png"} class="align-self-center card-img" alt="..." />
-                    <div class="card-img-overlay align-self-end">
-                      <div class="image-game-type align-self-end">
-                        <img src={process.env.PUBLIC_URL + "/price.png"} class="bet-place" alt="" />
-                        <img src={process.env.PUBLIC_URL + "/game_type_f3.png"} class="dies" />
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="card-footer bg-light d-flex justify-content-between">
-                    <img src={process.env.PUBLIC_URL + "/flag_uk.png"} />
-                    <h6 class="player_name"> BLAKE PORTMAN</h6>
-                    <div>
-                      <img ssrc={process.env.PUBLIC_URL + "/icon_players.png"} class="icon_players" />
-                      <span class="player_bet">1000</span>
-                    </div>
-
-
-                  </div>
-                </div>
-
-
-
-
-
-                <div class="col-4 cards-section cardcursor" onClick={this.handleUrl}>
-                <div class="card  cards-view text-white">
-                  <img src={process.env.PUBLIC_URL + "/host_g3.png"} class="card-img" alt="..." />
-                  <div class="card-img-overlay align-self-end">
-                    <div class="image-game-type align-self-end">
-                      <img src={process.env.PUBLIC_URL + "/price.png"} class="bet-place" alt="" />
-                      <img src={process.env.PUBLIC_URL + "/game_type_f3.png"} class="dies" />
-                    </div>
-                  </div>
-
-                </div>
-                <div class="card-footer bg-light d-flex justify-content-between">
-                  <img src={process.env.PUBLIC_URL + "flag_us.png"} />
-                  <h6 class="player_name"> EVA JOHNSSON</h6>
-                  <div>
-                    <img src={process.env.PUBLIC_URL + "/icon_players.png"} class="icon_players" />
-                    <span class="player_bet">1000</span>
-                  </div>
-
-
-                </div>
-              </div>
-
-
-              <div class="col-4 cards-section   cardcursor"  onClick={this.handleUrl}>
-                <div class="card cards-view text-white">
-                  <img src={process.env.PUBLIC_URL + "/host_g4.png"} class="card-img" alt="..." />
-                  <div class="card-img-overlay align-self-end">
-                    <div class="image-game-type align-self-end">
-                      <img src={process.env.PUBLIC_URL + "/price.png"} class="bet-place" alt="" />
-                      <img src={process.env.PUBLIC_URL + "/game_type_f3.png"} class="dies" />
-                    </div>
-                  </div>
-
-                </div>
-                <div class="card-footer bg-light d-flex justify-content-between">
-                  <img src={process.env.PUBLIC_URL + "/flag_eu.png"} />
-                  <h6 class="player_name"> NATALIE BLAIR</h6>
-                  <div>
-                    <img src={process.env.PUBLIC_URL + "/icon_players.png"} class="icon_players" />
-                    <span class="player_bet">1000</span>
-                  </div>
-
-
-                </div>
-              </div>
-          
-
-
-</div>
-
-
-{/* <!-- Card--1 --> */}
-
-
-{/* <!-- Card--2 --> */}
-
-
-
-
-
-
-                            </div>
+											<span className="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" className="img-fluid" /></span>
+											<span className="lobby-title">AMANDA PERRY</span>
+										</div>
+										<div className="col-4 col-md-4 blue">
+											<span className="players">17652</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
 
 
                             </div>

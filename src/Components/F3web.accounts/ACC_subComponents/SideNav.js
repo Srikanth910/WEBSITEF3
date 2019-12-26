@@ -75,7 +75,7 @@ export default class SideNav extends Component {
                     <div className="navbar-collapse offcanvas-collapse" id="collapsingNavbar1">
                         <ul className="nav flex-column text-left side-menu">
                         
-                        <li class="nav-item">
+                        <li class="nav-item active" >
                                 {/* <a class="nav-link" href="#"><span class="messages"></span>Messages</a> */}
                                 <Link className="nav-link"Link to={'/Lobby'}><span  className="messages"></span>Lobby</Link>
 
@@ -86,7 +86,7 @@ export default class SideNav extends Component {
 
                                 {/* <Link  onClick={function(){this.setState({open:!this.state.open})}.bind(this)}className=" nav-link dropdown-toggle" href="#" data-toggle="collapse" aria-expanded="false"><span class="profile"></span>Edit Profile</Link>
                                 {this. state.open &&<ul  id="editProfile"> */}
-                              <Link Link to  ={'#'} onClick={this._toggleprofile} className="nav-link active dropdown-toggle" data-toggle="collapse" aria-expanded="false"><span class="profile"></span>Edit Profile</Link>
+                              <Link Link to  ={'#'} onClick={this._toggleprofile} className="nav-link  dropdown-toggle" data-toggle="collapse" aria-expanded="false"><span class="profile"></span>Edit Profile</Link>
                              <ul id="editProfile" className="slide" ref="toggle-profile" >
                                   <li>
 

@@ -113,78 +113,78 @@ class SignIn extends Component {
 		let errors = {};
 		let Registervalide = true;
 
-		if (!fields["username"]) {
-			Registervalide = false;
-			errors["username"] = "*Please enter your username.";
-		}
+		// if (!fields["username"]) {
+		// 	Registervalide = false;
+		// 	errors["username"] = "*Please enter your username.";
+		// }
 
-		if (typeof fields["username"] !== "undefined") {
-			if (!fields["username"].match(/^[a-zA-Z ]*$/)) {
-				Registervalide = false;
-				errors["username"] = "*Please enter alphabet characters only.";
-			}
-		}
-
-
-
-
-		if (!fields["email"]) {
-			Registervalide = false;
-			errors["email"] = "*Please enter your email-ID.";
-		}
-
-		if (typeof fields["email"] !== "undefined") {
-			//regular expression for email validation
-			var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-			if (!pattern.test(fields["email"])) {
-				Registervalide = false;
-				errors["email"] = "*Please enter valid email-ID.";
-			}
-		};
-
-
-		if (!fields["password"]) {
-			Registervalide = false;
-			errors["password"] = "*Please enter your password.";
-		}
-
-		if (typeof fields["password"] !== "undefined") {
-			if (!fields["password"].match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/)) {
-				Registervalide = false;
-				errors["password"] = "*Please enter secure and strong password.";
-			}
-		};
-
-
-		if (!fields["Conform_password"]) {
-			Registervalide = false;
-			errors["Conform_password"] = "*Please enter your password.";
-		}
+		// if (typeof fields["username"] !== "undefined") {
+		// 	if (!fields["username"].match(/^[a-zA-Z ]*$/)) {
+		// 		Registervalide = false;
+		// 		errors["username"] = "*Please enter alphabet characters only.";
+		// 	}
+		// }
 
 
 
 
+		// if (!fields["email"]) {
+		// 	Registervalide = false;
+		// 	errors["email"] = "*Please enter your email-ID.";
+		// }
 
-		if (typeof fields["Conform_password"] !== "undefined") {
-			if (!fields["Conform_password"].match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/)) {
-				Registervalide = false;
-				errors["Conform_password"] = "*Please enter secure and strong ConformPassword.";
-			}
-
-
-
-			if (fields["password"] != fields["Conform_password"]) {
-				errors["Conform_password"] = "*Please password do not match.";
-				Registervalide = false;
-			}
-			// return true;.. 
-		};
+		// if (typeof fields["email"] !== "undefined") {
+		// 	//regular expression for email validation
+		// 	var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+		// 	if (!pattern.test(fields["email"])) {
+		// 		Registervalide = false;
+		// 		errors["email"] = "*Please enter valid email-ID.";
+		// 	}
+		// };
 
 
-		if (!fields["currency"]) {
-			Registervalide = false;
-			errors["currency"] = "*Please select your Currency.";
-		};
+		// if (!fields["password"]) {
+		// 	Registervalide = false;
+		// 	errors["password"] = "*Please enter your password.";
+		// }
+
+		// if (typeof fields["password"] !== "undefined") {
+		// 	if (!fields["password"].match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/)) {
+		// 		Registervalide = false;
+		// 		errors["password"] = "*Please enter secure and strong password.";
+		// 	}
+		// };
+
+
+		// if (!fields["Conform_password"]) {
+		// 	Registervalide = false;
+		// 	errors["Conform_password"] = "*Please enter your password.";
+		// }
+
+
+
+
+
+		// if (typeof fields["Conform_password"] !== "undefined") {
+		// 	if (!fields["Conform_password"].match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/)) {
+		// 		Registervalide = false;
+		// 		errors["Conform_password"] = "*Please enter secure and strong ConformPassword.";
+		// 	}
+
+
+
+		// 	if (fields["password"] != fields["Conform_password"]) {
+		// 		errors["Conform_password"] = "*Please password do not match.";
+		// 		Registervalide = false;
+		// 	}
+		// 	// return true;.. 
+		// };
+
+
+		// if (!fields["currency"]) {
+		// 	Registervalide = false;
+		// 	errors["currency"] = "*Please select your Currency.";
+		// };
 
 
 
@@ -406,10 +406,8 @@ class SignIn extends Component {
 		const LoginUser=await Login(user);
 
 		 if(LoginUser.status==="ok"){
-
-			
 			Toast.loading('loading...',()=>{
-				this.props.history.push("/LiveCasino");
+				this.props.history.push("/Lobby");
 					
 				});
 				setTimeout(() => {
@@ -424,11 +422,9 @@ class SignIn extends Component {
 			  }));
 
 
-			},()=>{
-				this.props.close();
 			})
 		   }else {
-						Toast.loading('Pleace wait...',()=>{
+						Toast.loading('pleace wait...',()=>{
 							this.setState({
 								error:LoginUser.message
 							 })	
@@ -483,8 +479,7 @@ class SignIn extends Component {
 		}
 
 
-
-
+	
 
 
 	handleRegister = (e, Name) => {
@@ -497,11 +492,11 @@ class SignIn extends Component {
 
 		if (this.RegisterValidate()) {
 			let fields = {};
-			fields["username"] = "";
-			fields["password"] = "";
-			fields["email"] = "";
-			fields["currency"] = "";
-			fields["Conform_password"] = "";
+			// fields["username"] = "";
+			// fields["password"] = "";
+			// fields["email"] = "";
+			// fields["currency"] = "";
+			// fields["Conform_password"] = "";
 			fields["city"] = "";
 			fields["pincode"] = "";
 			fields["first_name"] = "";
@@ -541,10 +536,59 @@ class SignIn extends Component {
 				
 
 			})
+				
+
+		
+
+
 			
 			
 
 		})
+			// const {
+			// 	username,
+			// 	email,
+			// 	password,
+			// 	currency,
+			// 	country,
+			// 	state,
+			// 	city,
+			// 	pincode,
+			// 	first_name,
+			// 	last_name,
+			// 	gender,
+			// 	date_of_birth,
+			// 	phone_number,
+			// 	address,
+			// 	Conform_password,
+
+
+			// } = this.state.fields;
+			// const data = {
+
+			// 	username: username,
+			// 	email: email,
+			// 	password: password,
+			// 	Conform_password: Conform_password,
+			// 	currency: currency,
+			// 	country: country,
+			// 	state: state,
+			// 	city: city,
+			// 	pincode: pincode,
+			// 	first_name: first_name,
+			// 	last_name: last_name,
+			// 	gender: gender,
+			// 	date_of_birth,
+			// 	phone_number: phone_number,
+			// 	address: address
+
+
+			// };
+			// console.log('register', data)
+		
+
+		
+
 		
 	}
 
@@ -594,8 +638,115 @@ class SignIn extends Component {
     }
 	
 
-	 Register2btn=()=>{
-		  const{login}=this.state.state;
+
+
+
+	RegisterValidate1() {
+
+		let fields = this.state.fields;
+		let errors = {};
+		let Registervalide1 = true;
+
+		if (!fields["username"]) {
+			Registervalide1 = false;
+			errors["username"] = "*Please enter your username.";
+		}
+
+		if (typeof fields["username"] !== "undefined") {
+			if (!fields["username"].match(/^[a-zA-Z ]*$/)) {
+				Registervalide1 = false;
+				errors["username"] = "*Please enter alphabet characters only.";
+			}
+		}
+
+
+
+
+		if (!fields["email"]) {
+			Registervalide1 = false;
+			errors["email"] = "*Please enter your email-ID.";
+		}
+
+		if (typeof fields["email"] !== "undefined") {
+			//regular expression for email validation
+			var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+			if (!pattern.test(fields["email"])) {
+				Registervalide1 = false;
+				errors["email"] = "*Please enter valid email-ID.";
+			}
+		};
+
+
+		if (!fields["password"]) {
+			Registervalide1 = false;
+			errors["password"] = "*Please enter your password.";
+		}
+
+		if (typeof fields["password"] !== "undefined") {
+			if (!fields["password"].match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/)) {
+				Registervalide1 = false;
+				errors["password"] = "*Please enter secure and strong password.";
+			}
+		};
+
+
+		if (!fields["Conform_password"]) {
+			Registervalide1 = false;
+			errors["Conform_password"] = "*Please enter your password.";
+		}
+
+
+
+
+
+		if (typeof fields["Conform_password"] !== "undefined") {
+			if (!fields["Conform_password"].match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/)) {
+				Registervalide1 = false;
+				errors["Conform_password"] = "*Please enter secure and strong ConformPassword.";
+			}
+
+
+
+			if (fields["password"] != fields["Conform_password"]) {
+				errors["Conform_password"] = "*Please password do not match.";
+				Registervalide1 = false;
+			}
+			// return true;.. 
+		};
+
+
+		if (!fields["currency"]) {
+			Registervalide1 = false;
+			errors["currency"] = "*Please select your Currency.";
+		};
+
+		this.setState({
+			errors: errors
+		});
+		return Registervalide1;
+		
+
+
+
+
+	}
+
+
+	 Register2btn=(e)=>{
+		 e.preventDefault();
+		 
+
+		const{login}=this.state.state;
+		if (this.RegisterValidate1()) {
+			let fields = {};
+			fields["username"] = "";
+			fields["password"] = "";
+			fields["email"] = "";
+			fields["currency"] = "";
+			fields["Conform_password"] = ""
+			this.setState({ fields: fields });
+
+
 		  if(login==="Register2btn"){
 			  this.setState({
 				login:''
@@ -608,6 +759,7 @@ class SignIn extends Component {
 		  }
 
 	 }
+	}
 
 	 Registeralert=()=>{
 

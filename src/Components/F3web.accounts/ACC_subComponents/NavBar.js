@@ -76,23 +76,27 @@ import Auth from '../../ServerApi/Auth';
 		buttons: [
 		  {
 			label: 'Yes',
-			onClick:() =>
+			onClick:() =>{
 			
 			Logout().then(user=>{
 				console.log('logoutrep',user)
 				if(user.status==='ok'){
-					Auth.signout(()=>{
-						this.props.history.push('/');
-					});
-					
 				
-				}else{
+					Auth.signout(()=>{
+						
+					});
+		
+					this.props.history.push('/');
+		
+				
+				}
+				else{
 					this.props.history.push("# ")
 				}
 			})
               
 
-		
+			}
 		  },
 		  {
 			label: 'No',
