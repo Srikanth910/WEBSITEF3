@@ -442,37 +442,7 @@ class SignIn extends Component {
 		 }
 		
 
-		// Login(user).then(res => {
-		// 			console.log('resopnce', res)
-
-		// 			if(res.status==="ok"){
-
-
-		// 		 this.setState({
-
-
-
-		// 					error:"login succuss" 
-		// 				 });
-						
-
-		// 			this.props.history.push("/LiveCasino");
-		// 			this.props.close();
-
-		// 			}else {
-		// 				 this.setState({
-		// 					error:res.message
-		// 				 })	
-		// 			}
-
-				// }).catch(err=>{
-				// 	console.log('errr',err)
-				// })
-
-
-
-		// }
-
+		
 
 
 
@@ -512,89 +482,39 @@ class SignIn extends Component {
 
 			this.setState({ fields: fields });
 
-	  console.log('fleds data',this.state.fields)
+	//   console.log('fleds data',this.state.fields)
 
 	   const data =this.state.fields
 		console.log('prestATE',data)
 
+		Register(data).then(res => {
+
+			console.log('responce', res);
 
 
 
-		
-		// Register(data).then(res => {
 
-		// 	console.log('responce', res);
-		// 	this.setState({
+			if(res.status===200){
+			this.setState({
 			
-		// 		errorstring:res.data.errorString,
-		// 		messages:res.data.message
-		// 	},()=>{
+				errorstring:res.data.errorString,
+				messages:res.data.message
+			},()=>{
 
 
-		// 		this.Registeralert();
-		// 		setTimeout(()=>this.login(), 1000);  
+				this.Registeralert();
+				setTimeout(()=>this.login(), 1000);  
 	
 				
 
-		// 	})
+			})
 				
-
-		
-
-
-			
-			
-
-		// })
-			// const {
-			// 	username,
-			// 	email,
-			// 	password,
-			// 	currency,
-			// 	country,
-			// 	state,
-			// 	city,
-			// 	pincode,
-			// 	first_name,
-			// 	last_name,
-			// 	gender,
-			// 	date_of_birth,
-			// 	phone_number,
-			// 	address,
-			// 	Conform_password,
-
-
-			// } = this.state.fields;
-			// const data = {
-
-			// 	username: username,
-			// 	email: email,
-			// 	password: password,
-			// 	Conform_password: Conform_password,
-			// 	currency: currency,
-			// 	country: country,
-			// 	state: state,
-			// 	city: city,
-			// 	pincode: pincode,
-			// 	first_name: first_name,
-			// 	last_name: last_name,
-			// 	gender: gender,
-			// 	date_of_birth,
-			// 	phone_number: phone_number,
-			// 	address: address
-
-
-			// };
-			// console.log('register', data)
-		
-
-		
-
 		
 	}
-
+})
 
 	};
+}
 
 
 
@@ -835,7 +755,7 @@ class SignIn extends Component {
 
 								{this.state.alertshow &&
 
-							<div class="alert alert-success" role="alert">
+							<div >
 
 							<p>{this.state.errorstring} ,
 							
