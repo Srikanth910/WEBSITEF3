@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Modal from 'react-bootstrap/Modal';
  import {Register, Login}  from '../ServerApi/ServerApi'
 import { withRouter ,Redirect} from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import Auth from '../ServerApi/Auth';
 
 
@@ -43,6 +45,7 @@ class SignIn extends Component {
 			address: '',
 			fields: {},
 			errors: {},
+			userdata:{}
 
 
 
@@ -101,20 +104,22 @@ class SignIn extends Component {
 
 
 
-	RegisterValidate() {
 
-		let fields = this.state.fields;
+
+	RegisterValid() {
+
+		let fields = this.state.fields
 		let errors = {};
-		let Registervalide = true;
+		let RegisterValid = true;
 
 		if (!fields["username"]) {
-			Registervalide = false;
+			RegisterValid = false;
 			errors["username"] = "*Please enter your username.";
 		}
 
 		if (typeof fields["username"] !== "undefined") {
 			if (!fields["username"].match(/^[a-zA-Z0-9]+$/)) {
-				Registervalide = false;
+				RegisterValid = false;
 				errors["username"] = "*Please enter fields.";
 			}
 		}
@@ -123,7 +128,7 @@ class SignIn extends Component {
 
 
 		if (!fields["email"]) {
-			Registervalide = false;
+			RegisterValid = false;
 			errors["email"] = "*Please enter your email-ID.";
 		}
 
@@ -131,27 +136,27 @@ class SignIn extends Component {
 			//regular expression for email validation
 			var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
 			if (!pattern.test(fields["email"])) {
-				Registervalide = false;
+				RegisterValid = false;
 				errors["email"] = "*Please enter valid email-ID.";
 			}
 		};
 
 
 		if (!fields["password"]) {
-			Registervalide = false;
+			RegisterValid = false;
 			errors["password"] = "*Please enter your password.";
 		}
 
 		if (typeof fields["password"] !== "undefined") {
 			if (!fields["password"].match(/^[a-zA-Z0-9]+$/)) {
-				Registervalide = false;
+				RegisterValid = false;
 				errors["password"] = "*Please enter   pasword.";
 			}
 		};
 
 
 		if (!fields["Conform_password"]) {
-			Registervalide = false;
+			RegisterValid = false;
 			errors["Conform_password"] = "*Please enter your password.";
 		}
 
@@ -161,7 +166,7 @@ class SignIn extends Component {
 
 		if (typeof fields["Conform_password"] !== "undefined") {
 			if (!fields["Conform_password"].match(/^[a-zA-Z0-9]+$/)) {
-				Registervalide = false;
+				RegisterValid = false;
 				errors["Conform_password"] = "*Please enter  Conform_password.";
 			}
 
@@ -169,16 +174,109 @@ class SignIn extends Component {
 
 			if (fields["password"] != fields["Conform_password"]) {
 				errors["Conform_password"] = "*Please password do not match.";
-				Registervalide = false;
+				RegisterValid = false;
 			}
 			// return true;.. 
 		};
 
 
 		if (!fields["currency"]) {
-			Registervalide = false;
+			RegisterValid = false;
 			errors["currency"] = "*Please select your Currency.";
 		};
+
+
+           
+		this.setState({
+			errors: errors,
+			
+		});
+		return RegisterValid;
+
+
+	}
+
+
+
+
+	RegisterValidate() {
+
+		let fields = this.state.fields;
+		let errors = {};
+		let Registervalide = true;
+
+		// if (!fields["username"]) {
+		// 	Registervalide = false;
+		// 	errors["username"] = "*Please enter your username.";
+		// }
+
+		// if (typeof fields["username"] !== "undefined") {
+		// 	if (!fields["username"].match(/^[a-zA-Z0-9]+$/)) {
+		// 		Registervalide = false;
+		// 		errors["username"] = "*Please enter fields.";
+		// 	}
+		// }
+
+
+
+
+		// if (!fields["email"]) {
+		// 	Registervalide = false;
+		// 	errors["email"] = "*Please enter your email-ID.";
+		// }
+
+		// if (typeof fields["email"] !== "undefined") {
+		// 	//regular expression for email validation
+		// 	var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+		// 	if (!pattern.test(fields["email"])) {
+		// 		Registervalide = false;
+		// 		errors["email"] = "*Please enter valid email-ID.";
+		// 	}
+		// };
+
+
+		// if (!fields["password"]) {
+		// 	Registervalide = false;
+		// 	errors["password"] = "*Please enter your password.";
+		// }
+
+		// if (typeof fields["password"] !== "undefined") {
+		// 	if (!fields["password"].match(/^[a-zA-Z0-9]+$/)) {
+		// 		Registervalide = false;
+		// 		errors["password"] = "*Please enter   pasword.";
+		// 	}
+		// };
+
+
+		// if (!fields["Conform_password"]) {
+		// 	Registervalide = false;
+		// 	errors["Conform_password"] = "*Please enter your password.";
+		// }
+
+
+
+
+
+		// if (typeof fields["Conform_password"] !== "undefined") {
+		// 	if (!fields["Conform_password"].match(/^[a-zA-Z0-9]+$/)) {
+		// 		Registervalide = false;
+		// 		errors["Conform_password"] = "*Please enter  Conform_password.";
+		// 	}
+
+
+
+		// 	if (fields["password"] != fields["Conform_password"]) {
+		// 		errors["Conform_password"] = "*Please password do not match.";
+		// 		Registervalide = false;
+		// 	}
+		// 	// return true;.. 
+		// };
+
+
+		// if (!fields["currency"]) {
+		// 	Registervalide = false;
+		// 	errors["currency"] = "*Please select your Currency.";
+		// };
 
 
 
@@ -377,6 +475,7 @@ class SignIn extends Component {
 			 
 	
 		const LoginUser=await Login(user);
+	        console.log('userdata', LoginUser)
 
 		 if(LoginUser.status==="ok"){
 			 localStorage.setItem('cookie', LoginUser)
@@ -436,12 +535,11 @@ class SignIn extends Component {
 
 		if (this.RegisterValidate()) {
 			let fields = {};
-			fields["username"] = "";
-			fields["password"] = "";
-			fields["email"] = "";
-			fields["currency"] = "";
-			fields["Conform_password"] = ""
-		
+			// fields["username"] = "";
+			// fields["password"] = "";
+			// fields["email"] = "";
+			// fields["currency"] = "";
+			// fields["Conform_password"] = ""
 			fields["city"] = "";
 			fields["pincode"] = "";
 			fields["first_name"] = "";
@@ -454,14 +552,14 @@ class SignIn extends Component {
 
 
 
-			this.setState({ fields: fields });
+			this.setState({ userdata: fields });
 
-	  console.log('fleds data',this.state.fields)
+	//   console.log('fleds data',this.state.fields)
 
-	   const data =this.state.fields
-		console.log('prestATE',data)
+	   const Registerdata =this.state.fields
+		console.log('Registerdata',Registerdata)
 
-		Register(data).then(res => {
+		Register(Registerdata).then(res => {
 
 			console.log('responce', res);
 
@@ -481,17 +579,6 @@ class SignIn extends Component {
 				setTimeout(() => {
 					Toast.hide();
 				}, 1000);
-
-		
-
-
-
-				
-	
-				
-
-			
-				
 		
 	}
 })
@@ -503,7 +590,6 @@ class SignIn extends Component {
 
 	login = () => {
         
-
         const {login  } = this.state;
         if (login === "login") {
             this.setState({
@@ -544,119 +630,33 @@ class SignIn extends Component {
 
 
 
-
-	RegisterValidate1() {
-
-		let fields = this.state.fields;
-		let errors = {};
-		let Registervalide1 = true;
-
-		if (!fields["username"]) {
-			Registervalide1 = false;
-			errors["username"] = "*Please enter your username.";
-		}
-
-		if (typeof fields["username"] !== "undefined") {
-			if (!fields["username"].match(/^[a-zA-Z ]*$/)) {
-				Registervalide1 = false;
-				errors["username"] = "*Please enter alphabet characters only.";
-			}
-		}
-
-
-
-
-		if (!fields["email"]) {
-			Registervalide1 = false;
-			errors["email"] = "*Please enter your email-ID.";
-		}
-
-		if (typeof fields["email"] !== "undefined") {
-			//regular expression for email validation
-			var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-			if (!pattern.test(fields["email"])) {
-				Registervalide1 = false;
-				errors["email"] = "*Please enter valid email-ID.";
-			}
-		};
-
-
-		if (!fields["password"]) {
-			Registervalide1 = false;
-			errors["password"] = "*Please enter your password.";
-		}
-
-		if (typeof fields["password"] !== "undefined") {
-			if (!fields["password"].match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/)) {
-				Registervalide1 = false;
-				errors["password"] = "*Please enter secure and strong password.";
-			}
-		};
-
-
-		if (!fields["Conform_password"]) {
-			Registervalide1 = false;
-			errors["Conform_password"] = "*Please enter your password.";
-		}
-
-
-
-
-
-		if (typeof fields["Conform_password"] !== "undefined") {
-			if (!fields["Conform_password"].match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/)) {
-				Registervalide1 = false;
-				errors["Conform_password"] = "*Please enter secure and strong ConformPassword.";
-			}
-
-
-
-			if (fields["password"] != fields["Conform_password"]) {
-				errors["Conform_password"] = "*Please password do not match.";
-				Registervalide1 = false;
-			}
-			// return true;.. 
-		};
-
-
-		if (!fields["currency"]) {
-			Registervalide1 = false;
-			errors["currency"] = "*Please select your Currency.";
-		};
-
-		this.setState({
-			errors: errors
-		});
-		return Registervalide1;
-		
-
-
-
-
-	}
-
-
 	 Register2btn=(e)=>{
 		 e.preventDefault();
-		 
 
+		const{login}=this.state;
 		
-
-
-		const{login}=this.state.state;
-		
-
-		  if(login==="Register2btn"){
-			  this.setState({
-				login:''
-				  
-			  })
+               if(this.RegisterValid()){
+				let fields = {};
+				fields["username"] = "";
+			fields["password"] = "";
+			fields["email"] = "";
+			fields["currency"] = "";
+			fields["Conform_password"] = ""
+				this.setState({userdata:fields})
 			 
-		  }else{
-			  this.setState({
-				login:'Register2btn'
-			  })
-		  }
+			 if(login==="Register2btn"){
+			
+                    this.setState({login:''})			
+		
+			   }else{
+				this.setState({
+				  login:'Register2btn'
+				})
+				console.log('regosuertr',this.state.fields)
+			}
+		} 
+
+
 
 
 	}
@@ -688,10 +688,6 @@ class SignIn extends Component {
 		return (
 			<Modal centeredaria-labelledby="contained-modal-title-vcenter" show={this.props.open} onHide={this.props.close} >
 
-
-
-
-
 				<div tabindex="-1" role="dialog" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 					<div role="document">
 						<div className="modal-content">
@@ -699,9 +695,7 @@ class SignIn extends Component {
 								<ul className="nav nav-tabs" id="myTab" role="tablist">
 									<li className="nav-item">
 										
-										{/* <a onClick={() => this.handleclick('Login')} className="nav-link active" id="signin-tab" data-toggle="tab" href="#signin" role="tab" aria-controls="signin" aria-selected="true">Sign In</a> */}
 									
-
 
 										<a onClick={this.login} className="nav-link active" id="signin-tab" data-toggle="tab" href="#signin" role="tab" aria-controls="signin" aria-selected="true">Sign In</a>
 									
@@ -736,10 +730,10 @@ class SignIn extends Component {
 
 							<div >
 
-							<p>{this.state.errorstring} ,
+							<span style={{color:'red', }}>{this.state.errorstring} </span>,
 							
-						</p>
-						<p>{this.state.messages} </p>
+	
+						<span style={{color:'red', }}>{this.state.messages} </span>
 					
 								</div>}
 
@@ -815,7 +809,7 @@ class SignIn extends Component {
 									</div>
 									
 									<div className="modal-body px-4">
-										<form >
+										<form onSubmit={this.Register2btn} >
 											<div className="form-group">
 												<input
 
@@ -862,13 +856,13 @@ class SignIn extends Component {
 												<div className="errorMsg">{this.state.errors.currency}</div>
 											</div>
 											<div className="text-center">
-												<button  type="submit" className="btn btn-secondary"  onClick={this.Register2btn} >Next</button></div>
+												<button  type="submit" className="btn btn-secondary"   >Next</button></div>
 										</form>
 									</div>
 
 									<div className="modal-footer clearfix px-4 pb-4">
 										<div className="float-left">
-											Already have an account? <a href="#">Sign In</a>
+											Already have an account? <a href="#"   >Sign In</a>
 										</div>
 										<div className="float-right">
 										</div>
@@ -1001,7 +995,7 @@ class SignIn extends Component {
 								  </div>
 										<div class="text-center">
 
-											<button type="submit"   id ="next-tab" class="btn btn-secondary">Sign Up</button></div>
+											<button type="submit"   id ="next-tab" class="btn btn-secondary " >Sign Up</button></div>
 									</form>
 								</div> }
 								{/* } */}
@@ -1017,5 +1011,10 @@ class SignIn extends Component {
 
 		)
 	}
+}
+SignIn.propsTypes={
+	Login:PropTypes.func.required,
+	Register:PropTypes.func.required
+
 }
 export default withRouter(SignIn)

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import './Home.css' 
 import './main.css';
-import { Link  ,withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import $ from 'jquery';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
@@ -9,34 +9,34 @@ import axios from 'axios';
 import Modelpopup from './HocModel/Modelpopup';
 import Footer from './SubCompoents/Footer';
 import Auth from '../ServerApi/Auth';
-import {NotificationContainer, NotificationManager} from 'react-notifications';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 import { Logout } from '../ServerApi/ServerApi';
 import LoginButton from './SubCompoents/LoginButton';
- 
+
 
 
 class Home extends Component {
 
 	constructor(props) {
 		super(props)
- 
+
 		this.state = {
-		 userlogged:false,
+			userlogged: false,
 			message: [],
 			error: [],
-			matchdata:'',
+			matchdata: '',
 			Name: 'Login',
-			modalopen:''
+			modalopen: ''
 			// register data :-
-			
 
 
 
-			}
 
-		
-		
+		}
+
+
+
 	}
 
 
@@ -49,80 +49,68 @@ class Home extends Component {
 				$('.offcanvas-collapse1').toggleClass('open')
 			})
 		});
-		$(function() {
-            $( 'ul.nav li' ).on( 'click', function() {
-                  $( this ).parent().find( 'li.active' ).removeClass( 'active' );
-                  $( this ).addClass( 'active' );
-            });
-      });	
+		$(function () {
+			$('ul.nav li').on('click', function () {
+				$(this).parent().find('li.active').removeClass('active');
+				$(this).addClass('active');
+			});
+		});
 	}
 
 
-	
+
 	// openModal=(e)=> {   
 	// 	console.log('hello')
 	// 	 e.preventDefault();
 	// 	 this.setState({modalopen: true});
 	//    }
- 
+
 	//  closeModal=(e)=> {
-		
-		 
+
+
 	// 	 this.setState({modalopen: false});
 	//    }
 
- 
 
 
-	handleDeposite=()=>{
-	
-		
-		if(Auth.getAuth()){
+
+	handleDeposite = () => {
+
+
+		if (Auth.getAuth()) {
 			this.props.history.push('/Deposit')
-		
-		}else{
+
+		} else {
 			NotificationManager.error('please login ');
-		}	
 		}
+	}
 
-		LogoutUser=()=>{
-			Logout().then(userLogout=>{
-				if(userLogout.status==='ok'){
+	LogoutUser = () => {
+		Logout().then(userLogout => {
+			if (userLogout.status === 'ok') {
 
-					Auth.signout(()=>{
+				Auth.signout(() => {
 
 					this.props.history.push('/')
 				})
-				}else{
-					this.props.history.push('#')
-				}
-			})
-		}
+			} else {
+				this.props.history.push('#')
+			}
+		})
+	}
 
 	render() {
-		
-	
-		//  const isEnabledRegister= username.length > 3 && password.length > 3 && email.length > 3  && currency.length > 0  &&Conform_password.length>0
-		//                               first_name.length>3 &&pincode.length>3&& date_of_birth>4 && city.length>0 && state.length>3 && phone_number.length> 10&&  address.length >3
-		
-		
+
+
+
 		return (
 			<div>
-  <NotificationContainer/>
-				 <header class="mt-2 mt-sm-4 fixed-top">
+				<NotificationContainer />
+				<header class="mt-2 mt-sm-4 fixed-top">
 					<div class="container-fluid px-0 text-center">
+						<LoginButton />
 
-						<LoginButton/>
-{/* {Auth.getAuth()===false &&
-						
-						<Link to="" role="button" class="sign-in" data-toggle="modal" onClick={this.props.showmodel} data-target="#exampleModalCenter">Sign In / Register</Link>}
 
-{Auth.getAuth()===true &&
-						<Link to="" role="button" class="sign-in" data-toggle="modal"  onClick={this.LogoutUser} data-target="#exampleModalCenter">Logout</Link>}
-						 */}
-						
-						{/* <FormModel open={this.state.modalopen} close={this.closeModal}/> */}
-						
 						<nav class="navbar navbar-expand-lg orange-bg mt-4 mt-md-5">
 							<Link Link to={'/'} className="navbar-brand">
 								<img src={process.env.PUBLIC_URL + "/logo.png"} className="d-none d-sm-none d-md-block" alt="Fantastic 3" />
@@ -155,11 +143,11 @@ class Home extends Component {
 							</div>
 						</nav>
 					</div>
-				</header> 
+				</header>
 
-			
- 
-          {/* <Navbar history={this.props.push}/> */}
+
+
+				{/* <Navbar history={this.props.push}/> */}
 
 
 
@@ -168,7 +156,7 @@ class Home extends Component {
 						<div className="carousel-item first active text-center">
 							<div className="carousel-caption">
 								<h1>Live Dealer Game</h1>
-								<Link to={'#'} className="btn-dark"   onClick={this.handleDeposite}>Deposit</Link>
+								<Link to={'#'} className="btn-dark" onClick={this.handleDeposite}>Deposit</Link>
 
 
 							</div>
@@ -202,13 +190,13 @@ class Home extends Component {
 							</div>
 						</div>
 					</div>
-					<Link className="btn-primary" Link to={'#'} onClick={this.handleDeposite}  >Go for it</Link>
+					<Link className="btn-primary" Link to={'#'} onClick={this.props.showmodel}  >Go for it</Link>
 				</section>
-    <Footer/>
+				<Footer />
 			</div>
 		)
 	}
 }
 
 
-export default  withRouter(Home)
+export default withRouter(Modelpopup(Home));

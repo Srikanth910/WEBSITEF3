@@ -7,8 +7,12 @@ axios.defaults.withCredentials = true;
 export const Login = user => {
     return axios
       .post(`${API_URL}/api/login`, {
+      
         username: user.username,
-        password: user.password
+        password: user.password,
+
+      
+
       })
       .then(res => {
         
