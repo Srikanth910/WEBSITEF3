@@ -478,7 +478,7 @@ class SignIn extends Component {
 	        console.log('userdata', LoginUser)
 
 		 if(LoginUser.status==="ok"){
-			 localStorage.setItem('cookie', LoginUser)
+			
 			Toast.loading('please wait...',()=>{
 				this.props.history.push("/LobbyArena");
 					
