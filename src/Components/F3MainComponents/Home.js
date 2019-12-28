@@ -72,6 +72,17 @@ class Home extends Component {
 	//    }
 
 
+	handlebutton=()=>{
+		 console.log('data used')
+		if(Auth.getAuth()){
+			NotificationManager.info(' You are already logged in.','',2000);
+		
+		}else{
+			this.props.showmodel();
+			
+		}
+
+	}
 
 
 	handleDeposite = () => {
@@ -81,23 +92,12 @@ class Home extends Component {
 			this.props.history.push('/Deposit')
 
 		} else {
-			NotificationManager.error('please login ');
+			NotificationManager.error('please login ','',1000,()=>{
+			this.props.showmodel();
+			});
 		}
 	}
 
-	LogoutUser = () => {
-		Logout().then(userLogout => {
-			if (userLogout.status === 'ok') {
-
-				Auth.signout(() => {
-
-					this.props.history.push('/')
-				})
-			} else {
-				this.props.history.push('#')
-			}
-		})
-	}
 
 	render() {
 
@@ -190,7 +190,7 @@ class Home extends Component {
 							</div>
 						</div>
 					</div>
-					<Link className="btn-primary" Link to={'#'} onClick={this.props.showmodel}  >Go for it</Link>
+					<Link className="btn-primary" Link to={'#'} onClick={this.handlebutton}  >Go for it</Link>
 				</section>
 				<Footer />
 			</div>
@@ -199,4 +199,4 @@ class Home extends Component {
 }
 
 
-export default withRouter(Modelpopup(Home));
+export default Modelpopup(withRouter(Home));

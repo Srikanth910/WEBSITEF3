@@ -3,6 +3,7 @@ import {Link}  from 'react-router-dom';
 import $ from 'jquery';
 import Footer from './Footer';
 import Modelpopup from '../HocModel/Modelpopup';
+import LoginButton from './LoginButton';
 
 class TermsAndCondition extends Component {
     constructor(props) {
@@ -35,8 +36,7 @@ class TermsAndCondition extends Component {
 					<div class="container-fluid px-0 text-center">
 						
 						
-						<Link to="" role="button" class="sign-in" data-toggle="modal" onClick={this.props.showmodel} data-target="#exampleModalCenter">Sign In / Register</Link>
-
+					<LoginButton/>
 
 						
 						<nav class="navbar navbar-expand-lg orange-bg mt-4 mt-md-5">

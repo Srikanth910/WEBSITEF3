@@ -18,6 +18,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 			  Balance:'',
 			  Bonus:'',
 			push:''	,
+			Username:'Srikanth',
 			Modelopen:''		  
 
 		 }
@@ -31,7 +32,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 		
 		
 	Balance().then(Userbalance=>{
-		console.log('resp',Userbalance);
+		// console.log('resp',Userbalance);
 		this.setState({
 		Balance:Userbalance.cash,
 		Bonus:Userbalance.bonus,
@@ -85,7 +86,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 				if(user.status==='ok'){
 		
 				
-					NotificationManager.success('successful logout ')
+					NotificationManager.success('successful logout ','',2000,)
 					
 
 			
@@ -95,7 +96,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 					setTimeout(()=>{
 						this.props.history.push('/');
 
-					},1000)
+					},2000)
 		
 					
 		
@@ -156,7 +157,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 						<div className="container-fluid">
 							<div className="row">
 								<div className="col-12 col-sm-5 col-lg-7 px-3 py-3">
-									<span className="user">Username</span>
+		<span className="user">{this.state.Username}</span>
 								</div>
 								<div className="col-5 col-sm-3 col-lg-2 border-left m-border px-3 py-3">
 									<div class="balance">

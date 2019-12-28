@@ -3,6 +3,7 @@ import React, { Component } from 'react';
  import $ from 'jquery';
 import Modelpopup from '../HocModel/Modelpopup';
 import Footer from './Footer';
+import LoginButton from './LoginButton';
 
  class PrivacyPolicy extends Component {
 
@@ -57,10 +58,7 @@ import Footer from './Footer';
 					<div class="container-fluid px-0 text-center">
 						
 						
-						<Link to="" role="button" class="sign-in" data-toggle="modal" onClick={this.props.showmodel} data-target="#exampleModalCenter">Sign In / Register</Link>
-
-
-						
+						<LoginButton/>
 						<nav class="navbar navbar-expand-lg orange-bg mt-4 mt-md-5">
 							<Link Link to={'/'} className="navbar-brand">
 								<img src={process.env.PUBLIC_URL + "/logo.png"} className="d-none d-sm-none d-md-block" alt="Fantastic 3" />

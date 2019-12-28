@@ -8,7 +8,7 @@ import TermsAndCondition from './Components/F3MainComponents/SubCompoents/TermsA
 import PrivacyPolicy from './Components/F3MainComponents/SubCompoents/PrivacyPolicy'
 import Profile from './Components/F3web.accounts/Editprofile/Profile'
 import Documents from './Components/F3web.accounts/Editprofile/Documents'
-import ChangePassword from './Components/F3web.accounts/Editprofile/ChangePassword'
+
 import Withdraw from './Components/F3web.accounts/Mywallet/Withdraw'
 import BalanceHistory from './Components/F3web.accounts/Mywallet/BalanceHistory'
 import Deposite from './Components/F3web.accounts/Mywallet/Deposit'
@@ -20,6 +20,7 @@ import NavBar from './Components/F3web.accounts/ACC_subComponents/NavBar'
 import Lobby from './Components/F3web.accounts/Lobby'
 import Bonuses from './Components/F3web.accounts/Bonuses'
 import Notifications from './Components/F3web.accounts/Editprofile/Notification'
+import Changepassword from './Components/F3web.accounts/Editprofile/ChangePasswords'
 
 export default class Routing extends Component {
 
@@ -41,7 +42,7 @@ export default class Routing extends Component {
         <Route path='/Documents' component={Documents} />
         <Route path='/Bonuses' component={Bonuses} />
         <Route path='/BalanceHistory' component={BalanceHistory} />
-        <Route path='/Changepassword' component={ChangePassword} />
+        <Route path='/Changepassword' component={Changepassword} />
 
         <ProtectedRoute path='/Deposit' component={Deposite} />
 

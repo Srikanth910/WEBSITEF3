@@ -1526,3 +1526,22 @@ form input {
 	line-height:24px;
 	letter-spacing:2px;	
 }
+
+.blue-bg
+{
+	background-color:#1b1b35;
+	color:#fff;
+}
+
+.dark-blue-bg
+{
+	background-color:#202556;
+	color:#fff;
+}
+
+.darkest-blue-bg
+{
+	background-color:#1a1e45;
+	border-bottom:1px solid #373b67;
+	border-top:1px solid #373b67;	
+}

@@ -20,8 +20,8 @@ return class Modelpopup extends Component {
      }
      
     openModal=(e)=> {   
-		console.log('hello')
-		 e.preventDefault();
+	
+		 
 		 this.setState({modalopen: true});
 	   }
  
