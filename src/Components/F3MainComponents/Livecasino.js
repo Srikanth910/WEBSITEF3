@@ -101,11 +101,11 @@ class LiveCasino extends Component {
 	// }
 
 
-	handleUrl = () => {
-		window.open("http://localhost:3000");
+	// handleUrl = () => {
+	// 	window.open("http://localhost:3000");
 
 
-	}
+	// }
 
 
 	handleLivecasino = () => {

@@ -10,11 +10,11 @@ import SideNav from './ACC_subComponents/SideNav'
 import Footer from './ACC_subComponents/Footer'
 export default class Lobby extends Component {
 
-  handleUrl=()=>{
-		window.open("http://localhost:3000");
+//   handleUrl=()=>{
+// 		window.open("http://localhost:3000");
 		
 		
-	}
+// 	}
 
     componentDidMount(){
         $(function () {
