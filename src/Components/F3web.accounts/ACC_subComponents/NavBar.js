@@ -102,11 +102,8 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 		
 				
 				}
-				else{
-					this.props.history.push("# ")
-					NotificationManager.errror('try again');
-				}
-			})
+				
+			}).catch(err=>console.log('err', err))
               
 
 			}

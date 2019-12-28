@@ -38,47 +38,36 @@ export default class Documents extends Component {
 
 
 
-   //  handlefilesubmit=(event)=>{
-   // 	event.preventDefault();
+    handlefilesubmit=(event)=>{
+   	event.preventDefault();
 
 
 
-   // 	 let formdata= new FormData();
-   // 	formdata.append("image",this.state.selectedFile)
-   // 	formdata.append("image alt",this.state.idDocument)
+   	 let formdata= new FormData();
+   	formdata.append("image",this.state.selectedFile)
+   	formdata.append("image alt",this.state.idDocument)
        
-   // 	// axios.post(	`http://localhost:8080/api/v1/player/uploadImage?idDocument=${this.state.idDocument}`,formdata)
-   // 	axios.post('http://localhost:8080/api/v1/player/uploadKYC', formdata,
-   // 	{
-   // 		headers: {
-   // 			"Content-Type": "multipart/form-data",
-   // 			"Accept": "application/json",
-   // 			"type": "formData"
-   // 		  },
-   // 	}
+   	// axios.post(	`http://localhost:8080/api/v1/player/uploadImage?idDocument=${this.state.idDocument}`,formdata)
+   	axios.post('https://f3-api.jaqk.in/web/upload-kyc', formdata,
+   	{
+   		headers: {
+   			"Content-Type": "multipart/form-data",
+   			"Accept": "application/json",
+   			"type": "formData"
+   		  },
+   	}
            
-   // 	)
+   	)
 
-   // 	.then(resp=>{
-   // 		console.log('respnce',resp)
-   // 	}).catch(error=>{
-   // 		console.log('error',error)
-   // 	})
+   	.then(resp=>{
+   		console.log('respnce',resp)
+   	}).catch(error=>{
+   		console.log('error',error)
+   	})
 
        
-   //  }	
-    
-   //  handlelogout=()=>{
-         
-   // 	axios.get('http://localhost:8080/api/v1/player/logout',{
-   // 		dafault:"successful operation"
-   // 	})
-   // 	.then(res=>{
-   // 		console.log('res',res);
-   // 	}).catch(error=>{
-   // 		console.log('error',error)
-   // 	})
-   // }
+    }	
+  
     render() {
         return (
            
