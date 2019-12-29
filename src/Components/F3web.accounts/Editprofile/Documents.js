@@ -5,6 +5,7 @@ import axios from 'axios'
 import SideNav from '../ACC_subComponents/SideNav';
 import NavBar from '../ACC_subComponents/NavBar';
 import Footer from '../ACC_subComponents/Footer';
+import { UploadedKyc, GetkycDocuments } from '../../ServerApi/ServerApi';
 
 export default class Documents extends Component {
 
@@ -36,6 +37,11 @@ export default class Documents extends Component {
         })
     }
 
+     componentDidMount=()=>{
+         GetkycDocuments().then(responce=>{
+             console.log('repoce get',responce)
+         }).catch(error=>console.log('err',error))
+     }
 
 
     handlefilesubmit=(event)=>{
@@ -44,26 +50,29 @@ export default class Documents extends Component {
 
 
    	 let formdata= new FormData();
-   	formdata.append("image",this.state.selectedFile)
-   	formdata.append("image alt",this.state.idDocument)
+       formdata.append("idFile",this.selectedFile);
+       formdata.append('idType',this.idDocument)
+   
        
-   	// axios.post(	`http://localhost:8080/api/v1/player/uploadImage?idDocument=${this.state.idDocument}`,formdata)
-   	axios.post('https://f3-api.jaqk.in/web/upload-kyc', formdata,
-   	{
-   		headers: {
-   			"Content-Type": "multipart/form-data",
-   			"Accept": "application/json",
-   			"type": "formData"
-   		  },
-   	}
+        
+       console.log('kyc', formdata)
+      
+   	// axios.post('https://f3-api.jaqk.in/web/upload-kyc', formdata,{
+    //     idType:this.state.idDocument,
+    //     headers: {
+    //         'Content-Type': 'multipart/form-data'
+    //     }
+          
+    //    }
+   
            
-   	)
+   	// )
 
-   	.then(resp=>{
-   		console.log('respnce',resp)
-   	}).catch(error=>{
-   		console.log('error',error)
-   	})
+   	// .then(resp=>{
+   	// 	console.log('respnce',resp)
+   	// }).catch(error=>{
+   	// 	console.log('error',error)
+   	// })
 
        
     }	

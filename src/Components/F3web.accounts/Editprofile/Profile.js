@@ -7,6 +7,8 @@ import Footer from '../ACC_subComponents/Footer';
 import SideNav from '../ACC_subComponents/SideNav';
 import NavBar from '../ACC_subComponents/NavBar';
 import { Balance, Getdata, Updateprofile } from '../../ServerApi/ServerApi';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 
 
@@ -24,7 +26,7 @@ export default class Profile extends Component {
 		  //balance data
 		  balance:'',
 		  mainbouns:'',
-		  
+	
 //profile data
 
 	  first_name:'',
@@ -40,6 +42,7 @@ export default class Profile extends Component {
 	  address:'',
 	  gender: '',
 	  pincode:'',
+	  
 
 
 		}
@@ -73,7 +76,7 @@ console.log('called component	')
 
 		//fetch data
     Getdata().then(userProfile=>{
-		 console.log('profile',userProfile)
+		//  console.log('profile',userProfile)
 	
 		 this.setState({
 			first_name : userProfile.firstName,
@@ -88,9 +91,6 @@ console.log('called component	')
 			country:userProfile.country,
 			pincode:userProfile.pincode,
 			
-			
-
-
 			
 		 })
 		 console.log(this.state.first_name);
@@ -134,7 +134,20 @@ console.log('called component	')
 
 
 	Updateprofile(userdata).then(resp=>{
-		console.log('responce profile', resp)
+		console.log('profile resp', resp)
+
+		if(resp.status==="ok"){
+		NotificationManager.success('your profile is updated','',2000)
+
+		}else{
+			this.setState({
+				ErrorMessage:resp.errorString,
+				ErrorMessage:resp.message
+				
+			})
+			NotificationManager.error(this.state.ErrorMessage,'',5000)
+		}
+		
 	}).catch(err=>{
 		console.log('error',err)
 	})
@@ -168,6 +181,7 @@ console.log('called component	')
  
         return (
             <div>
+				<NotificationContainer/>
             <div className="container-fluid">
 			<div className="row d-flex">
 				<SideNav/>
@@ -206,6 +220,9 @@ console.log('called component	')
 				</div>
 					<div className="container-fluid px-3 py-3 px-md-5 py-md-5">
 						<h1 className="inner">My Profile</h1>
+
+						
+		
 						<div className="light-gray-bg px-5 py-5">
 							
 						
@@ -235,7 +252,14 @@ console.log('called component	')
 									</div>
 									<div className="col-md-6 mb-3">
 										<label className="">currency</label>
-										<input type="text"   name="currency" value={this.state.currency}   onChange={this.handlechange}className="form-control" placeholder=""/>
+										{/* <input type="text"   name="currency" value={this.state.currency}   onChange={this.handlechange}className="form-control" placeholder=""/> */}
+										<select name="currency" value={this.state.currency} onChange={this.handlechange} className="form-control" >
+												<option>{this.state.currency} </option>
+												<option>inr</option>
+													<option>usd</option>
+													<option >aud</option>
+													</select>
+									
 									</div>
 									<div className="col-md-6 mb-3">
 										<label className="">Gender *</label>
@@ -273,7 +297,8 @@ console.log('called component	')
 									</div>
 								</div>
 								<hr className="my-5"/>
-								<button className="btn btn-light" type="submit">Save Profile</button>
+								<button className="btn btn-light" type="submit">Save Profile</button> 
+		
 							</form>
 						</div>
 					</div>	

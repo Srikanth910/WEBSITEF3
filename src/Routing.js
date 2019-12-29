@@ -21,7 +21,9 @@ import Lobby from './Components/F3web.accounts/Lobby'
 import Bonuses from './Components/F3web.accounts/Bonuses'
 import Notifications from './Components/F3web.accounts/Editprofile/Notification'
 import Changepassword from './Components/F3web.accounts/Editprofile/ChangePasswords'
-
+import Game from './Components/F3_Game/Game'
+import GameLobby from './Components/F3_Game/GameLobby'
+ 
 export default class Routing extends Component {
 
 
@@ -36,20 +38,25 @@ export default class Routing extends Component {
         <ProtectedRoute path='/LiveCasino' component={Livecasino} />
         <Route path='/TermsAndCondition' component={TermsAndCondition} />
         <Route path='/PrivacyPolicy' component={PrivacyPolicy} />
-        <ProtectedRoute path='/Profile' component={Profile} />
+        <Route path='/Profile' component={Profile} />
         <ProtectedRoute path='/WithDraw' component={Withdraw} />
         <ProtectedRoute path='/Notification' component={Notifications} />
-        <ProtectedRoute path='/Documents' component={Documents} />
+        <Route path='/Documents' component={Documents} />
         <ProtectedRoute path='/Bonuses' component={Bonuses} />
         <ProtectedRoute path='/BalanceHistory' component={BalanceHistory} />
-        <ProtectedRoute path='/Changepassword' component={Changepassword} />
+        <Route path='/Changepassword' component={Changepassword} />
 
         <ProtectedRoute path='/Deposit' component={Deposite} />
 
         <ProtectedRoute path='/Mybets' component={Mybets} />
 
         <ProtectedRoute path='/Messages' component={Messages} />
-        <ProtectedRoute path='/LobbyArena' component={Lobby} />
+        <Route path='/LobbyArena' component={Lobby} />
+     
+       <Route path ="/GameLobby" component={GameLobby}/>  
+
+<Route path ='/Game' component={Game}/>
+   
       </BrowserRouter>
 
 

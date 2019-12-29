@@ -164,3 +164,31 @@ export const Login = user => {
       console.log('err',err)
     })
   };
+   
+  export const UploadedKyc=()=>{
+  return axios.post(`${API_URL}/web/upload-kyc`).
+  then (kycdocus=>{
+    return kycdocus;
+  }).catch(err=>console.log('err',err))
+    
+  }
+
+  export const  GetkycDocuments=()=>{
+    return axios.get(`${API_URL}/api/kyc`).
+    then(resp=>resp).
+    catch(err=>console.log('eror',err))
+  }
+  
+
+
+
+  export const passwordChange=(userpasswords)=>{
+    return axios.post(`${API_URL}/api/change-passwd`,{
+      old_password:userpasswords.old_password,
+      new_password:userpasswords.new_password,
+    }).
+    then(Responce=>{
+      return Responce.data;
+    }).catch(error=>console.log('password',error))
+
+  }

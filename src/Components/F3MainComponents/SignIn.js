@@ -686,11 +686,11 @@ class SignIn extends Component {
 		}
 
 		return (
-			<Modal centeredaria-labelledby="contained-modal-title-vcenter" show={this.props.open} onHide={this.props.close} >
+			<Modal   dialogClassName="modal-50w" show={this.props.open} onHide={this.props.close} >
 
 				<div tabindex="-1" role="dialog" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 					<div role="document">
-						<div className="modal-content">
+						<div className="modal-contentview">
 							<div className="signin-links">
 								<ul className="nav nav-tabs" id="myTab" role="tablist">
 									<li className="nav-item">

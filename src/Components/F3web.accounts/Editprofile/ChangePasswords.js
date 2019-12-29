@@ -6,6 +6,10 @@ import Footer from '../ACC_subComponents/Footer';
 import { Navbar } from 'react-bootstrap';
 import SideNav from '../ACC_subComponents/SideNav';
 import NavBar from '../ACC_subComponents/NavBar';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
+import { passwordChange } from '../../ServerApi/ServerApi';
+import Auth from '../../ServerApi/Auth';
 
 class ChangePassword extends Component {
     constructor(props) {
@@ -117,13 +121,36 @@ return ChangePasswordvalid;
 			this.setState({ fields: fields });
 
 			const { currentPassword, oldPassword,Conform_password } = this.state.fields
-			const user = {
-                oldPassword: oldPassword,
-				newPassword: currentPassword,
+			const userpasswords = {
+                old_password: oldPassword,
+				new_password: currentPassword,
               
               
-			}
-			console.log('outside', user);
+            }
+            console.log('outside', userpasswords);
+            passwordChange(userpasswords).then(passwordresp=>{
+
+                if(passwordresp.status==="ok"){
+                    NotificationManager.success(' you have successfully changed your password','',2000);
+
+                    setTimeout(()=>{
+                        Auth.signout();
+                        this.props.history.push('/')
+                    },2000)
+                    
+                }else{
+
+                    this.setState({
+                        passwordError:passwordresp.message
+                    })
+                    NotificationManager.error(this.state.passwordError,'',5000);
+                }
+                console.log('changepassword',passwordresp)
+            }).catch(err=>console.log(err))
+            
+
+
+		
 			 
 		
     }

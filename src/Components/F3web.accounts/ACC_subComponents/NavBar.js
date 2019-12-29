@@ -18,7 +18,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 			  Balance:'',
 			  Bonus:'',
 			push:''	,
-			Username:'Srikanth',
+			Username:'username',
 			Modelopen:''		  
 
 		 }
@@ -39,6 +39,8 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 		})
 	})
 		
+
+
 
 	 }
 
@@ -75,7 +77,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 
     confirmAlert({
 		Title: 'Confirm to submit',
-		message: 'Are you sure  LOGOUT',
+		message: 'Are you sure  Logout',
 		buttons: [
 		  {
 			label: 'Yes',
@@ -86,7 +88,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 				if(user.status==='ok'){
 		
 				
-					NotificationManager.success('successful logout ','',2000,)
+					NotificationManager.success('You have successfully logged out', '',2000)
 					
 
 			
