@@ -60,7 +60,7 @@
      max-height: 1024px !important;
      /* padding: 0; */
   
-     margin-left: 14rem;
+     margin-left: 18rem;
  
  
  
@@ -82,9 +82,7 @@
      right: 9rem;
      top: 2.6rem;
      font-size: 1.6rem;
-     /* font-weight: bold;
-     /* font-weight: bold; */
- 
+   
   }
  
   .bd-highlight{
@@ -365,9 +363,7 @@
          top: 1rem;
      
      }
- body{
-     background-color: lightgray;
- }
+ 
  
      .max-bet-img{
          max-width: 46% !important;

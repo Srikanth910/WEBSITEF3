@@ -9,6 +9,7 @@ import Modelpopup from './HocModel/Modelpopup';
 import Footer from './SubCompoents/Footer';
 import Auth from '../ServerApi/Auth';
 import LoginButton from './SubCompoents/LoginButton';
+import Roombutton from './Roombutton';
 
 
 class LiveCasino extends Component {
@@ -198,96 +199,8 @@ class LiveCasino extends Component {
 							$ 382,34,583
 				</div>
 					</div>
-					<div className="container mt-5">
-						<div className="row">
-							<div className="col-md-4 px-3 mb-5">
-								<div className="lobby">
-									<img src={process.env.PUBLIC_URL + "/host_g1..png"} className="img-fluid" alt="..." />
-									<div className="price">$10</div>
-									<span className="dice"></span>
-									<a href="#" className="overlay" onClick={this.handleUrl}>
-										Play Now!
-							</a>
-								</div>
-
-								<div className="green-bg px-2 py-2">
-									<div className="row">
-										<div className="col-8 col-md-8 black position-relative">
-											<span className="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" className="img-fluid" /></span>
-											<span className="lobby-title">AMANDA PERRY</span>
-										</div>
-										<div className="col-4 col-md-4 blue">
-											<span className="players">17652</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div className="col-md-4 px-3 mb-5">
-								<div className="lobby">
-									<img src={process.env.PUBLIC_URL + "/host_g1..png"} className="img-fluid" alt="..." />
-									<div className="price">$10</div>
-									<span className="dice"></span>
-									<a href="#" className="overlay" onClick={this.handleUrl}>
-										Play Now!
-							</a>
-								</div>
-								<div className="green-bg px-2 py-2">
-									<div className="row">
-										<div className="col-8 col-md-8 black position-relative">
-											<span className="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" className="img-fluid" /></span>
-											<span className="lobby-title">AMANDA PERRY</span>
-										</div>
-										<div className="col-4 col-md-4 blue">
-											<span className="players">17652</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div className="col-md-4 px-3 mb-5">
-								<div className="lobby">
-									<img src={process.env.PUBLIC_URL + "/host_g1..png"} className="img-fluid" alt="..." />
-									<div className="price">$10</div>
-									<span className="dice"></span>
-									<a href="#" className="overlay" onClick={this.handleUrl} >
-										Play Now!
-							</a>
-								</div>
-								<div className="green-bg px-2 py-2">
-									<div className="row">
-										<div className="col-8 col-md-8 black position-relative">
-											<span className="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" className="img-fluid" /></span>
-											<span className="lobby-title">AMANDA PERRY</span>
-										</div>
-										<div className="col-4 col-md-4 blue">
-											<span className="players">17652</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div className="col-md-4 px-3 mb-5">
-								<div className="lobby">
-									<img src={process.env.PUBLIC_URL + "/host_g1..png"} className="img-fluid" alt="..." />
-									<div className="price">$10</div>
-									<span className="dice"></span>
-									<a href="#" className="overlay" onClick={this.handleUrl}>
-										Play Now!
-							</a>
-								</div>
-								<div className="green-bg px-2 py-2">
-									<div className="row">
-										<div className="col-8 col-md-8 black position-relative">
-
-											<span className="flag"><img src={process.env.PUBLIC_URL + "/flag-1.png"} alt="" className="img-fluid" /></span>
-											<span className="lobby-title">AMANDA PERRY</span>
-										</div>
-										<div className="col-4 col-md-4 blue">
-											<span className="players">17652</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					<Roombutton/>
+				
 				</section>
 
 

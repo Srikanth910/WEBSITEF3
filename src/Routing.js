@@ -38,24 +38,24 @@ export default class Routing extends Component {
         <ProtectedRoute path='/LiveCasino' component={Livecasino} />
         <Route path='/TermsAndCondition' component={TermsAndCondition} />
         <Route path='/PrivacyPolicy' component={PrivacyPolicy} />
-        <Route path='/Profile' component={Profile} />
+        <ProtectedRoute path='/Profile' component={Profile} />
         <ProtectedRoute path='/WithDraw' component={Withdraw} />
         <ProtectedRoute path='/Notification' component={Notifications} />
-        <Route path='/Documents' component={Documents} />
+        <ProtectedRoute path='/Documents' component={Documents} />
         <ProtectedRoute path='/Bonuses' component={Bonuses} />
         <ProtectedRoute path='/BalanceHistory' component={BalanceHistory} />
-        <Route path='/Changepassword' component={Changepassword} />
+        <ProtectedRoute path='/Changepassword' component={Changepassword} />
 
         <ProtectedRoute path='/Deposit' component={Deposite} />
 
         <ProtectedRoute path='/Mybets' component={Mybets} />
 
         <ProtectedRoute path='/Messages' component={Messages} />
-        <Route path='/LobbyArena' component={Lobby} />
+        <ProtectedRoute path='/LobbyArena' component={Lobby} />
      
-       <Route path ="/GameLobby" component={GameLobby}/>  
+       <ProtectedRoute path ="/GameLobby" component={GameLobby}/>  
 
-<Route path ='/Game' component={Game}/>
+       <ProtectedRoute path ='/Game/:id' component={Game}/>
    
       </BrowserRouter>
 

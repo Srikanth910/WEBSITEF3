@@ -76,7 +76,7 @@ console.log('called component	')
 
 		//fetch data
     Getdata().then(userProfile=>{
-		//  console.log('profile',userProfile)
+		 console.log('profile',userProfile)
 	
 		 this.setState({
 			first_name : userProfile.firstName,

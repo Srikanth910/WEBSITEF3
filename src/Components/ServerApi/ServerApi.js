@@ -192,3 +192,10 @@ export const Login = user => {
     }).catch(error=>console.log('password',error))
 
   }
+
+   export const GenerateroomIds=()=>{
+     return axios.get(`${API_URL}/api/rooms`).
+     then(rep=>{
+       return rep;
+     }).catch(error=>console.log('error',error))
+   }

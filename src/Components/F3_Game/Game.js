@@ -3,14 +3,15 @@ import Modal from 'react-bootstrap/Modal';
 import {Link } from 'react-router-dom'
 import './f3game.css'
 import { withRouter } from 'react-router-dom'
-
+import { GameToken } from '../ServerApi/ServerApi';
+// import {connect} from 'react-redux'
 const URL = 'wss://f3-gs.jaqk.in/rooms/85ec04b2-ec2f-49be-8840-363370431b7d';
 
 
 const ws = new WebSocket(URL);
 
  class Game extends Component {
-
+    
     constructor(props) {
         super(props)
 
@@ -37,7 +38,7 @@ const ws = new WebSocket(URL);
             name: "srikanth",
             total: 0,
             accessToken: '',
-            userId: '',
+            userId: this.props.match.params.id,
             roomId: '',
             Joinroom: '',
             lastroll: '',
@@ -77,92 +78,92 @@ const ws = new WebSocket(URL);
 
 
 
-        // GameaccessToken().then(Token => {
-        //     // console.log('responce Token', Token);
-        //     this.setState({
-        //         accessToken: Token.accessToken
-        //     })
-        // }).catch(err => {
-        //     console.log('error,', err)
-        // });
+      GameToken().then(Token => {
+            // console.log('responce Token', Token);
+            this.setState({
+                accessToken: Token.accessToken
+            })
+        }).catch(err => {
+            console.log('error,', err)
+        });
 
 
 
 
 
-        // ws.onopen = () => {
+        ws.onopen = () => {
 
-        //     // console.log('access Token', this.state.accessToken)
-
-
-        //     console.log(' connection established');
+            console.log('access Token', this.state.accessToken)
 
 
-        //     ws.send(
-        //         JSON.stringify(
-        //             {
-        //                 type: "join",
-        //                 data: {
-        //                     "accessToken": this.state.accessToken,
-        //                     "roomId": this.state.userId,
-        //                 }
-        //             }));
+            console.log(' connection established');
 
 
-        // };
+            ws.send(
+                JSON.stringify(
+                    {
+                        type: "join",
+                        data: {
+                            "accessToken": this.state.accessToken,
+                            "roomId": this.props.match.params.id,
+                        }
+                    }));
 
 
-        // ws.onmessage = (event) => {
-        //     console.log("message send sever", event);
+        };
 
 
-        //     if (JSON.parse(event.data).type === "connection") {
-        //         console.log('connectin evnet', event.data);
-        //     };
+        ws.onmessage = (event) => {
+            console.log("message send sever", event);
+
+
+            if (JSON.parse(event.data).type === "connection") {
+                console.log('connectin evnet', event.data);
+            };
 
 
 
-        //     if (JSON.parse(event.data).type === "join-room") {
-        //         console.log('join room event', event.data)
-        //         console.log(" Join:", JSON.parse(event.data).data.room);
+            if (JSON.parse(event.data).type === "join-room") {
+                console.log('join room event', event.data)
+                console.log(" Join:", JSON.parse(event.data).data.room);
 
-        //         const Joinroom = JSON.parse(event.data).data.room;
-        //         this.setState({
-        //             roomId: Joinroom
+                const Joinroom = JSON.parse(event.data).data.room;
+                this.setState({
+                    roomId: Joinroom
 
-        //         });
-        //         // console.log('room number ', this.state.roomId)
+                });
+                // console.log('room number ', this.state.roomId)
 
-        //     };
+            };
 
 
-        //     // if (JSON.parse(event.data).type === "summary") {
-        //     //     console.log('summary data dispayed', (event.data));
-        //     // }
+            // if (JSON.parse(event.data).type === "summary") {
+            //     console.log('summary data dispayed', (event.data));
+            // }
 
         
-        //    if(JSON.parse(event.data).type==="betPlaced"){
-        //        console.log('betplaced data',(event.data))
+           if(JSON.parse(event.data).type==="betPlaced"){
+               console.log('betplaced data',(event.data))
 
-        //    }
+           }
 
-        // };
+        };
 
 
-        // /// websocket onerror state
-        // ws.onerror = (event) => {
-        //     console.log('error websocket', event)
-        // };
+        /// websocket onerror state
+        ws.onerror = (event) => {
+            console.log('error websocket', event)
+        };
 
-        // // web socket on closes state 
+        // web socket on closes state 
 
-        // ws.onclose = (event) => {
+        ws.onclose = (event) => {
 
-        //     console.log('closed event', event);
-        //     this.currentbet();
+            console.log('closed event', event);
+            this.currentbet();
            
 
-        // }
+        }
 
     };
    
@@ -413,6 +414,7 @@ this.setState({
 
     render() {
         const { values, currentStepIndex } = this.state;
+        console.log('id',this.props.match.params.id)
         return (
 
 <div>
@@ -870,4 +872,5 @@ this.setState({
     }
 }
 
+// export default connect(state => state.game , null)(withRouter(Game))
 export default withRouter(Game)

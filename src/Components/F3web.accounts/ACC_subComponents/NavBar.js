@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
  import {Link } from 'react-router-dom'
 
  import { withRouter } from 'react-router-dom';
-import { Balance, Logout } from '../../ServerApi/ServerApi';
+import { Balance, Logout, Getdata } from '../../ServerApi/ServerApi';
 
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css';
@@ -40,6 +40,16 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 	})
 		
 
+	Getdata().then(userdata=>{
+		console.log('profile' , userdata.firstName)
+		this.setState({
+		firstname:userdata.firstName,
+		
+		})
+	}).catch(error=>{
+		console.log('error',error)
+	})
+
 
 
 	 }
@@ -47,33 +57,6 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 	 LogoutUser=()=>{
 
 
-	// 	this.setState({
-	// 		Modelopen:true
-
-	// 	})
-	// }
-	// 	closemodel=()=>{
-	// 		console.log('hellomodel close')
-	// 		this.setState({
-	// 			Modelopen:false
-	// 		})
-	// 	}
-
-
-	// 	UserLogout=async()=>{
-	// 		console.log('logout')
-	// 		const  Logoutuser  = await Logout();
-	// if(Logoutuser.status==="ok"){
-
-			
-	// 		this.props.history.push('/')
-	
-			
-	// 		}else{
-				
-	// 			this.props.history.push("# ")
-	// 		}
-	 
 
     confirmAlert({
 		Title: 'Confirm to submit',
@@ -156,7 +139,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 						<div className="container-fluid">
 							<div className="row">
 								<div className="col-12 col-sm-5 col-lg-7 px-3 py-3">
-		<span className="user">{this.state.Username}</span>
+		<span className="user" style={{color:'red'}}>{this.state.firstName} </span>
 								</div>
 								<div className="col-5 col-sm-3 col-lg-2 border-left m-border px-3 py-3">
 									<div class="balance">

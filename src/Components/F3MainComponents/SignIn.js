@@ -457,7 +457,7 @@ class SignIn extends Component {
 
 	};
 
-	  handlelogin=async(e) =>{
+	  handlelogin=(e) =>{
 		e.preventDefault();
 		
 		if (this.validateForm()) {
@@ -474,7 +474,12 @@ class SignIn extends Component {
 			console.log('outside', user);
 			 
 	
-		const LoginUser=await Login(user);
+
+			Login(user).then(LoginUser=>{
+
+
+			
+		
 	        console.log('userdata', LoginUser)
 
 		 if(LoginUser.status==="ok"){
@@ -512,8 +517,11 @@ class SignIn extends Component {
 						 
 					}
 
-		 }
+		 }).catch(err=>{
+			 console.log('err',err)
+		 })
 		
+		}
 
 		
 

@@ -29,10 +29,21 @@ class GameLobby extends Component {
     })
 
   }
+ handleroom1=()=>{
+  this.props.history.push(`/Game/${1}`)
+ }
 
-  componentDidMount() {
+ handleroom2=()=>{
+  this.props.history.push(`/Game/${2}`)
+ }
+ handleroom3=()=>{
+  this.props.history.push(`/Game/${3}`)
+ }
+ handleroom4=()=>{
+  this.props.history.push(`/Game/${4}`)
+ }
 
-  }
+ 
 
   render() {
     return (
@@ -73,7 +84,7 @@ class GameLobby extends Component {
                         </div>
                       </div>
 
-                      <Link to="/" href="#" class="overlay" >
+                      <Link to="#" href="#" class="overlay"  onClick={this.handleroom1}>
 								Play Now!
 							</Link>
                     </div>
@@ -105,7 +116,7 @@ class GameLobby extends Component {
                       </div>
 
 
-                      <Link to="/" href="#" class="overlay" >
+                      <Link to="#" href="#" class="overlay"  onClick={this.handleroom2} >
 								Play Now!
 							</Link>
                     </div>
@@ -135,7 +146,7 @@ class GameLobby extends Component {
                       </div>
 
 
-                      <Link to="/" href="#" class="overlay" >
+                      <Link to="#" href="#" class="overlay"  onClick={this.handleroom3}>
 								Play Now!
 							</Link>
                     </div>
@@ -163,7 +174,7 @@ class GameLobby extends Component {
                           <img src={process.env.PUBLIC_URL + "/game_type_f3.png"} class="dies" />
                         </div>
                       </div>
-                      <Link to="/" href="#" class="overlay" >
+                      <Link to="#" href="#" class="overlay"  onClick={this.handleroom4}>
 								Play Now!
 							</Link>
                     </div>
