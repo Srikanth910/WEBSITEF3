@@ -96,7 +96,7 @@
  .bg-imgage {
          width: 1440px !important;
          height: 1024px !important;
-         background: url("../../assests//game/bgg1.jpeg");
+         /* background: url("../../assests//game/bgg1.jpeg"); */
          background-size: 100% 100%;
          background-repeat: no-repeat;
      } 
@@ -359,8 +359,9 @@
      .icon-position{
          position: absolute;
          position: absolute;
-         right: 14rem;
-         top: 1rem;
+         right: 2rem;
+         top: 5rem;
+     
      
      }
  
@@ -485,3 +486,19 @@ background: #ffffff;
     text-decoration: none !important;
 }
 
+
+
+.player-wrapper {
+    position: relative;
+   
+  
+  }
+   
+  .react-player {
+    position: absolute;
+   
+    left: 14rem;
+
+    width: 1440px !important;
+    height: 1024px !important;
+  }

@@ -7,12 +7,14 @@ import GameRoute from './Components/GaemRoute'
 import { Provider } from 'react-redux'
 
 import store from './Components/Redux/store'
+
 export default class App extends Component {
   render() {
     return (
       <div>
         
         <Provider store = {store}>
+        
         <Routing/>
         </Provider>
        

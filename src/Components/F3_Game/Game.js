@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import Modal from 'react-bootstrap/Modal';
+
 import {Link } from 'react-router-dom'
 import './f3game.css'
 import { withRouter } from 'react-router-dom'
 import { GameToken } from '../ServerApi/ServerApi';
+import ReactPlayer from 'react-player';
 // import {connect} from 'react-redux'
 const URL = 'wss://f3-gs.jaqk.in/rooms/85ec04b2-ec2f-49be-8840-363370431b7d';
 
@@ -418,24 +419,34 @@ this.setState({
         return (
 
 <div>
-{/* 
-         <Modal
-       show={this.state.showModal}
 
-                className="modal-90w"
-           onclose={this.state.close}
-                
+<div className='player-wrapper '>
 
-                
-             > */}
+ <ReactPlayer
+          className='react-player'
+          url='https://wowzaprod273-i.akamaihd.net/hls/live/1006352/11e3d238/playlist.m3u8'
+          controls={true}
+          playing={true}
+    
+        />
+        
+      </div>
+      <div>
 
 <div tabindex="-1"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" className="model-dialogview">
                 {/* <Modal.Header closeButton onClick={this.close}>
 
                 </Modal.Header> */}
                 <div className="container containergame">
+
+
+              
+
+
                     
-                    <div className="bg-imgage  d-flex align-content-end flex-wrap">
+                    {/* <div className="bg-imgage  d-flex align-content-end flex-wrap"> */}
+                    <div className="react-player  d-flex align-content-end flex-wrap">
+                    
                     <div className="col-12 d-flex justify-content-end icon-position">
 
                         <div><i className="fa fa-volume-up"></i></div>
@@ -524,6 +535,7 @@ this.setState({
                             </div>
 
                         </div>
+                        
                         <div className="col d-flex p-0">
                             {/* <div className="col-4">
 
@@ -857,14 +869,12 @@ this.setState({
 
 
                     </div>
-
-
-
+                  
 
                 </div>
                 </div>
-                {/* </Modal> */}
-                
+               
+</div>
 </div>
            
             

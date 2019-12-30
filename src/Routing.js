@@ -56,7 +56,7 @@ export default class Routing extends Component {
      
        <ProtectedRoute path ="/GameLobby" component={GameLobby}/>  
 
-       <Route path ='/Game/:id' component={Game}/>
+       <ProtectedRoute path ='/Game/:id' component={Game}/>
    
       </BrowserRouter>
 
