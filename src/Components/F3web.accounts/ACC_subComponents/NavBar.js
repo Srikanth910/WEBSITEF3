@@ -18,6 +18,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 			  Balance:'',
 			  Bonus:'',
 			push:''	,
+			firstName:'',
 			Username:'username',
 			Modelopen:''		  
 

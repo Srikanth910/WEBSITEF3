@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import roomIds from './HocModel/roomIds';
  class Roombuttons extends Component {
     constructor(props) {
         super(props)
@@ -57,6 +58,7 @@ import { connect } from "react-redux";
         console.log("proppp",this.props);
 
          console.log('ids', this.state.id)
+         console.log('hoc ids',this.props.id)
         return (
             <div>
               
@@ -160,4 +162,5 @@ import { connect } from "react-redux";
     }
 }
 
-export default connect(state => state, null)(withRouter(Roombuttons))
+export default withRouter(Roombuttons)
+// export default connect(state => state, null)(withRouter(Roombuttons))

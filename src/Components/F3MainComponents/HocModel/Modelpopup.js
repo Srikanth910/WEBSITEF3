@@ -45,6 +45,7 @@ return class Modelpopup extends Component {
             </div>
         )
     }
+    
 }
  } 
  export default Modelpopup;
