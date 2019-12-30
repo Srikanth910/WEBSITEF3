@@ -509,7 +509,7 @@ this.setState({
                                         </div>
                                         <div>
                                             <div className="bar-pad img-fluid">
-                                                <img className="image-bars img-fluid" src={process.env.PUBLIC_URL + "/black_b.png"} alt="" />
+                                                <img className="image-bars img-fluid" src={process.env.PUBLIC_URL + "/red_b.png"} alt="" />
                                             </div>
                                         </div>
                                         <div>
@@ -625,7 +625,7 @@ this.setState({
 
 
 
-                                        <img src={process.env.PUBLIC_URL + "/statistics.png"} className="statistic img-fluid" alt="" />
+                                        <img src={process.env.PUBLIC_URL + "/Statistics.png"} className="statistic img-fluid" alt="" />
                                     </div>
                                 }
 

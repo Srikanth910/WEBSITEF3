@@ -200,7 +200,7 @@ class GameLobby extends Component {
 <!-- Bottom --> */}
               <div class="bottom p-0 mb-auto d-flex justify-content-end align-items-center">
                 <div class="col-4">
-                  <img src={process.env.PUBLIC_URL + "/Balance.png"} class="bottom-layer" alt="" />
+                  <img src={process.env.PUBLIC_URL + "/balance.png"} class="bottom-layer" alt="" />
                 </div>
                 <div class="col-8">
                   <img src={process.env.PUBLIC_URL + "/lobby_area.png"} class="bottom-layer" alt="" />
