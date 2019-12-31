@@ -148,7 +148,7 @@ class GameLobby extends Component {
                     </div>
                     <div class="card-footer bg-light d-flex justify-content-between">
                       <img src={process.env.PUBLIC_URL + "flag_us.png"} />
-                      <p class="player_name"> EVA JOHNSSON</p>
+                      <h6 class="player_name"> EVA JOHNSSON</h6>
                       <div>
                         <img src={process.env.PUBLIC_URL + "/icon_players.png"} class="icon_players" />
                         <span class="player_bet">1000</span>
