@@ -51,28 +51,27 @@ export default class Documents extends Component {
 
    	 let formdata= new FormData();
        formdata.append("idFile",this.selectedFile);
-       formdata.append('idType',this.idDocument)
-   
+      
        
         
        console.log('kyc', formdata)
       
-   	// axios.post('https://f3-api.jaqk.in/web/upload-kyc', formdata,{
-    //     idType:this.state.idDocument,
-    //     headers: {
-    //         'Content-Type': 'multipart/form-data'
-    //     }
+   	axios.post('https://f3-api.jaqk.in/web/upload-kyc', formdata,{
+   
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
           
-    //    }
+       }
    
            
-   	// )
+   	)
 
-   	// .then(resp=>{
-   	// 	console.log('respnce',resp)
-   	// }).catch(error=>{
-   	// 	console.log('error',error)
-   	// })
+   	.then(resp=>{
+   		console.log('respnce',resp)
+   	}).catch(error=>{
+   		console.log('error',error)
+   	})
 
        
     }	

@@ -5,11 +5,11 @@ import './f3game.css'
 import { withRouter } from 'react-router-dom'
 import { GameToken } from '../ServerApi/ServerApi';
 import ReactPlayer from 'react-player';
-// import {connect} from 'react-redux'
+
 const URL = 'wss://f3-gs.jaqk.in/rooms/85ec04b2-ec2f-49be-8840-363370431b7d';
 
 
-const ws = new WebSocket(URL);
+var ws = null;
 
  class Game extends Component {
     
@@ -56,31 +56,10 @@ const ws = new WebSocket(URL);
    
 
     componentDidMount = () => {
-        this.open();
-        // this.setState({
-        //     showModal:true
-        // })
-    
-       
-        
-        const ws = new WebSocket(URL);
-
-
-        // Getdata().then(userGetdata => {
-        //     console.log('id', userGetdata.userId);
-        //     this.setState({
-        //         userId: userGetdata.userId,
-        //     })
-
-        // }).catch(err => {
-        //     console.log("error", err)
-        // })
-
-
-
-
-      GameToken().then(Token => {
-            // console.log('responce Token', Token);
+   
+ 
+ ws = new WebSocket(URL);
+        GameToken().then(Token => {
             this.setState({
                 accessToken: Token.accessToken
             })
@@ -88,64 +67,59 @@ const ws = new WebSocket(URL);
             console.log('error,', err)
         });
 
-
-
-
-
+        
         ws.onopen = () => {
-
-            console.log('access Token', this.state.accessToken)
-
-
             console.log(' connection established');
-
+           
+        
 
             ws.send(
                 JSON.stringify(
                     {
                         type: "join",
                         data: {
-                            "accessToken": this.state.accessToken,
+                            "accessToken":this.state.accessToken,
+                            
                             "roomId": this.props.match.params.id,
                         }
                     }));
+                    console.log('join token ', this.state.accessToken)
+
+
+
 
 
         };
+        
 
 
         ws.onmessage = (event) => {
             console.log("message send sever", event);
+            const jsonEvent = JSON.parse(event.data);
 
-
-            if (JSON.parse(event.data).type === "connection") {
+            if (jsonEvent.type === "connection") {
                 console.log('connectin evnet', event.data);
+
+                                     
             };
 
 
 
-            if (JSON.parse(event.data).type === "join-room") {
+            if (jsonEvent.type === "join-room-result") {
                 console.log('join room event', event.data)
-                console.log(" Join:", JSON.parse(event.data).data.room);
+                console.log(" Join:", jsonEvent.data.room);
 
-                const Joinroom = JSON.parse(event.data).data.room;
+                const Joinroom = jsonEvent.data.room;
                 this.setState({
                     roomId: Joinroom
-
                 });
-                // console.log('room number ', this.state.roomId)
+               
 
             };
 
 
-            // if (JSON.parse(event.data).type === "summary") {
-            //     console.log('summary data dispayed', (event.data));
-            // }
-
-        
-           if(JSON.parse(event.data).type==="betPlaced"){
-               console.log('betplaced data',(event.data))
-
+           if(jsonEvent.type==="betPlaced"){
+            //    console.log('betplaced data',(event.data))
            }
 
         };
@@ -169,6 +143,29 @@ const ws = new WebSocket(URL);
     };
    
 
+    handlechangebet = () => {
+        
+       
+        const { values, currentStepIndex } = this.state
+
+        console.log('bet values   ', values[currentStepIndex], this.state.number, this.state.roomId);
+        this.setState(preState => ({
+            //  balance : preState.balance - this.state.value,
+            handlerclick: null,
+            total: parseInt(preState.values[currentStepIndex]) + parseInt(preState.total),
+            value: 0,
+            balance: preState.balance - preState.values[currentStepIndex],
+        }))
+
+
+        
+            ws.send(JSON.stringify({ "type": "placeBet", data: { "betValue": parseInt(this.state.values[currentStepIndex]), "number": parseInt(this.state.number), "roomId": this.state.roomId } }));
+    
+
+ 
+     
+
+           }
 
     getInitialState() {
         return {
@@ -348,33 +345,8 @@ const ws = new WebSocket(URL);
         }
 
     }
-    handlechangebet = () => {
 
-
-       
-        const { values, currentStepIndex } = this.state
-
-
-
-
-        console.log('bet value   ', values[currentStepIndex], this.state.number);
-        this.setState(preState => ({
-            //  balance : preState.balance - this.state.value,
-            handlerclick: null,
-            total: parseInt(preState.values[currentStepIndex]) + parseInt(preState.total),
-            value: 0,
-            balance: preState.balance - preState.values[currentStepIndex],
-        }))
-
-
-        ws.send(JSON.stringify({ "type": "placeBet", data: { "betValue": parseInt(this.state.values[currentStepIndex]), "number": parseInt(this.state.number), "roomId": this.state.roomId } }));
-
-
-        // ws.send(JSON.stringify({"type":"PlaceBet", "number":this.state.number, "amount":this.state.balance ,"prev":localStorage.getItem('PlaceBet')}))
-
-        // // console.log(PlaceBet);
-        // ws.send(JSON.stringify({"type":"DiceRolled", "number":this.state.number,"amount":this.state.balance ,"prev":localStorage.getItem('DiceRolled')}))
-    }
+    
 
 
     handleInputChange = e => {
@@ -420,15 +392,19 @@ this.setState({
 
 <div>
 
+
 <div className='player-wrapper '>
 
- <ReactPlayer
+
+
+
+  <ReactPlayer
           className='react-player'
           url='https://wowzaprod273-i.akamaihd.net/hls/live/1006352/11e3d238/playlist.m3u8'
           controls={true}
           playing={true}
     
-        />
+        /> 
         
       </div>
       <div>

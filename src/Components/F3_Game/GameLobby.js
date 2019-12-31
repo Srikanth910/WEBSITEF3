@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import './f3game.css'
 import Modal from 'react-bootstrap/Modal';
 import { withRouter } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import ScriptTag from 'react-script-tag';
 
 class GameLobby extends Component {
 
@@ -47,17 +48,12 @@ class GameLobby extends Component {
 
   render() {
     return (
+
+
+
+
       <div>
-        {/* <Modal
-          show={this.state.showModal}
-
-          className="modal-90w"
-          onclose={this.state.close}
-
-
-
-        > */}
-
+        <ScriptTag isHydrating={true} type="text/javascript" src='//player.cloud.wowza.com/hosted/tpk9wdtc/wowza.js'  />
           {/* <Gamef3 closeevent={this.state.showmodel}/> */}
           <div class="container content">
 
@@ -152,7 +148,7 @@ class GameLobby extends Component {
                     </div>
                     <div class="card-footer bg-light d-flex justify-content-between">
                       <img src={process.env.PUBLIC_URL + "flag_us.png"} />
-                      <h6 class="player_name"> EVA JOHNSSON</h6>
+                      <p class="player_name"> EVA JOHNSSON</p>
                       <div>
                         <img src={process.env.PUBLIC_URL + "/icon_players.png"} class="icon_players" />
                         <span class="player_bet">1000</span>
