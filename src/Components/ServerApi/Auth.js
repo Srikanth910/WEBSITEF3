@@ -1,13 +1,15 @@
 const Auth = {
-    isAuthenticated: false,
+    // isAuthenticated localStorage.setItem('isAuth', false),
+    isAuth:'',
     authenticate() {
-      this.isAuthenticated = true;
+    
+ this.isAuth= localStorage.setItem('isAuth', true);
     },
     signout() {
-      this.isAuthenticated = false;
+       this.isAuth=localStorage.removeItem('isAuth');
     },
     getAuth() {
-        return this.isAuthenticated;
+        return this.isAuth;
       }
   };
 

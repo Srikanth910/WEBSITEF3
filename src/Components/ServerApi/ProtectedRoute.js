@@ -4,13 +4,17 @@ import {Route, Redirect} from 'react-router-dom'
 import Auth from './Auth';
 
  
- const ProtectedRoute = ({ component: Component, ...rest }) => (
+ const ProtectedRoute = ({ component: Component, ...rest }) => {
 
-	
+	const isAuth = localStorage.getItem('isAuth');
+	console.log('autheritcation', isAuth)
+
+
+	return(
 	<Route
 	  {...rest}
 	  render={props =>
-		Auth.getAuth() ? (
+		 isAuth? (
 		  <Component {...props} />
 		) : (
 		  <Redirect
@@ -27,7 +31,8 @@ import Auth from './Auth';
 		)
 	  }
 	/>
-  )
+	)
+	}
    ;
   
    export default ProtectedRoute;

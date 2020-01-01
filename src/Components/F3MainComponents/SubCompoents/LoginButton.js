@@ -6,14 +6,17 @@ import Modelpopup from '../HocModel/Modelpopup'
 import { Logout } from '../../ServerApi/ServerApi'
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 
+
  class LoginButton extends Component {
+     
 
     LogoutUser=()=>{
      console.log('logour')
      Logout().then(user=>{
        if(user.status==="ok"){
       
-        Auth.signout();
+        // Auth.signout();
+        
      NotificationManager.success('successful logout ');
     this.props.history.push('/');
        }else{
@@ -25,15 +28,18 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
  }
     
     render() {
+        const Islogged=localStorage.getItem('isAuth');
+        
+        console.log('login yes', Islogged)
         return (
             <div>
                 <NotificationContainer/>
-                {Auth.getAuth()===false &&
+                {Islogged==='false'||Islogged===null ?
 						
-						<Link to="" role="button" class="sign-in" data-toggle="modal" onClick={this.props.showmodel} data-target="#exampleModalCenter">Sign In / Register</Link>}
+						<Link to="" role="button" class="sign-in" data-toggle="modal" onClick={this.props.showmodel} data-target="#exampleModalCenter">Sign In / Register</Link>:null}
 
-{Auth.getAuth()===true &&
-						<Link to={'#'} role="button" class="sign-in" data-toggle="modal"  onClick={this.LogoutUser} data-target="#exampleModalCenter">Logout</Link>}
+{Islogged==='true' ?
+						<Link to={'#'} role="button" class="sign-in" data-toggle="modal"  onClick={this.LogoutUser} data-target="#exampleModalCenter">Logout</Link>:null}
 						
             </div>
         )

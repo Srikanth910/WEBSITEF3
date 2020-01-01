@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 
 import Auth from '../ServerApi/Auth';
 
-
 import Toast from 'light-toast';
 
 class SignIn extends Component {
@@ -16,7 +15,7 @@ class SignIn extends Component {
 
 		this.state = {
 
-			isLogged:false,
+			
 			Name: 'Login',
 		  login:'login',
 		  Register:'',
@@ -483,6 +482,12 @@ class SignIn extends Component {
 	        console.log('userdata', LoginUser)
 
 		 if(LoginUser.status==="ok"){
+			// localStorage.setItem('isAuth', true)
+
+		
+
+		
+			
 			
 			Toast.loading('please wait...',()=>{
 				this.props.history.push("/LobbyArena");
@@ -498,6 +503,7 @@ class SignIn extends Component {
 			isLogged: true,
 		
 			  }));
+			  localStorage.setItem('isAuth', this.state.isLogged)
 
 
 			})
@@ -728,7 +734,7 @@ class SignIn extends Component {
 
 
                                   
-	}
+	
 
 
 
@@ -760,7 +766,10 @@ class SignIn extends Component {
 									</div>
 									<div className="modal-body px-4">
 
-								<div>	<span style={{ color: 'red' }}>{this.state.error}</span></div>
+										
+												<div>	<span style={{ color: 'red' }}>{this.state.error}</span></div>
+									
+							
 
 
 										<form onSubmit={this.handlelogin}>

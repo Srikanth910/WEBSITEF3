@@ -24,6 +24,7 @@ import Changepassword from './Components/F3web.accounts/Editprofile/ChangePasswo
 import Game from './Components/F3_Game/Game'
 import GameLobby from './Components/F3_Game/GameLobby'
  
+const isLogged= localStorage.getItem('isAuth')
 export default class Routing extends Component {
 
 
@@ -37,6 +38,9 @@ export default class Routing extends Component {
         <Route path='/Faq' component={Faq} />
         <Route path='/TermsAndCondition' component={TermsAndCondition} />
         <Route path='/PrivacyPolicy' component={PrivacyPolicy} />
+       
+       
+        <Switch>
         <ProtectedRoute path='/LiveCasino' component={Livecasino} />
         
         <ProtectedRoute path='/Profile' component={Profile} />
@@ -57,7 +61,7 @@ export default class Routing extends Component {
        <ProtectedRoute path ="/GameLobby" component={GameLobby}/>  
 
        <ProtectedRoute path ='/Game/:id' component={Game}/>
-   
+       </Switch>
       </BrowserRouter>
 
 
