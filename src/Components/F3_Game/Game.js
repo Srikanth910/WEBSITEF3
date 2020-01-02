@@ -392,7 +392,9 @@ this.setState({
         console.log('id',this.props.match.params.id)
         return (
 
-<div className="content-body">
+<div>
+
+    
 
 
 <div className='player-wrapper '>
@@ -438,7 +440,7 @@ this.setState({
   <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 
-                        <div class="col p-0 d-flex align-items-end">
+                        <div class="col-3 p-0 d-flex align-items-end">
 
                             {this.state.lastroll &&
                                 <div >
@@ -519,7 +521,7 @@ this.setState({
 
                         </div>
                         
-                        <div className="col d-flex p-0">
+                        <div className="col d-flex p-0 justify-content-end">
                             {/* <div className="col-4">
 
 

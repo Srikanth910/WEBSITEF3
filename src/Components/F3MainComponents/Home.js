@@ -62,7 +62,7 @@ class Home extends Component {
 
 	handlebutton=()=>{
 		 console.log('data used')
-		if(this.state.userlogged==='ok'){
+		if(this.state.userlogged!=='ok'){
 			NotificationManager.info(' You are already logged in.','',1000);
 			
 			

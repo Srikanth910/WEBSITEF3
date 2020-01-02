@@ -55,7 +55,7 @@ class GameLobby extends Component {
       <div>
         <ScriptTag isHydrating={true} type="text/javascript" src='//player.cloud.wowza.com/hosted/tpk9wdtc/wowza.js'  />
           {/* <Gamef3 closeevent={this.state.showmodel}/> */}
-          <div class="container content">
+          <div class="container content ">
 
 
             <div class="bg-gamelobby align-content-center justify-content-around  flex-wrap">

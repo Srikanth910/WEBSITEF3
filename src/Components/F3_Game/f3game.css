@@ -67,15 +67,14 @@
 
                        /* changes */
 
-.content-body{
-background-color: lightgray;    
-}
+
 
 .containergame{
    max-width:1280px !important ;
    max-height: 720px !important;
    padding: 0;
-   font-family: 'Open Sans', sans-serif;
+
+
 
 
 
@@ -88,17 +87,19 @@ background-color: lightgray;
     font-size: 1.3rem;
     /* right: 11.4rem; */
     left: 3.4rem;
-    font-weight: 900;
+    font-weight: 800;
+
  }
- .totalbet {
+ .totalbet{
+    font-family: 'Open Sans', sans-serif;
     position: absolute;
     text-align: center;
+    font-weight: 800;
     right: 5rem;
-    top: 3rem;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 900;
-}
+    top: 2.8rem;
+    font-size: 1.6rem;
+  
+ }
 
  .bd-highlight{
      margin-left: 8.1rem !important;
@@ -160,6 +161,7 @@ background-color: lightgray;
     .max-bet{
         width: 667px !important;
         height: 69px;
+        padding: 0;
     }
     .statistic{
         width: 268px;
@@ -252,12 +254,13 @@ background-color: lightgray;
          }
          .value1{
             position: absolute;
-            right: 1.2rem;
+            right: 1rem;
             top: 0.5rem;
-            font-size: 1.3rem;
-            /* font-family: monospace; */
+            font-size: 1.5rem;
+            font-family: monospace;
             text-align: center;
             color: #be0a0a;
+        
         
          }
 
@@ -268,16 +271,25 @@ background-color: lightgray;
 
                               /* changes */
 
-        .bars {
+        /* .bars {
            bottom: 3rem;
            left: 6.3rem;
+       } */
+       .bars {
+           bottom: 3rem;
+           left: 5.3rem;
+           max-width: 28.5rem;
        }
-              
+               .chat-box > img{
+                   position: relative;
+                   left: 0.2rem;
+                   width: 37%;
+               }
 
-       .btn-grp{
-           position: relative;
-               left: 2rem;
-       }
+               .btn-grp {
+                   position: relative;
+                   left: 1.4rem;
+               }
     .bar{
         width: 74px;
         height: 403px;
@@ -404,23 +416,20 @@ background-color: lightgray;
 
 
     .max-bet-img{
-        max-width: 46% !important;
+       max-width: 47% !important;
     }
     .statistic-range-img{
-        max-width: 66.5% !important;
+        /* max-width: 66.5% !important; */
+   
+   max-width: 69.5% !important;
     }
     .chat-text{
-    
-            height: 313px;
-            position: relative;
-            overflow: hidden;
-            padding: 0;
-            top: 7rem;
-    }
-    .chat-box > img {
-    position: relative;
-    left: 1.2rem;
-    width: 37%;
+       height: 313px;
+       position: relative;
+       overflow: hidden;
+       padding: 0;
+       top: 7rem;
+       padding: 0 0 0 15px;
     }
     .img-view{
        /* width: 100%; */
@@ -451,25 +460,25 @@ background-color: lightgray;
 
         .bottom {
            position: relative;
-           top: 14.7rem;
+           top: 1.5rem;
            background: #ffffff;
           
       
         }
         
-   .bg-gamelobby{
+   /* .bg-gamelobby{
        max-width: 1440px !important;
        min-height: 1024px !important;
        background: black;
        background-size: 100% 100%;
        background-repeat: no-repeat;
-   }
+   } */
 
    .content{ 
-       max-width: 1440px !important;
-       min-height: 1024px !important;
+       max-width: 1280px !important;
+       min-height: 720px !important;
        padding: 0;
-       margin-top: 1rem;
+    
       
        background: black;
    
@@ -544,26 +553,27 @@ background: #ffffff;
    width: 1280px !important;
    height: 720px !important;
  }
+
  .number-bet-limit-box{
-    bottom: 1.79rem;
-    position: relative;
-    font-weight: 900;
-  }
-  .limit-value-1{
+   bottom: 1.69rem;
+   position: relative;
+   font-weight: 900;
+ }
+ .limit-value-1{
 color: #000;
-  }
-  .limit-value-2{
-      color: #01D250;
+ }
+ .limit-value-2{
+     color: #01D250;
 }
 .limit-value-3{
-   color: #000;   
+  color: #000;   
 }
 .limit-value-4{
-    color: #01D250;  
+   color: #01D250;  
 }
 .limit-value-5{
-    color: #ff0000;  
+   color: #ff0000;  
 }
 .limit-value-6{
-   color: #000;   
+  color: #000;   
 }
