@@ -150,6 +150,8 @@ var ws = null;
 
         console.log('bet values   ', values[currentStepIndex], this.state.number, this.state.roomId);
         this.setState(preState => ({
+          
+            
             //  balance : preState.balance - this.state.value,
             handlerclick: null,
             total: parseInt(preState.values[currentStepIndex]) + parseInt(preState.total),
@@ -390,7 +392,7 @@ this.setState({
         console.log('id',this.props.match.params.id)
         return (
 
-<div>
+<div className="content-body">
 
 
 <div className='player-wrapper '>
@@ -423,7 +425,7 @@ this.setState({
                     {/* <div className="bg-imgage  d-flex align-content-end flex-wrap"> */}
                     <div className="react-player  d-flex align-content-end flex-wrap">
                     
-                    <div className="col-12 d-flex justify-content-end icon-position">
+                    <div className="col-10 d-flex justify-content-end icon-position">
 
                         <div><i className="fa fa-volume-up"></i></div>
                         <div><i className="fa fa-cog"></i></div>
@@ -476,32 +478,37 @@ this.setState({
                                             <div className="bar-pad img-fluid">
 
                                                 <img className="image-bars img-fluid" src={process.env.PUBLIC_URL + "/dark_b.png"} alt="" />
-
+                                                 <span className="number-bet-limit-box limit-value-1">MAX</span>
                                             </div>
                                         </div>
                                         <div>
                                             <div className="bar-pad img-fluid">
                                                 <img className="image-bars img-fluid" src={process.env.PUBLIC_URL + "/yellow_b.png"} alt="" />
+                                                 <span className="number-bet-limit-box limit-value-2">6500</span>
                                             </div>
                                         </div>
                                         <div>
                                             <div className="bar-pad img-fluid">
                                                 <img className="image-bars img-fluid" src={process.env.PUBLIC_URL + "/blue_b.png"} alt="" />
+                                                 <span className="number-bet-limit-box limit-value-3">MAX</span>
                                             </div>
                                         </div>
                                         <div>
                                             <div className="bar-pad img-fluid">
                                                 <img className="image-bars img-fluid" src={process.env.PUBLIC_URL + "/purpul_b.png"} alt="" />
+                                                 <span className="number-bet-limit-box limit-value-4">10000</span>
                                             </div>
                                         </div>
                                         <div>
                                             <div className="bar-pad img-fluid">
                                                 <img className="image-bars img-fluid" src={process.env.PUBLIC_URL + "/red_b.png"} alt="" />
+                                                 <span className="number-bet-limit-box limit-value-5">700</span>
                                             </div>
                                         </div>
                                         <div>
                                             <div className="bar-pad img-fluid">
                                                 <img className="image-bars img-fluid" src={process.env.PUBLIC_URL + "/green_b.png"} alt="" />
+                                                 <span className="number-bet-limit-box limit-value-6">MAX</span>
                                             </div>
                                         </div>
 
@@ -520,7 +527,7 @@ this.setState({
                             <div>{this.state.ChatMessageData}</div>
                         </div> */}
 
-<div class="col-5 chat-text  flex-nowrap  text-light text-center">
+<div class="col-4 chat-text  flex-nowrap  text-light text-center">
           {/* <ul> */}
             {/* <li>text-1</li>
             <li>text-2</li>
@@ -550,7 +557,7 @@ this.setState({
 
 
 
-                            <div className="col-8 p-0 d-flex align-items-end statistic-range-img">
+                            <div className="col-9 p-0 d-flex align-items-end statistic-range-img">
 
 
 
@@ -642,7 +649,7 @@ this.setState({
 
 
 
-                                <div className="col-9 p-0 d-flex justify-content-end position-absolute bars">
+                                <div className="col-10 p-0 d-flex justify-content-end justify-content-between position-absolute bars">
                                     <div className="col-2">
 
                                         {this.state.handlerclick === "handlerclick" && <div className="sliderbg bar">
@@ -856,6 +863,9 @@ this.setState({
             
         )
     }
+
+
+
 }
 
 // export default connect(state => state.game , null)(withRouter(Game))

@@ -19,7 +19,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 			  Bonus:'',
 			push:''	,
 			firstName:'',
-			Username:'username',
+			userName:'',
 			Modelopen:''		  
 
 		 }
@@ -33,10 +33,11 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 		
 		
 	Balance().then(Userbalance=>{
-		// console.log('resp',Userbalance);
+		console.log('resp',Userbalance);
 		this.setState({
 		Balance:Userbalance.cash,
 		Bonus:Userbalance.bonus,
+		userName:Userbalance.username
 		})
 	})
 		
@@ -125,7 +126,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 						<div className="container-fluid">
 							<div className="row">
 								<div className="col-12 col-sm-5 col-lg-7 px-3 py-3">
-		<span className="user" >{this.props.firstName}{this.props.lastName} </span>
+		<span className="user" >{this.state.userName} </span>
 								</div>
 								<div className="col-5 col-sm-3 col-lg-2 border-left m-border px-3 py-3">
 									<div class="balance">

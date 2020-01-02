@@ -1,5 +1,4 @@
- 
- /* .modal-90w{
+/* .modal-90w{
     max-width: auto !important;
     max-height: auto !important;
      
@@ -31,474 +30,540 @@
      outline: 0;
  } */  */
  .close {
-     position: relative;
-     color: red;
-     top: 6rem;
-     text-decoration: none;
-     right: rem;
-     z-index: 3;
- }
- .close:hover {
-     color: #000;
-     text-decoration: none;
- }
- /* .modal-header {
-     display: -ms-flexbox;
-     display: flex;
-     -ms-flex-align: start;
-     align-items: flex-start;
-     -ms-flex-pack: justify;
-     justify-content: space-between;
-     padding: 1rem 1rem;
-     border-bottom: none;
-     border-top-left-radius: none;
-     border-top-right-radius: none;
- } */
-  
- .containergame{
-     max-width:1440px !important ;
-     max-height: 1024px !important;
-     padding: 0;
-  
+    position: relative;
+    color: red;
+    top: 6rem;
+    text-decoration: none;
+    right: rem;
+    z-index: 3;
+}
+.close:hover {
+    color: #000;
+    text-decoration: none;
+}
+/* .modal-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border-bottom: none;
+    border-top-left-radius: none;
+    border-top-right-radius: none;
+} */
  
+/* .containergame{
+    max-width:1440px !important ;
+    max-height: 1024px !important;
+    padding: 0;
  
- 
- 
- } 
- .balance_data{
-     position: absolute;
-     top: 2.8rem;
-     text-align: center;
-     font-family: monospace;
-     font-size: 1.6rem;
-     /* right: 11.4rem; */
-     left: 3.4rem;
- 
-  }
-  .totalbet{
-     font-family: monospace;
-     position: absolute;
-     text-align: center;
-     right: 9rem;
-     top: 2.6rem;
-     font-size: 1.6rem;
-   
-  }
- 
-  .bd-highlight{
-      margin-left: 8.1rem !important;
-  }
- .curser{
-     cursor: pointer;
- }
-
-
- .bg-imgage {
-         width: 1440px !important;
-         height: 1024px !important;
-         /* background: url("../../assests//game/bgg1.jpeg"); */
-         background-size: 100% 100%;
-         background-repeat: no-repeat;
-     } 
-     .left-btns{
-         width: 163px;
-         height: 64px;
-     }
-     .rgt-icon{
-         width: 48px;
-         height: 48px;
-     }
-     .number-btns{
-         /* width: 84px;
-         height: 80px; */
-         width: 76px;
-         height: 76px;
-     }
-     .place-btn{
-         /* width: 171px;
-         height: 146px; */
-         width: 171px;
-         height: 115px;
-         position: absolute;
-         bottom: 2rem;
-         right: 2rem;
-         /* position: absolute; */
-     }
-     .six-rolls{
-         width: 145px;
-         height: 424px;
-     }
-     .current-bt{
-         width: 191px;
-         /* width: 100%; */
-         height: 285px;
-     }
-     .max-bet{
-         width: 667px !important;
-         height: 69px;
-     }
-     .statistic{
-         width: 268px;
-         height: 313px;
-     }
-     .bar-pad{
-         background: url('../../assests/game/bet_pad.png');
-         width: 77px;
-         height: 46px;
-         background-repeat: no-repeat;
-         /* line-height: 300px; */
-         background-size: cover;
-         /* position: absolute; */
-         text-align: center;
-     }
-     .image-bars{
-         width: 77px;
-         height: 46px;
-     }
-     .click-number-text{
-         width: 222px;
-         height: 9px;
-     }
- 
-     
- .slider {
-     -webkit-appearance: none;
-     width: 323px;
-     height: 12px;
-     position: relative;
-     border-radius: 5px;
-     z-index: 1;
-     background: #ede6e6f0;
-     outline: none;
-     /* opacity: 0.7; */
-     transform: rotate(-90deg);
-     transition: opacity .2s;
-     bottom: m;
-     top: 9.5rem;
-     right: 8rem;
-         }
-     .slider:hover {
-             opacity: 1;
-         }
-     
-         .slider::-webkit-slider-thumb {
-             -webkit-appearance: none;
-             appearance: none;
-             width: 30px;
-             height: 30px;
-             border-radius: 50%;
-             background:url('../../assests/game/bar1.png');
-              /* background-color: #561013; */
-     cursor: pointer;
-              
-         }
-     
-         .slider::-moz-range-thumb {
-              width: 30px;
-             height: 30px;
-     
-             border-radius: 50%;
-              background:url('../../assests/game/bar1.png');
-              /* background-color: #561013; */
-     
-            
-         }
- 
-         
-         .sliderbg{
-             background-color: #ffffffd4;
-             height: 15rem;
-             top: 1rem;
-             width: 3rem;
-             position: relative;
-             right: 0rem;
-             border-radius: 10px;
-          /* background-image: url('../assests/Bet_range.png');
-          background-repeat: no-repeat; */
-            
-          }
-          .betvalue{
-             height: 36px;   
-             position: relative;
-             left: 0.1rem;
-             top: 0.2rem;
-          }
-          .value{
- 
-          }
-          .value1{
-             position: absolute;
-             right: 1rem;
-             top: 0.5rem;
-             font-size: 1.5rem;
-             font-family: monospace;
-             text-align: center;
-             color: #be0a0a;
-         
-         
-          }
- 
-          .bars{
-             bottom: 3rem;
-             left: 6.6rem;
-         }
-     .bar{
-         width: 71px;
-         height: 403px;
-         left: 0.6rem;
-     }
-     .pro-bars{
-         /* width: 100%; */ 
-         bottom: 3rem;
-         width: 100%;
-         height: 200px;
-     }
-     .progress-bar-vertical {
-         width: 24px;
-         height: auto;
-         float: left;
-         padding: 5px;
-     }
-       
-       .progress-bar-vertical .progress-bar {
-         width: 100%;
-         height: 0;
-         -webkit-transition: height 0.6s ease;
-         -o-transition: height 0.6s ease;
-         transition: height 0.6s ease;
-       }
-       .progress {
-         transform: rotate(180deg);
-         background: none;
-     }
-     .progress-bar{
-         border-radius: 12px;
-     }
- 
- 
-    .bar-1{
-     background: linear-gradient(to bottom, #34010E 0%, #A5022A 100%)
- }
- .bar-2{
-     background: linear-gradient(to bottom, #B0B305 0%, #E8EC06  100%)
- }
- .bar-3{
-     background: linear-gradient(to bottom, #037B9D 0%,  #0EA1D2 100%)
- }
- .bar-4{
-     background: linear-gradient(to top, #9406CA 0%, #7A079E 100%)
- }
- .bar-5{
-     background: linear-gradient(to bottom, #B8020C 0%, #F70100 100%)
- }
- .bar-6{
-     background: linear-gradient(to top, #04D04F 0%, #01D250 100%)
- }
- 
- .tip {
-     position: absolute;
-     /* right: 11rem; */
-     bottom: 2px;
-     text-align: center;
-     padding: 0 11px;
-     display: flex;
-     font-size: 16px;
-     font-weight: 900;
- }
- .tip-btn{
-     top: 16.4rem;
-     position: relative;
-     left: 5rem;
- 
-     font-size: 14px;
-     padding: 7px 14px;
-     color: white;
-     font-weight: 900;
-     border-radius: 13px;
-     border-style: none !important;
-     background: #ff0000 !important;
- }
- 
- 
- 
-     .sr-only{
-         position: relative;
-         font-size: 9px;
-      /* color: black; */
-      color: black;
-     font-weight: 900;
-         margin: 0;
-         overflow: hidden;
-         clip: rect(0, 0, 0, 0);
-         top: 6rem;
-        
-         transform: rotate(180deg);
-         width: 23px;
-         color: white;
-         height: 24px;
-         padding: 0;
-     }
-     .sr-only p{
-         margin-top: 6px;
-     }
-     .fa {
-   
-         color: white;
-         cursor: pointer;
-         padding: 5px;
-         margin: 10px;
-         border: 1px solid #525050;
-         border-radius: 50%;
-     }
-    
-     .icons{
-         height: 33px;
-         /* width: 100%; */
-         /* margin-right: 16px; */
-     }
-     .icon-position{
-         position: absolute;
-         position: absolute;
-         right: 2rem;
-         top: 5rem;
-     
-     
-     }
- 
- 
-     .max-bet-img{
-         max-width: 46% !important;
-     }
-     .statistic-range-img{
-         max-width: 58% !important;
-     }
-     .chat-text{
-     
-             height: 313px;
-             position: relative;
-             overflow: hidden;
-             padding: 0;
-             top: 7rem;
-     }
-     .img-view{
-        /* width: 100%; */
-        height: auto;
-    }
-     /* ul{
-         width: 100%;
-         list-style-type: none;
-         padding: 18px;
-         position: absolute;
-         bottom: 0px;
-         display: flex;
-         margin: 0;
-         flex-direction: column;
-     } */
-     
-     /* @media (min-width: 576px){
-         .modal-dialog {
-             
-                 max-width: 95%;
-                 margin: -3rem auto; 
-             
-          } 
-         } */
 
 
 
 
-         .bottom {
-            position: relative;
-            top: 14.7rem;
-            background: #ffffff;
-           
-       
-         }
-         
-    .bg-gamelobby{
-        max-width: 1440px !important;
-        min-height: 1024px !important;
-        background: black;
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-    }
+}  */
 
-    .content{ 
-        max-width: 1440px !important;
-        min-height: 1024px !important;
-        padding: 0;
-        margin-top: 1rem;
-       
-        background: black;
-    
-     }
-      
- .card-view{
-    width: 330px;
-    height: 173px;
-    margin-bottom: 0px;
+                       /* changes */
+
+.content-body{
+background-color: lightgray;    
+}
+
+.containergame{
+   max-width:1280px !important ;
+   max-height: 720px !important;
+   padding: 0;
+   font-family: 'Open Sans', sans-serif;
+
+
+
 } 
-.cards-section{
-    margin-bottom: 1rem;
-}
-.card-footer{
-    width: 330px;
-}
-.image-game-type{
-    display: inline-grid !important;
-    float:right;
-}
-.bet-place{
-    width: 80px;
-    height: 30px;
-}
-.dies{
-    width: 54px;
-    height: 51px;
-    padding: 4px;
-}
-.player_name{
+.balance_data{
+    position: absolute;
+    top: 2.8rem;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
+    /* right: 11.4rem; */
+    left: 3.4rem;
+    font-weight: 900;
+ }
+ .totalbet {
+    position: absolute;
+    text-align: center;
+    right: 5rem;
+    top: 3rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
     font-weight: 900;
 }
+
+ .bd-highlight{
+     margin-left: 8.1rem !important;
+ }
+.curser{
+    cursor: pointer;
+}
+
+
+.bg-imgage {
+        width: 1440px !important;
+        height: 1024px !important;
+        /* background: url("../../assests//game/bgg1.jpeg"); */
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    } 
+    .left-btns{
+        width: 163px;
+        height: 64px;
+    }
+    .rgt-icon{
+        width: 48px;
+        height: 48px;
+    }
+    .number-btns{
+        /* width: 84px;
+        height: 80px; */
+        width: 76px;
+        height: 76px;
+    }
+    .place-btn{
+        /* width: 171px;
+        height: 146px; */
+        width: 171px;
+        height: 115px;
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        /* position: absolute; */
+    }
+    .six-rolls{
+        width: 145px;
+        height: 424px;
+    }
+    /* .current-bt{
+        width: 191px;
+       
+        height: 285px;
+    } */
+
+
+                               /* changes */
+
+
+    .current-bt {
+       width: 200px;
+       height: 285px;
+   }
+    .max-bet{
+        width: 667px !important;
+        height: 69px;
+    }
+    .statistic{
+        width: 268px;
+        height: 313px;
+    }
+    .bar-pad{
+        background: url('../../assests/game/bet_pad.png');
+        width: 77px;
+        height: 46px;
+        background-repeat: no-repeat;
+        /* line-height: 300px; */
+        background-size: cover;
+        /* position: absolute; */
+        text-align: center;
+    }
+    .image-bars{
+        width: 77px;
+        height: 46px;
+    }
+    .click-number-text{
+        width: 222px;
+        height: 9px;
+    }
+
+    
+.slider {
+    -webkit-appearance: none;
+    width: 323px;
+    height: 12px;
+    position: relative;
+    border-radius: 5px;
+    z-index: 1;
+    background: #ede6e6f0;
+    outline: none;
+    /* opacity: 0.7; */
+    transform: rotate(-90deg);
+    transition: opacity .2s;
+    bottom: m;
+    top: 9.5rem;
+    right: 8rem;
+        }
+    .slider:hover {
+            opacity: 1;
+        }
+    
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background:url('../../assests/game/bar1.png');
+             /* background-color: #561013; */
+    cursor: pointer;
+             
+        }
+    
+        .slider::-moz-range-thumb {
+             width: 30px;
+            height: 30px;
+    
+            border-radius: 50%;
+             background:url('../../assests/game/bar1.png');
+             /* background-color: #561013; */
+    
+           
+        }
+
+        
+        .sliderbg{
+            background-color: #ffffffd4;
+            height: 15rem;
+            top: 1rem;
+            width: 3rem;
+            position: relative;
+            right: 1rem;
+            border-radius: 10px;
+         /* background-image: url('../assests/Bet_range.png');
+         background-repeat: no-repeat; */
+           
+         }
+         .betvalue{
+            height: 36px;   
+            position: relative;
+            left: 0.1rem;
+            top: 0.2rem;
+         }
+         .value{
+
+         }
+         .value1{
+            position: absolute;
+            right: 1.2rem;
+            top: 0.5rem;
+            font-size: 1.3rem;
+            /* font-family: monospace; */
+            text-align: center;
+            color: #be0a0a;
+        
+         }
+
+         /* .bars{
+            bottom: 3rem;
+            left: 6.6rem;
+        } */
+
+                              /* changes */
+
+        .bars {
+           bottom: 3rem;
+           left: 6.3rem;
+       }
+              
+
+       .btn-grp{
+           position: relative;
+               left: 2rem;
+       }
+    .bar{
+        width: 74px;
+        height: 403px;
+        /* left: 0.6rem; */
+    }
+    .pro-bars{
+        /* width: 100%; */ 
+        bottom: 3rem;
+        width: 100%;
+        height: 200px;
+    }
+    .progress-bar-vertical {
+        width: 24px;
+        height: auto;
+        float: left;
+        padding: 5px;
+    }
+      
+      .progress-bar-vertical .progress-bar {
+        width: 100%;
+        height: 0;
+        -webkit-transition: height 0.6s ease;
+        -o-transition: height 0.6s ease;
+        transition: height 0.6s ease;
+      }
+      .progress {
+        transform: rotate(180deg);
+        background: none;
+        /* padding: 0; */
+    }
+    .progress-bar{
+        border-radius: 12px;
+    }
+
+
+   .bar-1{
+    background: linear-gradient(to bottom, #34010E 0%, #A5022A 100%)
+}
+.bar-2{
+    background: linear-gradient(to bottom, #B0B305 0%, #E8EC06  100%)
+}
+.bar-3{
+    background: linear-gradient(to bottom, #037B9D 0%,  #0EA1D2 100%)
+}
+.bar-4{
+    background: linear-gradient(to top, #9406CA 0%, #7A079E 100%)
+}
+.bar-5{
+    background: linear-gradient(to bottom, #B8020C 0%, #F70100 100%)
+}
+.bar-6{
+    background: linear-gradient(to top, #04D04F 0%, #01D250 100%)
+}
+
+.tip {
+    position: absolute;
+    /* right: 11rem; */
+    bottom: 2px;
+    text-align: center;
+    padding: 0 11px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 900;
+}
+.tip-btn{
+    top: 16.4rem;
+    position: relative;
+    left: 5rem;
+
+    font-size: 14px;
+    padding: 7px 14px;
+    color: white;
+    font-weight: 900;
+    border-radius: 13px;
+    border-style: none !important;
+    background: #ff0000 !important;
+}
+
+
+
+    .sr-only{
+        position: relative;
+        font-size: 9px;
+     /* color: black; */
+     color: black;
+    font-weight: 900;
+        margin: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        top: 6rem;
+       
+        transform: rotate(180deg);
+        width: 23px;
+        color: white;
+        height: 24px;
+        padding: 0;
+    }
+    .sr-only p{
+        margin-top: 6px;
+    }
+    .fa {
+  
+        color: white;
+        cursor: pointer;
+        padding: 5px;
+        margin: 10px;
+        border: 1px solid #525050;
+        border-radius: 50%;
+    }
+   
+    .icons{
+        height: 33px;
+        /* width: 100%; */
+        /* margin-right: 16px; */
+    }
+    .icon-position{
+        position: absolute;
+        position: absolute;
+        right: 2rem;
+        top: 1rem;
+    
+    
+    }
+
+
+    .max-bet-img{
+        max-width: 46% !important;
+    }
+    .statistic-range-img{
+        max-width: 66.5% !important;
+    }
+    .chat-text{
+    
+            height: 313px;
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+            top: 7rem;
+    }
+    .chat-box > img {
+    position: relative;
+    left: 1.2rem;
+    width: 37%;
+    }
+    .img-view{
+       /* width: 100%; */
+       height: auto;
+   }
+    /* ul{
+        width: 100%;
+        list-style-type: none;
+        padding: 18px;
+        position: absolute;
+        bottom: 0px;
+        display: flex;
+        margin: 0;
+        flex-direction: column;
+    } */
+    
+    /* @media (min-width: 576px){
+        .modal-dialog {
+            
+                max-width: 95%;
+                margin: -3rem auto; 
+            
+         } 
+        } */
+
+
+
+
+        .bottom {
+           position: relative;
+           top: 14.7rem;
+           background: #ffffff;
+          
+      
+        }
+        
+   .bg-gamelobby{
+       max-width: 1440px !important;
+       min-height: 1024px !important;
+       background: black;
+       background-size: 100% 100%;
+       background-repeat: no-repeat;
+   }
+
+   .content{ 
+       max-width: 1440px !important;
+       min-height: 1024px !important;
+       padding: 0;
+       margin-top: 1rem;
+      
+       background: black;
+   
+    }
+     
+.card-view{
+   width: 330px;
+   height: 173px;
+   margin-bottom: 0px;
+} 
+.cards-section{
+   margin-bottom: 1rem;
+}
+.card-footer{
+   width: 330px;
+}
+.image-game-type{
+   display: inline-grid !important;
+   float:right;
+}
+.bet-place{
+   width: 80px;
+   height: 30px;
+}
+.dies{
+   width: 54px;
+   height: 51px;
+   padding: 4px;
+}
+.player_name{
+   font-weight: 900;
+}
 .icon_players{
-    width: 41px;
-    /* background: #9c0f1c; */
-    height: 22px;
-    padding: 2px;
+   width: 41px;
+   /* background: #9c0f1c; */
+   height: 22px;
+   padding: 2px;
 }
 
 .player_bet{
-    font-weight: 800;
-    color: #9c0f1c;
+   font-weight: 800;
+   color: #9c0f1c;
 }
 .bottom_div{
-    position: relative;
-    top: 10.7rem;
+   position: relative;
+   top: 10.7rem;
 background: #ffffff;
 }
 .bottom-layer{
-    margin:1rem 10px 0;
+   margin:1rem 10px 0;
 }
 .cardcursor{
-    cursor: pointer;
+   cursor: pointer;
 }
 .list-style{
-    text-decoration: none !important;
+   text-decoration: none !important;
 }
 
 
 
 .player-wrapper {
-    position: relative;
-   
+   position: relative;
   
-  }
-   
-  .react-player {
-    position: absolute;
-   
-    left: 14rem;
+ 
+ }
+  
+ .react-player {
+   position: absolute;
+  
+   left: 20rem;
 
-    width: 1440px !important;
-    height: 1024px !important;
+   width: 1280px !important;
+   height: 720px !important;
+ }
+ .number-bet-limit-box{
+    bottom: 1.79rem;
+    position: relative;
+    font-weight: 900;
   }
+  .limit-value-1{
+color: #000;
+  }
+  .limit-value-2{
+      color: #01D250;
+}
+.limit-value-3{
+   color: #000;   
+}
+.limit-value-4{
+    color: #01D250;  
+}
+.limit-value-5{
+    color: #ff0000;  
+}
+.limit-value-6{
+   color: #000;   
+}

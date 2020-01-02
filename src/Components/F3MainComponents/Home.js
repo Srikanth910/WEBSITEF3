@@ -90,6 +90,15 @@ class Home extends Component {
 		}
 	}
 
+	handlelivebutton=()=>{
+		if(this.state.userlogged==='ok'){
+			this.props.history.push('/LiveCasino')
+		}else{
+			NotificationManager.error('please login ','',1000);
+		
+		}
+
+	}
 
 	render() {
 
@@ -123,9 +132,9 @@ class Home extends Component {
 									</li>
 								</ul>
 								<ul className="navbar-nav ml-5 mr-auto">
-									<li className="nav-item " >
+									<li className="nav-item " onClick={this.handlelivebutton} >
 
-										<Link className="nav-link " Link to={'/LiveCasino'} >Live Casino</Link>
+										<Link className="nav-link " to ={'#'}>Live Casino</Link>
 									</li>
 									<li className="nav-item">
 										<Link className="nav-link " Link to={'/FAq'}>Faq</Link>

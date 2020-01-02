@@ -2,6 +2,8 @@ import React, { Component } from 'react'
  import {Link}from  'react-router-dom'
 
 export default class Footer extends Component {
+
+	
     render() {
         return (
             <div>
@@ -15,8 +17,8 @@ export default class Footer extends Component {
 							<li className="nav-item">
 								<Link className="nav-link " Link to={'/About'}>About Us</Link>
 							</li>
-							<li className="nav-item">
-								<Link className="nav-link " Link to={'/LiveCasino'}>Live Casino</Link>
+							<li className="nav-item" onClick={this.handlelivebutton}>
+								<Link className="nav-link "  to={'#'}>Live Casino</Link>
 							</li>
 							<li className="nav-item">
 								<Link className="nav-link " Link to={'/FAQ'}>Faq</Link>
