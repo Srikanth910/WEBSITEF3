@@ -8,15 +8,21 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 
  class LoginButton extends Component {
+     constructor(props) {
+         super(props)
+     
+         this.state = {
+             
+         }
+     }
      
 
     LogoutUser=()=>{
      console.log('logour')
      Logout().then(user=>{
        if(user.status==="ok"){
-      
-        // Auth.signout();
-        
+        localStorage.removeItem('status');
+   
      NotificationManager.success('successful logout ');
     this.props.history.push('/');
        }else{
@@ -28,17 +34,17 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
  }
     
     render() {
-        const Islogged=localStorage.getItem('isAuth');
+        var Userlogged=localStorage.getItem('status');
         
-        console.log('login yes', Islogged)
+        console.log('login yes', Userlogged)
         return (
             <div>
                 <NotificationContainer/>
-                {Islogged==='false'||Islogged===null ?
+                {Userlogged==='false'||Userlogged===null ?
 						
 						<Link to="" role="button" class="sign-in" data-toggle="modal" onClick={this.props.showmodel} data-target="#exampleModalCenter">Sign In / Register</Link>:null}
 
-{Islogged==='true' ?
+{Userlogged==="ok" ?
 						<Link to={'#'} role="button" class="sign-in" data-toggle="modal"  onClick={this.LogoutUser} data-target="#exampleModalCenter">Logout</Link>:null}
 						
             </div>

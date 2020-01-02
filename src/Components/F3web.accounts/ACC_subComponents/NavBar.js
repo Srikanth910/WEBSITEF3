@@ -76,8 +76,8 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 						
 					})
 				
-					localStorage.removeItem('isAuth');
-					localStorage.setItem('isAuth',this.state.isLogged)
+					localStorage.removeItem('status');
+					// localStorage.setItem('isAuth',this.state.isLogged)
 		
 				
 					NotificationManager.success('You have successfully logged out', '',2000)

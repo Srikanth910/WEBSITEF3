@@ -204,81 +204,7 @@ class SignIn extends Component {
 		let errors = {};
 		let Registervalide = true;
 
-		// if (!fields["username"]) {
-		// 	Registervalide = false;
-		// 	errors["username"] = "*Please enter your username.";
-		// }
-
-		// if (typeof fields["username"] !== "undefined") {
-		// 	if (!fields["username"].match(/^[a-zA-Z0-9]+$/)) {
-		// 		Registervalide = false;
-		// 		errors["username"] = "*Please enter fields.";
-		// 	}
-		// }
-
-
-
-
-		// if (!fields["email"]) {
-		// 	Registervalide = false;
-		// 	errors["email"] = "*Please enter your email-ID.";
-		// }
-
-		// if (typeof fields["email"] !== "undefined") {
-		// 	//regular expression for email validation
-		// 	var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-		// 	if (!pattern.test(fields["email"])) {
-		// 		Registervalide = false;
-		// 		errors["email"] = "*Please enter valid email-ID.";
-		// 	}
-		// };
-
-
-		// if (!fields["password"]) {
-		// 	Registervalide = false;
-		// 	errors["password"] = "*Please enter your password.";
-		// }
-
-		// if (typeof fields["password"] !== "undefined") {
-		// 	if (!fields["password"].match(/^[a-zA-Z0-9]+$/)) {
-		// 		Registervalide = false;
-		// 		errors["password"] = "*Please enter   pasword.";
-		// 	}
-		// };
-
-
-		// if (!fields["Conform_password"]) {
-		// 	Registervalide = false;
-		// 	errors["Conform_password"] = "*Please enter your password.";
-		// }
-
-
-
-
-
-		// if (typeof fields["Conform_password"] !== "undefined") {
-		// 	if (!fields["Conform_password"].match(/^[a-zA-Z0-9]+$/)) {
-		// 		Registervalide = false;
-		// 		errors["Conform_password"] = "*Please enter  Conform_password.";
-		// 	}
-
-
-
-		// 	if (fields["password"] != fields["Conform_password"]) {
-		// 		errors["Conform_password"] = "*Please password do not match.";
-		// 		Registervalide = false;
-		// 	}
-		// 	// return true;.. 
-		// };
-
-
-		// if (!fields["currency"]) {
-		// 	Registervalide = false;
-		// 	errors["currency"] = "*Please select your Currency.";
-		// };
-
-
-
+	
 		if (!fields["first_name"]) {
 			Registervalide = false;
 			errors["first_name"] = "*Please enter your firstName.";
@@ -424,9 +350,6 @@ class SignIn extends Component {
 	handlechange = (e, ) => {
 
 
-		// this.setState({
-
-		// 	[event.target.name]: event.target.value,
 
 		let fields = this.state.fields;
 		fields[e.target.name] = e.target.value;
@@ -477,17 +400,11 @@ class SignIn extends Component {
 			Login(user).then(LoginUser=>{
 
 
-			
+			localStorage.setItem('status',LoginUser.status)
 		
 	        console.log('userdata', LoginUser)
 
 		 if(LoginUser.status==="ok"){
-			// localStorage.setItem('isAuth', true)
-
-		
-
-		
-			
 			
 			Toast.loading('please wait...',()=>{
 				this.props.history.push("/LobbyArena");
@@ -500,10 +417,10 @@ class SignIn extends Component {
 			
 			Auth.authenticate(()=>{
 			this.setState(() => ({
-			isLogged: true,
+		
 		
 			  }));
-			  localStorage.setItem('isAuth', this.state.isLogged)
+	
 
 
 			})

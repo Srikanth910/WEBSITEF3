@@ -6,15 +6,15 @@ import Auth from './Auth';
  
  const ProtectedRoute = ({ component: Component, ...rest }) => {
 
-	const isAuth = localStorage.getItem('isAuth');
-	console.log('autheritcation', isAuth)
+	const status = localStorage.getItem('status');
+	console.log('autheritcation', status)
 
 
 	return(
 	<Route
 	  {...rest}
 	  render={props =>
-		 isAuth? (
+		 status==="ok"? (
 		  <Component {...props} />
 		) : (
 		  <Redirect

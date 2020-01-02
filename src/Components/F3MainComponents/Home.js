@@ -15,7 +15,7 @@ import { Logout } from '../ServerApi/ServerApi';
 import LoginButton from './SubCompoents/LoginButton';
 
 
-const islogged= localStorage.getItem('isAuth')
+
 
 class Home extends Component {
 
@@ -23,7 +23,7 @@ class Home extends Component {
 		super(props)
 
 		this.state = {
-			userlogged: false,
+			userlogged:localStorage.getItem('status'),
 			message: [],
 			error: [],
 			matchdata: '',
@@ -75,13 +75,14 @@ class Home extends Component {
 
 	handlebutton=()=>{
 		 console.log('data used')
-		if(!localStorage.getItem('isAuth')){
-			this.props.showmodel();
-		
-		
-		}else{
+		if(this.state.userlogged==='ok'){
 			NotificationManager.info(' You are already logged in.','',2000);
 			
+			
+		}else{
+		
+			
+			this.props.showmodel();
 			
 		}
 
@@ -91,13 +92,14 @@ class Home extends Component {
 	handleDeposite = () => {
 
 
-		if (localStorage.getItem('isAuth')) {
+		if (this.state.userlogged==='ok') {
 			this.props.history.push('/Deposit')
 
 		} else {
-			NotificationManager.error('please login ','',1000,()=>{
-			this.props.showmodel();
-			});
+			NotificationManager.error('please login ','',1000);
+			
+		
+		
 		}
 	}
 
@@ -105,6 +107,7 @@ class Home extends Component {
 	render() {
 
 
+		console.log('isAuther', this.state.userlogged)
 
 		return (
 			<div>
