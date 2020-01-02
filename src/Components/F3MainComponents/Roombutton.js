@@ -41,24 +41,21 @@ import roomIds from './HocModel/roomIds';
         //     payload:2,
         //     history:this.props.history
         // })
-        window.open(`/Game/${2}`)
+        this.props.history.push(`/Game/${2}`)
 
        
     }
     handleid3=()=>{
-        window.open(`/Game/${3}`)
+        this.props.history.push(`/Game/${3}`)
 
     
     }
     handleid4=()=>{
-        window.open(`/Game/${4}`)
+        this.props.history.push(`/Game/${4}`)
 
     }
     render() {
-        console.log("proppp",this.props);
-
-         console.log('ids', this.state.id)
-         console.log('hoc ids',this.props.id)
+      
         return (
             <div>
               
