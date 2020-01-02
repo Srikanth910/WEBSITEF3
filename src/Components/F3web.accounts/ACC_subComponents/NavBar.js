@@ -41,15 +41,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 	})
 		
 
-	Getdata().then(userdata=>{
-		console.log('profile' , userdata.firstName)
-		this.setState({
-		firstname:userdata.firstName,
-		
-		})
-	}).catch(error=>{
-		console.log('error',error)
-	})
+	
 
 
 
@@ -61,7 +53,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 
     confirmAlert({
 		Title: 'Confirm to submit',
-		message: 'Are you sure  Logout',
+		message: "Are you sure you want to Logout..?",
 		buttons: [
 		  {
 			label: 'Yes',
@@ -84,7 +76,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 					
 
 			
-					Auth.signout()
+			
 					
 
 					setTimeout(()=>{
@@ -117,27 +109,12 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 		
 	
 		
-	// 	  Logout().then(resp=>{
-	// 		console.log('responce',resp)
-	// 		if(resp.status==="ok"){
-
-	// 	alert('logout succuss')
-	// 	this.props.history.push('/')
-
-		
-	// 	}else{
-			
-	// 		this.props.history.push("# ")
-	// 	}
-	//    }).catch(err=>{
-	// 	   console.log('error',err)
-	//    })
-	
-
+	// 
 	  
 
 
     render() {
+		console.log('username', this.props.firstName,this.props.lastName)
         return (
             
 				
@@ -148,7 +125,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 						<div className="container-fluid">
 							<div className="row">
 								<div className="col-12 col-sm-5 col-lg-7 px-3 py-3">
-		<span className="user" style={{color:'red'}}>{this.state.firstName} </span>
+		<span className="user" >{this.props.firstName}{this.props.lastName} </span>
 								</div>
 								<div className="col-5 col-sm-3 col-lg-2 border-left m-border px-3 py-3">
 									<div class="balance">

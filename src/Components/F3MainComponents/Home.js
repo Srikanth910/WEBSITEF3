@@ -60,23 +60,10 @@ class Home extends Component {
 
 
 
-	// openModal=(e)=> {   
-	// 	console.log('hello')
-	// 	 e.preventDefault();
-	// 	 this.setState({modalopen: true});
-	//    }
-
-	//  closeModal=(e)=> {
-
-
-	// 	 this.setState({modalopen: false});
-	//    }
-
-
 	handlebutton=()=>{
 		 console.log('data used')
 		if(this.state.userlogged==='ok'){
-			NotificationManager.info(' You are already logged in.','',2000);
+			NotificationManager.info(' You are already logged in.','',1000);
 			
 			
 		}else{
@@ -107,7 +94,6 @@ class Home extends Component {
 	render() {
 
 
-		console.log('isAuther', this.state.userlogged)
 
 		return (
 			<div>

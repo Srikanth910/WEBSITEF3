@@ -155,25 +155,7 @@ console.log('called component	')
 	
 	 }
 
-	//  handlelogout=()=>{
-		  
-	// 	Logout().then(resp=>{
-	// 		console.log('responce',resp)
-	// 			if(resp.status==200){
-	// 		alert('logout succuss')
-	// 		   this.props.history.push("/")
-	// 		}else{
-				
-	// 			this.props.history.push("#  ")
-	// 		}
-	// 	   }).catch(err=>{
-	// 		   console.log('error',err)
-	// 	   })
-        
-    
-		
-	//  } 
-
+	
 
 
     render() {
@@ -189,7 +171,7 @@ console.log('called component	')
 
 
 				<div className="col-12 col-lg-9 px-0">
-                    <NavBar/>
+                    <NavBar  firstName ={this.state.first_name}  lastName={this.state.last_name}/>
 					
 
 					<div className="gray-bg">

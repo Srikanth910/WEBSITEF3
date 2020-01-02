@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import roomIds from './HocModel/roomIds';
  class Roombuttons extends Component {
@@ -67,9 +67,9 @@ import roomIds from './HocModel/roomIds';
                             <img src={process.env.PUBLIC_URL + "/host_g1..png"} className="img-fluid" alt="..." />
                             <div className="price">$10</div>
                             <span className="dice"></span>
-                            <a href="#" className="overlay" onClick={this.handleid1}>
+                            <Link to ="#"  className="overlay" onClick={this.handleid1}>
                                 Play Now!
-                    </a>
+                    </Link>
                         </div>
 
                         <div className="green-bg px-2 py-2">
@@ -89,9 +89,9 @@ import roomIds from './HocModel/roomIds';
                             <img src={process.env.PUBLIC_URL + "/host_g2.png"} className="img-fluid" alt="..." />
                             <div className="price">$10</div>
                             <span className="dice"></span>
-                            <a href="#" className="overlay" onClick={this.handleid2}>
+                            <Link to="#" className="overlay" onClick={this.handleid2}>
                                 Play Now!
-                    </a>
+                    </Link>
                         </div>
                         <div className="green-bg px-2 py-2">
                             <div className="row">
@@ -110,9 +110,9 @@ import roomIds from './HocModel/roomIds';
                             <img src={process.env.PUBLIC_URL + "/host_g3.png"} className="img-fluid" alt="..." />
                             <div className="price">$10</div>
                             <span className="dice"></span>
-                            <a href="#" className="overlay" onClick={this.handleid3} >
+                            <Link to ="#" className="overlay" onClick={this.handleid3} >
                                 Play Now!
-                    </a>
+                    </Link>
                         </div>
                         <div className="green-bg px-2 py-2">
                             <div className="row">
@@ -131,9 +131,9 @@ import roomIds from './HocModel/roomIds';
                             <img src={process.env.PUBLIC_URL + "/host_g4.png"} className="img-fluid" alt="..." />
                             <div className="price">$10</div>
                             <span className="dice"></span>
-                            <a href="#" className="overlay" onClick={this.handleid4}>
+                            <Link to ="#"className="overlay" onClick={this.handleid4}>
                                 Play Now!
-                    </a>
+                    </Link>
                         </div>
                         <div className="green-bg px-2 py-2">
                             <div className="row">

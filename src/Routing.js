@@ -24,6 +24,17 @@ import Changepassword from './Components/F3web.accounts/Editprofile/ChangePasswo
 import Game from './Components/F3_Game/Game'
 import GameLobby from './Components/F3_Game/GameLobby'
  
+
+
+
+
+
+
+const NotFound = () => {
+  return (
+    <h3>404 - Not found</h3>
+  );
+};
 const isLogged= localStorage.getItem('isAuth')
 export default class Routing extends Component {
 
@@ -61,6 +72,7 @@ export default class Routing extends Component {
        <ProtectedRoute path ="/GameLobby" component={GameLobby}/>  
 
        <ProtectedRoute path ='/Game/:id' component={Game}/>
+       <Route path="*" component={NotFound} />
        </Switch>
       </BrowserRouter>
 

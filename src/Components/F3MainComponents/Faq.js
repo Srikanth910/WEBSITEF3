@@ -279,7 +279,7 @@ import LoginButton from './SubCompoents/LoginButton'
                                     </h5>
                                 </div>
                                 <div id="collapseTwelve" className="accordion_body  slide collapse" aria-labelledby="headingTwelve" data-parent="#accordion4">
-                                    <div className="card-body content">
+                                    <div className="card-body ">
                                         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
                                         3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. 
                                         Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. 
@@ -411,7 +411,7 @@ import LoginButton from './SubCompoents/LoginButton'
                                     </h5>
                                 </div>
                                 <div id="collapseTwelve" className="accordion_body  slide collapse" aria-labelledby="headingTwelve" data-parent="#accordion4">
-                                    <div className="card-body content">
+                                    <div className="card-body ">
                                         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
                                         3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. 
                                         Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. 

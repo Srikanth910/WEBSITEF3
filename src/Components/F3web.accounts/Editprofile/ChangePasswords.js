@@ -134,8 +134,9 @@ return ChangePasswordvalid;
                     NotificationManager.success(' you have successfully changed your password','',2000);
 
                     setTimeout(()=>{
-                        Auth.signout();
+                     localStorage.removeItem('status')
                         this.props.history.push('/')
+                       
                     },2000)
                     
                 }else{
@@ -145,7 +146,7 @@ return ChangePasswordvalid;
                     })
                     NotificationManager.error(this.state.passwordError,'',5000);
                 }
-                console.log('changepassword',passwordresp)
+            
             }).catch(err=>console.log(err))
             
 

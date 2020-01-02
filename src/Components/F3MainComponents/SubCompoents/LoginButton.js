@@ -23,10 +23,10 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
        if(user.status==="ok"){
         localStorage.removeItem('status');
    
-     NotificationManager.success('successful logout ');
+     NotificationManager.success('You have successfully logged out','',1000);
     this.props.history.push('/');
        }else{
-        NotificationManager.error('try again  ');
+        NotificationManager.error('try again  ','',1000);
 
        }
          
@@ -36,7 +36,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
     render() {
         var Userlogged=localStorage.getItem('status');
         
-        console.log('login yes', Userlogged)
+        
         return (
             <div>
                 <NotificationContainer/>

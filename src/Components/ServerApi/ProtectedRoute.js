@@ -7,7 +7,7 @@ import Auth from './Auth';
  const ProtectedRoute = ({ component: Component, ...rest }) => {
 
 	const status = localStorage.getItem('status');
-	console.log('autheritcation', status)
+	
 
 
 	return(

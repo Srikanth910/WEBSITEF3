@@ -24,7 +24,7 @@ import { Provider } from 'react-redux'
               this.setState({
                   id:2
               })
-              window.open('/GameLobby')
+              this.props.history.push('/GameLobby')
           }
 
         
