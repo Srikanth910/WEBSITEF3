@@ -31,7 +31,7 @@ import GameLobby from './Components/F3_Game/GameLobby'
 
 
 
-const isLogged= localStorage.getItem('isAuth')
+
 export default class Routing extends Component {
 
 

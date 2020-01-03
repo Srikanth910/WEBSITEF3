@@ -544,15 +544,22 @@ background: #ffffff;
   
  
  }
-  
+
  .react-player {
+    position: absolute;
+ 
+    width: 1280px !important;
+    height: 720px !important;
+}
+  
+ /* .react-player {
    position: absolute;
   
    left: 20rem;
 
    width: 1280px !important;
    height: 720px !important;
- }
+ } */
 
  .number-bet-limit-box{
    bottom: 1.69rem;
@@ -576,4 +583,22 @@ color: #000;
 }
 .limit-value-6{
   color: #000;   
+}
+
+/* model */
+.modal-width{
+    right: 1rem;
+}
+
+@media (min-width: 576px){
+.modal-90w {
+    max-width: 79rem;
+    margin: 1.75rem auto;
+}
+}
+
+.modal-content {
+    background-color: none !important;
+    border:unset;
+    border-radius: unset;
 }

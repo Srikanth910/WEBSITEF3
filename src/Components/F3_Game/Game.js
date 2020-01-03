@@ -5,6 +5,7 @@ import './f3game.css'
 import { withRouter } from 'react-router-dom'
 import { GameToken } from '../ServerApi/ServerApi';
 import ReactPlayer from 'react-player';
+import Modal from 'react-bootstrap/Modal';
 
 const URL = 'wss://f3-gs.jaqk.in/rooms/85ec04b2-ec2f-49be-8840-363370431b7d';
 
@@ -53,10 +54,41 @@ var ws = null;
 
 
     
+
+    getInitialState() {
+        return {
+            
+            showModal: false,
+
+
+        };
+    }
+   
+    close = () => {
+        this.setState({
+            showModal: false,
+            setShow: false
+
+        });
+        // window.location.href = "http://localhost:8000/LiveCasino"
+    }
+
+    open = () => {
+        console.log('open')
+        this.setState({
+            showModal: true,
+            setShow: true
+        });
+
+    }
+
+
+
+    
    
 
     componentDidMount = () => {
-   
+   this.open();
  
  ws = new WebSocket(URL);
         GameToken().then(Token => {
@@ -392,9 +424,22 @@ this.setState({
         console.log('id',this.props.match.params.id)
         return (
 
+
+
+
 <div>
 
     
+<Modal
+                show={this.state.showModal}
+
+           onclose={this.state.close}
+           dialogClassName="modal-90w"
+
+           className="model-dialog"
+
+                
+            >
 
 
 <div className='player-wrapper '>
@@ -413,7 +458,7 @@ this.setState({
       </div>
       <div>
 
-<div tabindex="-1"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" className="model-dialogview">
+
                 {/* <Modal.Header closeButton onClick={this.close}>
 
                 </Modal.Header> */}
@@ -858,8 +903,8 @@ this.setState({
 
                 </div>
                 </div>
-               
-</div>
+        
+</Modal>
 </div>
            
             

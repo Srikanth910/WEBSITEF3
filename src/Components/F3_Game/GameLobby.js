@@ -3,7 +3,8 @@ import './f3game.css'
 import Modal from 'react-bootstrap/Modal';
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom';
-import ScriptTag from 'react-script-tag';
+
+
 
 class GameLobby extends Component {
 
@@ -48,12 +49,24 @@ class GameLobby extends Component {
 
   render() {
     return (
+         
+<Modal
+                show={this.state.showModal}
+
+           onclose={this.state.close}
+           dialogClassName="modal-90w"
+
+           className="model-dialog"
+
+                
+            >
+
 
 
 
 
       <div>
-        <ScriptTag isHydrating={true} type="text/javascript" src='//player.cloud.wowza.com/hosted/tpk9wdtc/wowza.js'  />
+      
           {/* <Gamef3 closeevent={this.state.showmodel}/> */}
           <div class="container content ">
 
@@ -66,10 +79,7 @@ class GameLobby extends Component {
 
               <div class="row justify-content-around around">
 
-                {/* <!-- Card--1 --> */}
-
-
-                {/* <Link to="/" className="list-style"> */}
+             
                   <div class="col-md-4 cards-section cardcursor" href="/">
                     <div class="card card-view text-white lobby" >
                       <img src={process.env.PUBLIC_URL + "/host_g1..png"} class="card-img" alt="..." />
@@ -206,8 +216,9 @@ class GameLobby extends Component {
             </div>
           </div>
 
-        {/* </Modal> */}
       </div>
+      
+      </Modal>
 
     )
   }

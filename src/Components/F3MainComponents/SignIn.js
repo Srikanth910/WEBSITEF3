@@ -619,9 +619,9 @@ class SignIn extends Component {
 		return (
 			<Modal   dialogClassName="modal-50w" show={this.props.open} onHide={this.props.close} >
 
-				<div tabindex="-1" role="dialog" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+				{/* <div tabindex="-1" role="dialog" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"> */}
 					<div role="document">
-						<div className="modal-contentview">
+						<div className="modal-contentview  popup-view">
 							<div className="signin-links">
 								<ul className="nav nav-tabs" id="myTab" role="tablist">
 									<li className="nav-item">
@@ -939,7 +939,7 @@ class SignIn extends Component {
 							</div>
 						</div>
 					</div>
-				</div>
+				{/* </div> */}
 
 			</Modal>
 
